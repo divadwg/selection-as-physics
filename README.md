@@ -151,10 +151,11 @@ Prior art and literature check: see `docs/references.md`.
 
 ## Repository
 
-- `docs/experiments.md`: what was run, what it showed, which sim.
+- `docs/experiments.md`: what was run, what it showed, which script and figure.
+- `docs/entropy_ledger.md`: the sun–Earth–space entropy ledger; three Earths (dirt, diamond, whirlpool).
 - `docs/references.md`: prior art to cite and the literature check.
 - `docs/papers.md`: the paper plan.
-- `docs/entropy_ledger.md`: the full sun–Earth–space entropy ledger; three Earths (dirt, diamond, whirlpool).
 - `docs/history.md`: ΛB post-mortem and distinctions kept from the working conversation.
-- `sims/`: simulation code (Python, numpy; scipy for one helper).
-- `figures/`: outputs referenced in docs/experiments.md.
+- `docs/substack_draft.md`: plain-English essay.
+- `sims/core/`: the theorem and its checks (paper 1). `sims/boundaries/`: what linear systems cannot do (paper 2). Numbered in the order of the argument.
+- `figures/core/`, `figures/boundaries/`: one figure per result, named for what it shows.

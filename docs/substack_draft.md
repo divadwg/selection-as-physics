@@ -64,4 +64,18 @@ I thought life was on the output side of the ledger, that it existed to degrade 
 
 Is this natural selection as physics? In the smallest systems that can carry it, yes, provably. The window is a theorem, checked. Whether biology sits inside the window is a measurement nobody has made, and it needs a system where you can weigh flow, disturbance rate and disturbance size against each other. Until then the honest sentence is that selection is a theorem of non-equilibrium physics with a stated boundary, and that the currency of that theorem is share of the flow, not the heat. I spent fifteen years looking on the wrong side of the ledger. The right side was the sea the river cannot lower, and the mills fighting for what runs past.
 
+## The equation
+
+If you want it as mathematics, it is two lines.
+
+**p(g) ∝ 1 / D(g)**
+
+How often you find a channel at a given state is one over how much it jitters there. Jitter is how often a channel is disturbed times how hard, squared. This is Landauer's line, from 1975.
+
+**share(g) · p(g) ∝ g^(m − q)**
+
+Multiply how much a channel at that state carries by how many channels are there, and you get where the flow actually is. Flow rises with state as g^m; jitter rises as g^q. When they rise together, q equals m, the product is flat: the flow is spread evenly across every state while the channels are piled at the bottom. Population and flow disagree, and the disagreement is selection. It holds when jitter grows at least in proportion to state and not more than one power faster than the flow: 1 ≤ q ≤ m + 1. Outside that window, nothing separates.
+
+Everything else in this essay is a consequence of those two lines and one physical guess: that busier channels jitter more. Landauer gave us the first line fifty years ago. The second is what you get when you remember that the channels are sharing something.
+
 *The full logic, the code, and the entropy ledger are on GitHub. Corrections welcome, especially from people who can measure jitter.*

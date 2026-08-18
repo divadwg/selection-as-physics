@@ -16,13 +16,24 @@
 
 ## Which sim is which
 
-- `sims/lg.py`, `sims/lg2.py`: D2Q9 lattice flow past a disc; loops above threshold; linear control. Figures: loops_vs_drive, threshold.
-- `sims/hyb.py`: river-bed hybrid; memory test; seed capture. Figures: memory_test, bump_test2, rough_bed_test, seed_capture.
-- `sims/memdial.py`: memory as dial vs gate. Figure: memory_dial.
-- `sims/heldback.py`: plateau channel network. Figure: heldback_plateau.
-- `sims/rhythm.py`: blinking gradient over a linear medium (negative). Figure: rhythm_test.
-- `sims/kink.py`, `kink2.py`, `kink3.py`: forty-route concentration, stress tests, heredity. Figure: heredity_test.
-- `sims/memloop.py`: free-sign write-back. `sims/substrate.py`: one-substrate version.
-- `sims/boundary.py`: m sweep on the toy line q = m.
-- `sims/realdata.py`: q from published fluctuation exponents; firm transient-vs-stationary check.
-- `sims/window2.py`: exact-law integration of the (m,q) window; large-N Itô SDE check.
+### Core (paper 1: the theorem and its checks)
+| Script | What it shows | Figure |
+|---|---|---|
+| `sims/core/01_concentration_forty_routes.py` | forty routes, undirected kicks at rate ∝ share: flux concentrates; flat noise: no | `figures/core/concentration_only_when_noise_scales_with_share.png` |
+| `sims/core/02_heredity_copying_climb.py` | add undirected copying ∝ share: population mean trait climbs; controls flat | `figures/core/heredity_copying_population_climbs.png` |
+| `sims/core/03_exponent_sweep_toy_line.py` | on the line q = m: no concentration below m = 1, marginal at 1 | `figures/core/exponent_sweep_toy_line_selection_iff_m_ge_1.png` |
+| `sims/core/04_selection_window_exact_law.py` | exact stationary law integrated over (m, q); large-N Itô SDE check | `figures/core/selection_window_phase_diagram_m_q.png` |
+| `sims/core/05_writeback_free_sign_selection.py` | free-sign flow-to-rule coupling: positive sign takes over; controls | `figures/core/writeback_self_reinforcing_sign_takes_over.png` |
+| `sims/core/06_one_substrate_no_channel_supplied.py` | material obstructs flow, flow moves material by its own property: erodible sign wins; no channel drawn | (numbers in record above) |
+| `sims/core/07_q_from_published_exponents.py` | q from cities, firms, GDP, networks; firm stationary-vs-transient exponent check | (table in record above) |
+
+### Boundaries (paper 2: what linear systems cannot do)
+| Script | What it shows | Figure |
+|---|---|---|
+| `sims/boundaries/01_lattice_flow_loops_above_threshold.py` | D2Q9 flow past a disc: closed loop above Re ≈ 10, grows with drive; linear rule never loops | `figures/boundaries/lattice_flow_loops_vs_drive_linear_never_loops.png` |
+| `sims/boundaries/02_memory_gate_vs_dial.py` | continuously rewritten memory only slows forgetting; gated memory holds | `figures/boundaries/memory_gate_holds_dial_only_slows.png` |
+| `sims/boundaries/03_plateau_channel_network.py` | flow-proportional cutting builds channels from noise; slope-only cutting builds a sheet | `figures/boundaries/plateau_channels_form_only_with_flow_proportional_cutting.png` |
+| `sims/boundaries/04_blinking_gradient_negative.py` | storage pays under rhythm but no pattern forms in a linear medium | `figures/boundaries/blinking_gradient_builds_no_pattern.png` |
+| `sims/boundaries/05_riverbed_hybrid_memory_in_slow_layer.py` | seed a bump: loop forms; kill flow keep bump, loop regrows; keep flow kill bump, loop dies; seeds capture bed material ∝ size | `figures/boundaries/riverbed_memory_lives_in_bump_not_flow.png` |
+
+Dropped from the repo (numbers retained in the record above): stress-test script for concentration (floor/ceiling/rate/kick/splitting), the superseded first lattice script, and four river-bed figures (bump erosion, rough bed, seed capture) whose content is three sentences.
