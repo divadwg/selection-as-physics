@@ -1,0 +1,8 @@
+# Papers
+
+
+1. *State-dependent diffusivity, throughput share, and a finite selection window.* Bergin-Lipman: state-dependent mutation rates can select anything. Here: for a zero-drift Itô process occupancy is 1/D(g); with throughput share ∝ g^m and D ∝ g^q, population and flux separate iff 1 ≤ q ≤ m+1, a two-sided window with two falsifiable failure regimes; the constitutive hypothesis D ∝ J places physical systems on q = m; copying ∝ share converts concentration into Darwinian selection (Price on the trait, not Fisher on share); free-sign write-back gives replicator feedback selection. Related to Landauer's blowtorch and nonlinear preferential attachment; cite both; claim the window, the inversion, the physical placement. Validation section: q from published fluctuation exponents (cities, firms, GDP, networks) all inside the window; firm case a quantitative near-miss with a stationary-vs-transient explanation to test. PRE / J. Stat. Phys.
+2. *Structure needs a threshold: four boundaries in driven systems.* Linear systems can't loop, remember, concentrate, or compete; here is the threshold for each. Done; armour for 1. Send first if smoothest entry wanted.
+3. *Everything is flow: rebuild rules, loops, and memory as a copy step.* Whirlpool and DNA are both ships of Theseus; only one keeps its dents. Substack then journal.
+4. *One real system.* Measure noise vs flux, share exponent, concentration in one physical system (self-modifying parallel channels, memristive filaments, braided rivers); plus biological cross-checks for P6a and P10.
+Not yet: the synthesis. It waits for 4.
