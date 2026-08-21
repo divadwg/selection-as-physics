@@ -24,10 +24,14 @@
 | `sims/core/03_exponent_sweep_toy_line.py` | on the line q = m: no concentration below m = 1, marginal at 1 | `figures/core/exponent_sweep_toy_line_selection_iff_m_ge_1.png` |
 | `sims/core/04_selection_window_exact_law.py` | exact stationary law integrated over (m, q); large-N Itô SDE check | `figures/core/selection_window_phase_diagram_m_q.png` |
 | `sims/core/05_writeback_free_sign_selection.py` | free-sign flow-to-rule coupling: positive sign takes over; controls | `figures/core/writeback_self_reinforcing_sign_takes_over.png` |
-| `sims/core/06_one_substrate_no_channel_supplied.py` | material obstructs flow, flow moves material by its own property: erodible sign wins; no channel drawn | (numbers in record above) |
-| `sims/core/07_q_from_published_exponents.py` | q from cities, firms, GDP, networks; firm stationary-vs-transient exponent check | (table in record above) |
+| `sims/core/06_one_substrate_no_channel_supplied.py` | material obstructs flow, flow moves material by its own property: erodible sign wins; no channel drawn | `figures/core/one_substrate_self_clearing_material_takes_over.png` |
+| `sims/core/09_footprint_extensive_vs_coherent_q_emerges.py` | footprint ∝ share at fixed per-patch coupling on chaotic substrate: variance exponent 1.01 emerges (D ∝ J derived, not injected); coherent control: 2.00, at/above upper edge; common-mode noise fails to select even in-window: variation must be idiosyncratic | `figures/core/footprint_q_emerges_and_common_mode_fails.png` |
+| `sims/core/08_mutation_from_unseen_layers_no_rng.py` | deterministic chaotic substrate, no RNG after t=0: kicks emerge as coarse-level dice, variance ~ share² from contact alone, concentration follows; frozen substrate: nothing; periodic substrate: concentration without unpredictability, so selection needs scaled variance, not randomness | `figures/core/mutation_from_unseen_layers_no_rng.png` |
+| `sims/core/07_q_from_published_exponents.py` | q from cities, firms, GDP, networks; firm stationary-vs-transient exponent check | `figures/core/real_systems_on_the_window.png` |
 
-### Boundaries (paper 2: what linear systems cannot do)
+### Boundaries (what linear systems cannot do)
+
+None of these is new physics. Recirculation above a threshold and the fore-aft symmetry of Stokes flow, bistable memory, stream-power channelisation, and the failure of a linear medium to pattern under periodic forcing are all textbook. They are here as checked, pictured preconditions of the theory's domain, not as results; they belong in a paper only as illustrations of the boundaries the core theorem assumes.
 | Script | What it shows | Figure |
 |---|---|---|
 | `sims/boundaries/01_lattice_flow_loops_above_threshold.py` | D2Q9 flow past a disc: closed loop above Re ≈ 10, grows with drive; linear rule never loops | `figures/boundaries/lattice_flow_loops_vs_drive_linear_never_loops.png` |

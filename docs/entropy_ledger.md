@@ -1,5 +1,9 @@
 # The entropy ledger: why order does not change total entropy production
 
+**The headline.** Entropy is produced when order degrades, not when it is created. Creation defers; decay repays; over the whole cycle the sun's account closes exactly. The misunderstanding was that order costs extra entropy up front. It doesn't. It borrows against a fall that was already scheduled, and we notice the price only when the bill comes due. (Precise form: creation degrades less than the bare gradient would, since the light spent building is only partially degraded on the way; degradation-of-order repays the difference; the cycle closes at the bare total.)
+
+**The resolving fact.** Everything on Earth we call ordered is higher entropy per joule than the sunlight that paid for it: sunlight at 5800 K carries ~0.0002 J/K per joule; chemical order at 300 K ~0.003 J/K per joule; heat leaves at 255 K. Turning a joule of light into a joule of diamond, leaf or brain raises its entropy tenfold. Order on Earth is a rung on the way down, not a reversal, which is why no extra export is ever needed to pay for it: the payment happens inside, at the moment the photon's low entropy is spent.
+
 Per square metre of Earth, per second. Identity used throughout: in steady state, entropy produced inside a system = entropy leaving − entropy entering. Internal structure never appears in that equation.
 
 **Fixed by the boundaries.** Absorbed sunlight P = 240 W (albedo 0.30). Radiated at effective temperature T_e = 255 K, from 240 = σT⁴. Radiation carries entropy at (4/3)·power/temperature.
@@ -27,3 +31,11 @@ Per square metre of Earth, per second. Identity used throughout: in steady state
 Structure acts on inputs and routes: how much is absorbed (albedo), what is unlocked (fuel, catalysis), where the degradation happens and over what time. It cannot act on outputs: entropy per joule leaving is set by where the flow ends (the sea, 255 K space). Hence: currency of selection is share of flux; entropy production is the bill, fixed by the gradient, the same for any arrangement.
 
 Albedo change is a tendency, not a law: favoured only while reflection is the cheapest share in reach and only while absorbing more does not break the absorber (heat, drought, fire). Earth's albedo has been moved both ways by life; absorbed power has wandered but not run away.
+
+## The two objections every sharp reader raises
+
+**Fossil fuels.** Burning them does raise entropy production above the solar steady state. But fossil carbon is banked order: sunlight captured long ago, partially degraded to the 300 K of chemistry, then trapped. Burning resumes a degradation that was paused. The forest that banked it was the below-ceiling phase; the smokestack is the above-ceiling phase; sum them and it is the same sunlight, fully degraded, three hundred million years late. (The larger climate effect runs through the greenhouse boundary, an inflow/boundary change, and dwarfs the direct waste heat.) A civilisation on fossil fuels is living inside the repayment phase of an account someone else opened, which is why "order makes entropy" looks obviously true from where we stand, and is backwards about the mechanism.
+
+**A Dyson sphere.** It raises solar-system entropy production enormously, by capturing flux that was leaking past undegraded and degrading it now. That is share captured from the leak taken to 100 percent, the ultimate causing loop; not order paying for itself with export. The sphere's own material is banked order like the diamond, paid for once at construction. And the sphere is detectable exactly as routed flux (infrared), not as extra entropy per joule, which is Dyson's own point.
+
+**The cycle, per parcel of order, at fixed inflow.** Creation: production below the ceiling (degradation withheld, banked). Maintained existence: production at the ceiling, no higher. Degradation: production above the ceiling by exactly the banked amount. Full cycle: the bare-gradient total, to the joule. Structure is thermodynamically a timing device: it cannot change how much entropy a gradient will ultimately produce, only when and where. One more reason the currency of selection cannot be entropy production: over any full cycle, every channel's total is identical; what differs is only what each did with the flux while it had it.

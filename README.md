@@ -55,7 +55,10 @@ What rivers cannot do is carry width as a number. A channel's state travels only
 ## 2. Definitions
 
 - D1. *Pattern*: a configuration distinguishable from background at some resolution.
-- D2. *Gradient-rebuilt* vs *self-rebuilt* pattern: re-formed each instant from ambient physics, versus re-formed by reference to its own prior state. Both are flow; both replace their substance. The rebuild rule is the difference. Whirlpool: nudge it, the gradient restores the old shape. DNA: nudge a base, the next copy carries the nudge.
+- D2. *Gradient-rebuilt* vs *self-rebuilt* pattern: re-formed each instant from ambient physics, versus re-formed by reference to its own prior state. Both are flow; both replace their substance. The rebuild rule is the difference. Whirlpool: nudge it, the gradient restores the old shape. DNA: nudge a base, the next copy carries the nudge. Refined below.
+- D2a. The heredity ladder, four rungs. (0) Open flow: no memory; the gradient re-templates every disturbance (weather; most flows; heredity is rare in flows and must be earned, not assumed). (1) Closed loop: heredity-in-time; each turnover templated by the previous one via the momentum term; one lineage, generations = turnovers, fidelity < 1 (the whirlpool, dying and reborn each cycle). (2) Bifurcation: heredity across lineages, iff the daughter's state is caused by the parent's state rather than by the environment. Vortex shedding is production, not replication (the obstacle templates each vortex); channel splitting and the turbulent cascade (eddies begetting eddies) are replication at low fidelity. (3) Externalised state: state moves into a slower substrate the flow reads and writes (bump, catalyst bed, DNA); fidelity decouples from the flow's turnover; the record outlives the revolution, then the carrier.
+- D2b. The templating (sticking) condition: heredity survives at any rung exactly when the pattern's own state outcompetes the gradient as template for the next state. Twin of D6: self-routing is how much of your sustaining flux is your own doing; self-templating is how much of your successor's state is. Heredity emerges where self-templating crosses threshold: a measurable transition, not an added ingredient.
+- Terminology ruling: pre-copying, the theorems deliver *sorting* (differential persistence, Vrba-Gould), not selection. Write-ups must say sorting until the copying bridge is explicitly in place.
 - D3. Domain: gradient-rebuilt patterns and the self-rebuilt patterns they couple to. Kinetically trapped order (crystal, table) is outside: its entropy bill was paid once at creation; ours is paid continuously because existence and rebuilding are the same event.
 - D4. *Loop in flow*: closed circulation distinct from through-flux. Needs two spatial dimensions (a 1D world has no interior), a conserved current (Life has none, so its gliders are travelling wobbles), and a nonlinearity (linear flow cannot tell upstream from down). A spiral is a circle plus a through-flux: closed in one direction (boundary, identity), open in the other (metabolism). A wobble repeats in time but encloses nothing: it leaks; a loop traps.
 - D5. A pattern is *real* at a resolution if its shorthand predicts as well as tracking the parts (predictive closure); its *boundary* is the contour where the shorthand stops leaking. Not yet operational on a lattice.
@@ -81,8 +84,9 @@ What rivers cannot do is carry width as a number. A channel's state travels only
 - P3 (Minimum price, restricted): stated as a lemma, L1 below. No general floor for order merely existing.
 - P4 (Instability): above critical throughput smooth relaxation is impossible; structure forced. Proven for convection; reproduced in our lattice; nonlinearity shown necessary.
 - P5 (Preferred scale): flow structures have a stable size; surplus makes more, not bigger. Empirical; not reproduced by us.
-- P6 (Noise): whatever an observer cannot resolve appears as irreducible noise in what they can (Mori-Zwanzig). Hidden below, dice above. Nothing here depends on what the hidden layer is made of.
-- P6a (Constitutive hypothesis, not FDT): the diffusivity of a channel's state in the privileged variable g scales as g^m, i.e. with its throughput. Equilibrium FDT does not give this; far from equilibrium FDT is generically violated (Harada-Sasa). Status: hypothesis to be derived or tested per system class. Evidence in the direction: transcription-associated mutagenesis; metabolic-rate scaling of molecular evolution. Also assumed: kicks additive and symmetric in g (the stochastic metric); reparameterization changes the apparent exponent.
+- P6 (Noise): whatever an observer cannot resolve appears as irreducible noise in what they can (Mori-Zwanzig). Hidden below, dice above. *Demonstrated in-substrate:* a deterministic chaotic layer under the channels produces kicks that are dice to the coarse observer, with variance scaling as share² from contact alone, and concentration follows with no RNG anywhere (sims/core/08). Caveat learned there: selection needs activity-scaled variance, not unpredictability; a periodic substrate concentrates too. Mutation means blind and scaled, not uncaused.
+- P6a, resolved into a classification (demonstrated in-substrate, sims/core/09): how D scales with J is set by how a channel grows. *Extensive* growth (throughput adds independent units: patches, transactions, members) gives kick variances that add, so D ∝ J, q = m, inside the window; measured emergent exponent 1.01 with footprint ∝ share at fixed per-patch coupling on a chaotic substrate. *Intensive/coherent* growth (same units, bigger amplitude, or one shared environmental signal) gives D ∝ J², q = 2m ≥ m+1, at or beyond the upper edge; measured 2.00. The exponent is not a free parameter; it is the geometry of growth, measurable per system. Additional finding: common-mode noise (perfectly correlated across channels) fails to select even at nominally in-window q, because selection requires noise that differentiates competitors; variation must be idiosyncratic. Original statement kept for history:
+- P6a (original form, superseded above): the diffusivity of a channel's state in the privileged variable g scales as g^m, i.e. with its throughput. Equilibrium FDT does not give this; far from equilibrium FDT is generically violated (Harada-Sasa). Status: hypothesis to be derived or tested per system class. Evidence in the direction: transcription-associated mutagenesis; metabolic-rate scaling of molecular evolution. Also assumed: kicks additive and symmetric in g (the stochastic metric); reparameterization changes the apparent exponent.
 - P6b (Transport): what a flow can move, it moves in proportion to itself.
 - P7 (Finitude): every gradient is finite.
 - P8 (Storage): configurations stable between copies can hold information (Schrödinger's aperiodic crystal); their role is stability between copies, not permanence.
@@ -109,6 +113,8 @@ General form. For a zero-drift Itô process in a coordinate g with reflecting bo
 
 ### Where entropy enters, and where it does not
 
+- The headline: entropy is produced when order degrades, not when it is created. Creation defers (production dips below the bare-gradient ceiling while order is banked); maintenance holds at the ceiling; degradation repays (production above the ceiling by the banked amount); the full cycle closes at the bare total. Structure is a timing device for entropy production, which is one more reason it cannot be the currency of selection.
+- The resolving fact: everything on Earth we call ordered (a diamond, a cell, a brain, a city, a language) is *higher* entropy per joule than the sunlight that paid for it. Sunlight arrives at 5800 K (~0.0002 J/K per joule); chemical order at 300 K sits at ~0.003 J/K per joule; heat leaves at 255 K. Building a leaf out of light is a step down the entropy ladder, not a climb back up. Life is a rung, not a reversal, and the second law was never in tension with order on Earth.
 - The theorem (p ∝ 1/D, the window) contains no entropy. Occupancy is set by kinetics along the path, not by entropy or its derivatives; that was Landauer's point in 1975.
 - The flux I is fixed by the gradient and boundary conditions. Entropy production is not fixed by the flux: the same flux can pass through smooth channels producing little entropy or through structured, dissipative ones producing more.
 - Maintaining a channel's structure is paid for out of its own share of the flux (T1, Lemma L1), bounded by that share (T2, per channel). So what is competed for is flux; each channel converts part of its share into the entropy that keeps it what it is, up to the limit of its share.
@@ -142,7 +148,7 @@ See the term map in §1. Additions not in the table: death = freezing at the flo
 
 ## 11. Open joints and status
 
-Open: one real system measured end to end (noise ∝ flux, m ≥ 1, concentration observed); identification of persistence-selection with reproduction-selection (argued via iv, not measured); D5 not operational; P5 not reproduced.
+Open: the h² experiment (heredity self-emerging from flow): in the plateau world, at each channel-splitting event regress daughter cross-section on parent cross-section controlling for local slope and rainfall; the net slope is the flow's heritability. Predict ≈ 0 in shedding regimes, positive at splitting, rising with slow-layer persistence, crossing threshold where sorting becomes selection; machinery exists (sims/boundaries/03 + 05). Also open: one real system measured end to end (J, r, σ² independently; window checked; concentration observed); identification of persistence-sorting with reproduction-selection (argued via the copying bridge, not measured); D5 not operational; P5 not reproduced.
 Proved (toy): Theorem (i)–(v). Reproduced: P4, T3, T8a, T11, T12a, boundary. Physics near equilibrium, evidenced beyond: P6a. Known math to cite: boundary ≡ nonlinear preferential attachment.
 
 Prior art and literature check: see `docs/references.md`.
@@ -151,11 +157,14 @@ Prior art and literature check: see `docs/references.md`.
 
 ## Repository
 
+- `docs/results_one_liners.md`: each experiment in one sentence with its figure.
 - `docs/experiments.md`: what was run, what it showed, which script and figure.
+- `docs/memristor_q_analysis.md`: q computed from measured memristor noise exponents; one physical system crosses the window.
 - `docs/entropy_ledger.md`: the sun–Earth–space entropy ledger; three Earths (dirt, diamond, whirlpool).
 - `docs/references.md`: prior art to cite and the literature check.
 - `docs/papers.md`: the paper plan.
 - `docs/history.md`: ΛB post-mortem and distinctions kept from the working conversation.
 - `docs/substack_draft.md`: plain-English essay.
+- `docs/animation_brief.md`: build brief for a one-world explainer animation (illustration, not evidence).
 - `sims/core/`: the theorem and its checks (paper 1). `sims/boundaries/`: what linear systems cannot do (paper 2). Numbered in the order of the argument.
 - `figures/core/`, `figures/boundaries/`: one figure per result, named for what it shows.
