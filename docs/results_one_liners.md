@@ -38,6 +38,22 @@
 
 ![](../figures/core/footprint_q_emerges_and_common_mode_fails.png)
 
+**10. Heredity from flow.** In an incising network with a persistent bed, a daughter branch resembles its parent beyond what proximity explains (excess correlation +0.21 with no memory ingredient added), and turning up bed healing erases the excess entirely, so heredity self-emerges in the slow layer and dies when the slow layer forgets; the first version of this measurement was confounded by smoothness and corrected with a distance-matched null, and the correction is part of the record.
+
+![](../figures/core/heredity_from_flow_excess_vs_healing.png)
+
+**11. Re-templating erases sorting (consistency check).** Pull every channel back toward the environment-dictated shape and concentration dies as deviations stop outliving the run: near-tautological, recorded because the original theorem silently assumed it away. The open successor experiment: with copying on, deviations need only survive until copied, so copying should rescue heredity from re-templating in proportion to share, making fitness feed back on heritability.
+
+![](../figures/core/drift_kills_sorting_dent_life.png)
+
+**12. Copying rescues heredity.** A deviation no longer needs to outlive the world's forgetting, only the wait until it is copied, so replication acts as memory refresh: the population climb survives re-templating that kills sorting alone, the rescue grows with copy rate, and since copying is funded by share, fitness itself buys longer heredity.
+
+![](../figures/core/copying_rescues_heredity_from_retemplating.png)
+
+**13. Portability (rung 3, first pass).** A gated token of state, shed downstream and read by its configuration wherever it lands, shapes flow at sites its parent's water never touched, above a shuffled-token null, and the transported self-reinforcing rule sweeps the substrate from half to ninety-five percent; gating shown sufficient, necessity still owed a clean control.
+
+![](../figures/core/portability_gated_parcels_rung3.png)
+
 ## Boundaries (what linear systems cannot do)
 
 **8. Lattice flow past a disc.** When a flow is driven past an obstacle, a closed loop appears above a threshold and grows with drive, and with the momentum term removed no loop forms at any drive.
