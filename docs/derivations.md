@@ -20,8 +20,11 @@ R₀ = (copy attempts per lifetime) × (per-copy success) = c·s · τ_dev · f.
 - R₀ = 1 is an explicit surface in (s, ΔE/T_eff, q): establishment threshold in the same coordinates as the sorting window. Survival of a single spark ≈ 2(R₀−1) near threshold (branching processes).
 - Fizz picture: origination can be frequent with R₀ just below 1; failed-chain-length distribution measures distance to threshold; cycling environments cross episodically given storage (τ_dev spanning the bad phase).
 
+### D0 (new, from review). The choice of stochastic variable
+Multiplicative-noise SDEs are not invariant under change of variables: additive unbiased noise in one coordinate becomes state-dependent diffusion plus noise-induced drift in another. The theory must identify the physically natural variable in which elementary perturbations are additive and unbiased: Δg = Σ ε_k over N(J) events, E[ε]=0, giving D(g) = ½ r(g) σ²(g) in the diffusion limit. This is the physical derivation of state-dependent diffusivity, and the defence against the first expected attack.
+
 ### D2/D3 RESTRUCTURE (forced by sims/core/16-17): establishment is escape, then compounding
-Copies inherit the parent's decaying trait, so offspring fates are correlated and no R0 (naive or trajectory-integrated) predicts survival. Correct two-stage law: (i) ESCAPE: some lineage member's trait must first-passage past the self-sustaining threshold before the family's shared decay absorbs it; copying's role while rare is multiplying escape attempts, P_surv ≈ 1 - (1 - p_esc)^M with M the family size before absorption; (ii) after escape, share is self-sustaining and compounding (R0 > 1) is automatic. R0 governs stage (ii) only. Derivation owed: p_esc as a first-passage problem for a kicked, re-templated trait; M from the copying rate along the decay path.
+Copies inherit the parent's decaying trait, so offspring fates are correlated and no R0 (naive or trajectory-integrated) predicts survival. Correct two-stage law: (i) ESCAPE: some lineage member's trait must first-passage past the self-sustaining threshold before the family's shared decay absorbs it; copying's role while rare is multiplying escape attempts, P_surv ≈ 1 - (1 - p_esc)^M with M the family size before absorption; (ii) after escape, share is self-sustaining and compounding (R0 > 1) is automatic. R0 governs stage (ii) only. Superseding route (from review): branching diffusion in trait space. Extinction probability Q(g) obeys D(g)Q'' + v(g)Q' + b(g)(Q²−Q) + d(g)(1−Q) = 0; P_survive = 1−Q. One equation holds diffusion, drift, inheritance, copying, death; the escape threshold should emerge from its solution. Owed: solve (numerically first) with b ∝ J, d from erasure, D ∝ g^q, v = −k(g−g*); compare against sims/core/16-17 survival data.
 
 ## D3. Invasion at low share (the exponential-regime reachability theorem)
 
@@ -31,6 +34,9 @@ Incumbents: gradient-templated structures, produced at environment-set rate, no 
 - The stable zoo (T10a) = the δ-dominated phase, derived.
 - The recursion: v (variable level), healing λ (medium level), incumbent pressure δ (population level) are one object, the world re-imposing its template, at three scales; every threshold in the theory is a race against it.
 - Owed: a concrete incumbent model fixing δ from the same physics (production rate of gradient structures per unit freed flux).
+
+## D5 (new, from revised review). Copying derived from throughput: the accumulator
+dA_i/dt = ηJ_i (throughput supplies usable work); copy when A_i ≥ E_copy (finite copy cost); hence τ_copy = E_copy/(ηJ) and b = ηJ/E_copy ∝ J, derived from two physical conditions rather than imposed. With inheritance g_daughter = g_parent + ε (ε from the same hidden layers), variation + heredity + differential reproduction follow, replicator/Price dynamics apply, and throughput plays two distinct roles from one conserved flow: engagement with hidden degrees of freedom (variation) and resource accumulation (reproduction). Demonstrated in-substrate (sims/core/18): emergent b(J) linear with slope ≈ 0.9·η/E (daughters start with empty accumulators), climb scaling inversely with copy cost, flat without copying.
 
 ## D4. Portability (condition 4's extension and the gating-necessity argument)
 
