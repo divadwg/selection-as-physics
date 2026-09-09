@@ -1,0 +1,78 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "trials": 1000,
+  "branching": {
+    "intervals": 8,
+    "horizons": [
+      2,
+      8,
+      20
+    ],
+    "cap": 128,
+    "initial_trait": 1.5,
+    "diffusivity": ".02*g",
+    "death": 0.4,
+    "dt": 0.005,
+    "refined_dt": 0.0025
+  },
+  "transport": {
+    "samples": 10000,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "distances": [
+      0,
+      10,
+      40,
+      100
+    ],
+    "flip_rate": 0.005,
+    "slow_decay": 0.005,
+    "fast_decay": 0.3,
+    "sigma": 0.1
+  },
+  "generations": {
+    "population": 256,
+    "generations": 40,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "distance": 10,
+    "total_flow": 1,
+    "copy_cost": 1,
+    "funding": "pooled fixed budget"
+  },
+  "source_sha256": {
+    "run_heredity.py": "c8701749371d2f5fcee46013a7ad4ee992d1159fa397b80e8a7eface9aa202ec",
+    "heredity.py": "9d4b747d0620dffc7050cbc8411d8c9554479f8de8e1ad70bc05cb0cef900b74"
+  }
+}
