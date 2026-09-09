@@ -18,7 +18,7 @@ def main():
     target = Path(__file__).with_name("window_data.csv")
     series = [[], [], []]
     with target.open("w", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["q", "base_r100", "base_r1e8", "n40_r1e8"])
         for q in np.linspace(0, 3, 301):
             small = continuum_half(1, q, 100)

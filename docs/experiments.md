@@ -1,5 +1,11 @@
 # Experiments (record)
 
+Current reading: the [revised paper](../paper/README.md) connects the stationary
+window to deterministic-lattice and copying thought experiments. The
+[retained example runs](research_examples/README.md) distinguish their different
+models and controls; they do not establish the full sequence in one system.
+
+
 
 1. Driven lattice flow past a disc (D2Q9): closed loop above Re ≈ 10, grows with drive; linear rule: no loop at any drive, fore-aft symmetric. No shedding seen in run time (T7 in flow not reproduced).
 2. River-bed hybrid: seed a bump, loop forms in lee. Wipe flow, keep bump: loop regrows. Keep flow, remove bump: loop dies. Memory lives in the slow layer (T11).
@@ -43,8 +49,8 @@ of script 04 as a validation of conserved-flow dynamics.
 | `sims/core/12_copying_rescues_heredity.py` | with copying ∝ share, the population climb survives re-templating that kills sorting alone (mean g 3.3-4.3 vs 1.08 at dent-life 10k), rescue scales with copy rate, fails where copy-interval ≈ dent-life; copying homogenises shares while raising them | `figures/core/copying_rescues_heredity_from_retemplating.png` |
 | `sims/core/11_drift_kills_sorting.py` | restoring drift toward environment-set g*: concentration 0.48 → 0.09 as dent-life falls ∞ → 100 steps; consistency check, near-tautological, of the weak-re-templating condition the zero-drift theorem assumed; successor experiment (copying as memory refresh) is the one with falsifiable content | `figures/core/drift_kills_sorting_dent_life.png` |
 | `sims/core/10_h2_heredity_from_flow.py` | plateau with healing dial: v1 raw parent-daughter regression confounded by spatial smoothness (rose with healing); v2 distance-matched null: heredity excess +0.21 at zero healing, ≈0 by λ=0.05; heredity lives in the slow layer and one dial kills it (D2b in numbers) | `figures/core/heredity_from_flow_excess_vs_healing.png` |
-| `sims/core/09_footprint_extensive_vs_coherent_q_emerges.py` | footprint ∝ share at fixed per-patch coupling on chaotic substrate: variance exponent 1.01 emerges (D ∝ J derived, not injected); coherent control: 2.00, at/above upper edge; common-mode noise fails to select even in-window: variation must be idiosyncratic | `figures/core/footprint_q_emerges_and_common_mode_fails.png` |
-| `sims/core/08_mutation_from_unseen_layers_no_rng.py` | deterministic chaotic substrate, no RNG after t=0: kicks emerge as coarse-level dice, variance ~ share² from contact alone, concentration follows; frozen substrate: nothing; periodic substrate: concentration without unpredictability, so selection needs scaled variance, not randomness | `figures/core/mutation_from_unseen_layers_no_rng.png` |
+| `sims/core/09_footprint_extensive_vs_coherent_q_emerges.py` | retained default run: variance-versus-mean-share slopes 1.01 (separate patches), 2.00 (common coherent patch), 1.99 (fixed patches); coherent control changes cross-route correlations as well as slope, so this is not an isolated test of the upper boundary; see research_examples/README.md | `figures/core/footprint_q_emerges_and_common_mode_fails.png` |
+| `sims/core/08_mutation_from_unseen_layers_no_rng.py` | no random draws after initialization; chaotic, frozen and periodic variants give final top-three shares 0.62, 0.08 and 0.95; determinism permits concentration here, but chaos is not shown necessary; no diffusion limit is established | `figures/core/mutation_from_unseen_layers_no_rng.png` |
 | `sims/core/07_q_from_published_exponents.py` | q from cities, firms, GDP, networks; firm stationary-vs-transient exponent check | `figures/core/real_systems_on_the_window.png` |
 
 ### Boundaries (what linear systems cannot do)

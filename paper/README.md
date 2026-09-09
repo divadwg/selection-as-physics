@@ -3,13 +3,15 @@
 [Read the paper (PDF)](finite_noise_window.pdf). The editable source is
 [finite_noise_window.tex](finite_noise_window.tex).
 
-**A finite noise window for concentration of a shared flow: exact stationarity
-and the finite-population correction**, David Galbraith, revised 9 September 2026.
-This is a working technical note, not a peer-reviewed publication. The
+**A finite noise window for concentration of a shared flow: deterministic
+disturbance and steps toward selection**, David Galbraith, revised 9 September 2026.
+This is a working paper, not a peer-reviewed publication. The
 originality of the full model and correction has not been established by a
-comprehensive literature review.
+comprehensive literature review. Known results for power laws and deterministic
+effective noise do not by themselves establish that the combined physical
+proposal has already been demonstrated.
 
-This note treats pre-existing channels. It does not settle the broader proposal
+The exact model treats pre-existing channels. It does not settle the broader proposal
 that channels self-organize in an energy gradient, or establish that proposal
 as prior art. The established mathematics and the untested physical mechanism
 are different claims.
@@ -17,8 +19,11 @@ are different claims.
 This revision replaces the August draft's single-path treatment of shared flow
 with the exact joint stationary law. It defines the pooled observable, includes
 the finite-population correction, qualifies the endpoints, and replaces the old
-independent-walker convergence claim with the retained coupled checks. Copying,
-memory and broader evolutionary interpretations remain repository extensions.
+independent-walker convergence claim with the retained coupled checks. It also
+presents the [deterministic-lattice and copying thought experiments](thought_experiments.tex)
+as steps in the broader proposed connection to selection, with their
+[retained outputs and limitations](../docs/research_examples/README.md).
+Further memory, lineage and state-transport models remain repository extensions.
 
 The upper threshold is presented as an application of established moment
 mathematics. The draft does not claim discovery of a new power-law threshold or

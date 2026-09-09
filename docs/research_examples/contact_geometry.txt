@@ -1,0 +1,3 @@
+extensive : measured variance ~ share^1.01  (predicted 1)   top-3 share 0.17
+coherent  : measured variance ~ share^2.00  (predicted 2)   top-3 share 0.08
+fixed_amp : measured variance ~ share^1.99  (predicted 2)   top-3 share 0.63

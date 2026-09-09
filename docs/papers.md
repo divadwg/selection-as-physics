@@ -8,7 +8,10 @@ David Galbraith, revised 9 September 2026.
 
 The paper studies one reflected, driftless Itô model with a fixed shared flow.
 It derives the exact joint stationary law, the finite-population correction and
-the precise pooled concentration window. The upper edge is presented as an
+the precise pooled concentration window. It then develops the proposed route
+from deterministic fine-scale disturbance to selection through explicit lattice
+and copying thought experiments. [Retained example runs](research_examples/README.md)
+make their evidence and limitations inspectable. The upper edge is presented as an
 application of established moment mathematics, without a priority claim for
 the threshold itself. It is a working draft, not a peer-reviewed publication.
 
@@ -20,8 +23,8 @@ validation. The discontinued aggregate-nanowire route supplies no verdict.
 
 The repository also contains models of copying funded by throughput, memory
 refresh, lineage establishment and transport of stored state. Each introduces
-additional assumptions. They remain separate research directions rather than
-parts of the stationary theorem.
+additional assumptions. The paper discusses the first steps in this programme; further extensions
+remain separate research directions rather than parts of the stationary theorem.
 
 A physical test would require states and flows resolved by channel, a fixed total,
 checks of the joint variance rule and drift, and adequate relaxation and state

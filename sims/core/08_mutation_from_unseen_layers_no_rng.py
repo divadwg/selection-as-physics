@@ -1,11 +1,11 @@
-"""
-Mutation from unseen layers, watched happening. No RNG after t=0.
-Fine layer: chaotic coupled-map lattice (logistic r=4), deterministic, mixing.
-Coarse layer: each channel sits on a KxK block; 'gray' = block mean.
-Channels: forty routes, share = g/sum(g). Kick = coupling * throughput-contact * (gray - longrun mean).
-Controls: frozen fine layer (no churn) and periodic fine layer (orderly churn).
-Measurements: (1) gray deviations unpredictable from coarse history but exactly reproducible from fine state;
-(2) effective kick variance on a channel scales with its share; (3) concentration appears; dies in controls.
+"""Deterministic fine-lattice driving of coarse flow routes.
+
+Random draws initialize the system; all subsequent updates are deterministic.
+Each route responds to block-mean deviations, with amplitude proportional to share.
+The frozen and periodic variants are comparisons, not both negative controls:
+the periodic default also concentrates. Reported autocorrelation is a limited
+coarse statistic, not a proof of unpredictability or a diffusion limit.
+See docs/research_examples/README.md for retained runs and interpretation.
 """
 import numpy as np
 def fine_step(x, eps=0.1, mode='chaotic'):

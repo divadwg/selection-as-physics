@@ -1,0 +1,102 @@
+\section{Thought experiments toward selection}
+\label{sec:thought}
+
+\subsection{Effective noise in a deterministic world}
+
+The first construction, \texttt{sims/core/08}, puts each of forty coarse routes
+over a block of a coupled logistic-map lattice. The lattice evolves
+deterministically. A route responds to the difference between its block mean
+and a slowly updated running mean, with a coupling proportional to its share.
+Random numbers initialize the lattice and routes; none are drawn during their
+subsequent evolution. Fixing the complete initial state fixes the trajectory.
+
+In the retained default run, the chaotic lattice gives a final top-three flow
+share of $0.62$, compared with $0.08$ for a frozen lattice. Its sampled block
+means have mean lag-one autocorrelation about $0.01$, and the repeated run
+reports identical summary statistics. These are demonstrations of deterministic
+driving with irregular coarse fluctuations and concentrated flow, not a proof
+that the coarse process is Markovian or converges to the It\^o model above.
+
+The periodic control is informative: it gives an even larger top-three share,
+$0.95$. The experiment therefore does not show that chaos is necessary, despite
+an earlier description of that control. Low autocorrelation alone would not
+establish unpredictability from all coarse information either. The contribution
+of the lattice experiment is to make the absence of ongoing random input
+explicit and reproducible within a flow-sharing example.
+
+Deterministic dynamics admitting stochastic effective descriptions are already
+established mathematically \cite{melbourne,gottwald}. Their role here is as a
+candidate physical source for the disturbance, not a new discovery that
+determinism and statistical noise can coexist. A diffusion limit for this
+particular lattice, including its effective drift and stochastic convention,
+remains to be derived. This matters because deterministic multiplicative
+forcing need not produce a driftless It\^o limit \cite{gottwald}.
+
+\subsection{Contact geometry and the window are separate tests}
+
+The next construction, \texttt{sims/core/09}, recruits more lattice patches for
+a route with a larger share, keeping coupling per patch fixed. In the retained
+run, the variance-versus-mean-share slope is $1.01$ for sums over separate
+patches. A common coherent patch gives slope $2.00$; using fixed patches with
+amplitude proportional to share gives $1.99$. These are across-route diagnostic
+slopes, not direct estimates of conditional infinitesimal diffusivity.
+
+The final top-three shares are $0.17$, $0.08$ and $0.63$, respectively.
+The coherent case uses the same fluctuation for all routes and so changes
+cross-route correlation as well as variance scaling. It cannot isolate the
+effect of moving $q$ to the upper edge. Both slopes near two are also at the
+$m=1$ boundary, rather than beyond it. The lattice examples consequently
+support a mechanism for effective disturbance and its scaling; they do not
+demonstrate the full two-sided window in a single deterministic substrate.
+
+The exact theorem answers a different, controlled question: for the specified
+diffusion, when does pooled concentration vanish as a population fraction?
+The lattice routes have a lower clipping rule and no fixed upper reflecting
+cutoff, and their effective drift and shared clock have not been matched to
+Eq.~\eqref{eq:model}. A next test must connect those models before treating
+their results as one experiment.
+
+\subsection{From unequal sharing to differential reproduction}
+
+Concentration alone contains no lineage. Suppose each route also has a store
+of usable work $A_i$, increasing at rate $\dot A_i=\eta J_i$, and a copy costs
+$E_{\rm copy}$. With constant flow and no intervening loss, the time between
+copies is $E_{\rm copy}/(\eta J_i)$. For time-varying flow, accumulated work
+sets the number of completed copies, up to the remainder in the store. Thus
+the ideal long-run rate is $b_i=\eta\overline J_i/E_{\rm copy}$.
+This derives the rate conditional on a copying mechanism, an efficiency and a
+cost; it does not derive the existence of copying machinery.
+
+In \texttt{sims/core/18}, a funded copy replaces a randomly chosen route with
+an inherited state plus a perturbation. The default run with copy cost $200$
+ends at mean state $8.67\pm1.27$, compared with $4.32\pm1.17$ at cost $500$
+and $1.05\pm0.19$ without copying. These are means and population standard
+deviations across three runs, not confidence intervals. Fitted copying-rate
+slopes are $0.0045$ and $0.0017$, against ideal values $0.0050$ and $0.0020$;
+replacement can erase stored resources, and self-targeted attempts are counted.
+
+Here the connection to selection becomes explicit: state varies, is inherited,
+and affects reproduction through throughput. The simulation supplies
+inheritance and replacement rules and uses random draws during evolution.
+It is therefore a separate thought experiment, not a completed demonstration
+of selection driven entirely by the deterministic lattice. Other repository
+models investigate whether copying refreshes memory faster than restoring
+dynamics erase it. Those address another necessary condition for the proposed
+sequence, rather than following automatically from the concentration theorem.
+
+\subsection{What the combined proposal commits to}
+
+The scientific proposal is the connection between these steps, including the
+bounded concentration condition. The theorem constrains this concentration
+mechanism, not every possible route to Darwinian selection. It would gain substance from a construction
+in which the same physical rules supply effective variation, cross both noise
+boundaries, preserve inherited differences and fund reproduction. Whether
+channels themselves must be supplied or can form from an initially unchannelled
+material is a further question. No such complete construction is established
+here. Nor does the prior art cited for the separate ingredients establish that
+the complete proposed mechanism is already known.
+
+All default outputs discussed in this section are retained with source hashes
+and reproduction commands in \texttt{docs/research\_examples/}. They report
+finite-time toy-model behaviour. They neither establish empirical validity nor
+replace the stationary checks below.

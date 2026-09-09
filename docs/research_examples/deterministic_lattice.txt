@@ -1,0 +1,4 @@
+chaotic  : top-3 share=0.62  kick-variance~share^1.99  gray autocorr=+0.01
+frozen   : top-3 share=0.08  kick-variance~share^nan  gray autocorr=+nan
+periodic : top-3 share=0.95  kick-variance~share^2.01  gray autocorr=-0.16
+re-run same initial condition: identical results -> True

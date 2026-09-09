@@ -1,0 +1,3 @@
+E_copy=200.0: mean-g=8.67±1.27  emergent b(J) slope=0.0045  (predicted slope eta/E = 0.0050)
+E_copy=500.0: mean-g=4.32±1.17  emergent b(J) slope=0.0017  (predicted slope eta/E = 0.0020)
+E_copy=inf: mean-g=1.05±0.19  emergent b(J) slope=nan

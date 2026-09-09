@@ -1,0 +1,8 @@
+Python 3.12.14
+NumPy 2.3.5
+All scripts run with their committed default parameters on 9 September 2026.
+Outputs printed by the original scripts; slopes are rounded diagnostics.
+
+sims/core/08_mutation_from_unseen_layers_no_rng.py SHA256 65e60ab829f563dced92d77c76bedaaef33d6a948a4458366a280fed42ec0e5d
+sims/core/09_footprint_extensive_vs_coherent_q_emerges.py SHA256 5e280f788ea6b1f89da1918e8ddce1a5341e067a07961402d856e3e4aaea5530
+sims/core/18_copying_derived_accumulator.py SHA256 b49cb3e393197a9ee5239929dcb010f8fce29ca0cfe2f5ff14e993ec7d5013ac

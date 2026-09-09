@@ -26,6 +26,17 @@ The exact coupled calculation and finite-population correction are results
 presented in this repository. Their derivation is explicit; whether equivalent
 formulations already exist requires a more exhaustive literature comparison.
 
+## Deterministic dynamics and effective noise
+
+[Melbourne and Stuart (2011, corrected 2015)](https://arxiv.org/abs/1101.3087)
+derive stochastic diffusion limits from deterministic fast-slow systems.
+[Gottwald and Melbourne (2013, corrected 2015)](https://arxiv.org/abs/1304.6222)
+show why multiplicative deterministic forcing requires care over effective drift
+and stochastic interpretation. These establish relevant ingredients; they do
+not establish the combined flow-window-to-selection mechanism proposed here.
+The repository's particular lattice has not yet been shown to satisfy a
+corresponding diffusion-limit theorem.
+
 ## Historical research notes
 
 The notes below are retained for provenance. Statements such as “not found” do

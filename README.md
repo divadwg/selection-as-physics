@@ -1,24 +1,42 @@
 # Selection as physics
 
-A research repository on how state-dependent disturbance affects the sharing of
-flow, and how that might connect to inheritance and reproduction.
+A research programme asking whether natural selection can be understood through
+flows: deterministic fine-scale dynamics supply effective variation, a bounded
+range of disturbance scaling permits concentrated sharing, and inherited states
+can use flow to reproduce.
 
 **Start with the [revised paper (PDF)](paper/finite_noise_window.pdf):
 *A finite noise window for concentration of a shared flow*.**
 [Editable source and build instructions](paper/README.md).
 
-The paper gives an exact result for a specified stochastic model. The repository
-supplies its implementation, independent checks and retained results, alongside
-broader exploratory models. No physical experiment currently validates the
-paper's constitutive assumptions or predicted window.
+The paper combines an exact result for a specified stochastic model with
+computational thought experiments exploring that proposed connection. The
+repository supplies the implementations, independent stationary checks and
+retained example runs, alongside further work on memory and inheritance.
+The whole sequence has not yet been demonstrated in one physical system.
 
-The checked model starts with channels already present. It does not derive
+The exact stationary model starts with channels already present. It does not derive
 channel formation from an energy gradient or identify spatial regions where
 channels emerge. Known power-law mathematics does not establish that broader
 physical proposition, and this literature check has not shown that proposition
 to be prior art.
 
-## What the paper establishes
+## The proposed connection
+
+1. A fine-grained deterministic lattice drives irregular disturbances in a coarse
+   flow model, without fresh random input after initialization.
+2. The stationary theory identifies a **bounded scaling window** for extreme
+   flow concentration. Merely obtaining concentration is not enough to test it;
+   the two failure regimes matter too.
+3. Further models add persistent inherited states and copying funded by flow,
+   asking how unequal sharing could become differential reproduction.
+
+The contribution being investigated is this physical connection. The familiar
+mathematics of one step does not establish that the complete connection is old,
+nor do the separate examples prove it. The missing work is to join the steps
+under consistent physical rules and test them together.
+
+## What the stationary calculation establishes
 
 Suppose channels divide a fixed throughput. Each channel has a state `g`, and its
 share grows with `g^m`. Disturbance changes that state without a systematic bias
@@ -81,6 +99,21 @@ claim for the elementary inequality, and originality of the full model has not
 been established. Its practical value depends on finding a
 system where the stated assumptions and observables can be measured together.
 
+## Thought experiments discussed in the paper
+
+[Retained runs, assumptions and reproduction commands](docs/research_examples/README.md).
+
+| Example | What the run shows | What it does not yet show |
+|---|---|---|
+| [Deterministic lattice](sims/core/08_mutation_from_unseen_layers_no_rng.py) | Concentration under deterministic updates after random initialization; reruns from the same state agree. | A diffusion limit, chaos being necessary, or self-formation of channels. The periodic control also concentrates. |
+| [Contact patches](sims/core/09_footprint_extensive_vs_coherent_q_emerges.py) | Variance-versus-mean-share slopes of 1.01 and about 2 under different patch couplings. | Both window boundaries crossed in one controlled deterministic experiment; the coherent case also changes cross-route correlations. |
+| [Copy accumulator](sims/core/18_copying_derived_accumulator.py) | Flow funds copy attempts; inherited states rise on average in the supplied copying model. | Copying machinery derived from the substrate, or reproduction driven by the same deterministic lattice. |
+
+These examples make parts of the programme concrete. The exact theorem supplies
+the conditional window; the lattice examples explore a source of disturbance;
+the copying example explores reproduction. They use different dynamics and
+must not be presented as one completed derivation.
+
 ## What the repository adds to the paper
 
 | Resource | How it supports the paper |
@@ -100,7 +133,7 @@ it does not establish equilibration at arbitrary ranges or physical validity.
 Large-range tables and the paper figure are exact-law evaluations, not dynamic
 simulations at those ranges.
 
-## What goes beyond the paper
+## Further work beyond the paper
 
 These are exploratory models with their own assumptions. They suggest further
 questions; they are not consequences of the stationary theorem, and they have
@@ -108,17 +141,15 @@ not all received the same validation as `sims/validation/`.
 
 | Extension | What it explores | Where to look |
 |---|---|---|
-| Noise from unresolved dynamics | Whether a deterministic chaotic substrate can supply effective kicks, and how contact correlations affect variance scaling. | [Hidden layers](sims/core/08_mutation_from_unseen_layers_no_rng.py), [contact patches](sims/core/09_footprint_extensive_vs_coherent_q_emerges.py) |
-| Copying funded by throughput | An accumulator pays a finite copy cost; inherited states can then affect reproductive success. Losses and reset rules matter. | [Copy accumulator](sims/core/18_copying_derived_accumulator.py) |
 | Memory and inheritance | How restoring drift erases deviations, and when repeated copying preserves them. | [Drift](sims/core/11_drift_kills_sorting.py), [copying and memory](sims/core/12_copying_rescues_heredity.py) |
 | Lineage establishment | Whether a rare family survives when descendants inherit a changing state. | [Lineage instrument](sims/core/16_r0_instrument.py), [null models](sims/core/17_stricter_null_r0v2_necessity.py) |
 | Transport of stored state | How barriers and travel time affect a detached state's ability to influence another site. | [Gated parcels](sims/core/13_portability_gated_parcels.py), [transit](sims/core/15_transit_gated_vs_ungated.py) |
 | Structural boundaries | Toy models of loops, memory and channel formation under specified driving rules. | [Boundary simulations](sims/boundaries/) |
 
-These extensions address the wider ambition behind the repository name: what
-additional mechanisms would connect flow concentration to heredity and
-reproduction? The paper itself establishes a stationary flow result. It does
-not derive life, persistent winners, or Darwinian evolution from diffusion alone.
+These extensions develop the programme discussed in the paper, including what
+is needed for inherited differences to last and spread. Their results are
+model-specific. The current work does not derive life, persistent winners, or
+Darwinian evolution from diffusion alone.
 
 ## Evidence still needed
 

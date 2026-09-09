@@ -10,12 +10,16 @@
 \newcommand{\dd}{\mathrm{d}}
 \setlength{\emergencystretch}{2em}
 \title{A finite noise window for concentration of a shared flow\\[0.4em]
-\large Exact stationarity and the finite-population correction}
+\large Deterministic disturbance and steps toward selection}
 \author{David Galbraith}
 \date{Revised draft, 9 September 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
+Can variation, unequal flow sharing and reproduction be connected within a
+physical description of selection? We examine a sequence of models in which
+unresolved deterministic dynamics supply effective disturbance, a bounded range
+of disturbance scaling permits concentration, and flow can fund copying.
 State-dependent diffusion changes how often a channel occupies a given state.
 When channels share a fixed total throughput, their population distribution and
 their flow distribution can differ substantially. We study a bounded, reflected
@@ -30,11 +34,27 @@ approaches $1/(2N)$ inside the window. The upper boundary is the familiar
 weighted-moment threshold, here given an exact conserved-flow interpretation.
 It limits a specific noise-driven concentration mechanism; it is neither a
 universal noise limit nor a result about persistent winners. Independent event
-simulations check the stationary predictions on bounded grids. Empirical
-applicability remains untested.
+simulations check the stationary predictions on bounded grids. Separate lattice
+and copying experiments illustrate further steps in the proposed connection.
+They do not yet derive channel emergence, the full window and reproduction in
+one physical system. Empirical applicability remains untested.
 \end{abstract}
 
-\section{What the upper boundary says}
+\section{The physical question and the upper boundary}
+
+The motivating proposal is conditional: disturbance associated with a driven
+flow could help produce concentrated sharing only within a suitable scaling
+window, and that concentration could become relevant to selection if states
+persist and are copied. The window is essential to this proposal. A mechanism
+that concentrates under every disturbance rule would not establish it.
+
+The research programme asks whether this sequence can be constructed without
+adding random forcing as a fundamental ingredient: deterministic fine-scale
+dynamics produce effective variation; variation affects the division of flow;
+and inherited states use some of that flow to reproduce. This paper separates
+an exact stationary result from computational thought experiments that explore
+those connections. The proposed synthesis is not equivalent to the known
+power-law calculation on which one step depends.
 
 A collection of paths can be counted in two ways: by the number of paths in each
 state, or by the fraction of throughput they carry. A rare large state can matter
@@ -305,7 +325,9 @@ upper edge while measuring the finite-range prediction, rather than expecting
 an infinite-limit discontinuity. No physical dataset is used as validation in
 this paper.
 
-\section{Numerical checks and their limits}
+\input{thought_experiments}
+
+\section{Numerical checks of the stationary result}
 
 The repository implements a continuous-time nearest-neighbour chain on a uniform
 state lattice with spacing $h$. Each allowed jump of channel $i$ by $+h$ or $-h$
@@ -360,7 +382,7 @@ log-uniformly, which is already the target stationary law at $q=1$, and did not
 establish relaxation. It is retained in the repository as a labelled legacy
 diagnostic. The exact power integrals remain valid.
 
-\section{Scope and relation to the wider repository}
+\section{Drift and related models}
 
 Scalar diffusion with drift has the zero-current law
 \begin{equation}
@@ -378,25 +400,24 @@ Wealth condensation \cite{bouchaud} couples exchange and multiplicative growth;
 the variable being condensed and its dynamics differ from the fixed-throughput
 observable used here. These are related comparisons, not equivalent mechanisms.
 
-Beyond the paper, the repository explores inherited states, copying funded by
-throughput, memory loss and transport of stored states. If throughput supplies
-usable work at rate $\eta J$ and each copy costs $E_{\rm copy}$, ideal sustained
-operation gives a copy rate $\eta J/E_{\rm copy}$. Inheritance, losses, resets and
-population replacement must still be specified. Those exploratory models ask
-how concentration could connect to reproduction. Their conclusions do not
-follow from the stationary theorem and are not evidence for its physical
-premises. The README distinguishes the tested paper implementation from these
-extensions and historical claims.
+Beyond the thought experiments discussed here, the repository examines lineage
+establishment and transport of stored states. These extend the proposed route
+toward selection but introduce further assumptions. The README distinguishes
+their status from the exact stationary result and its numerical checks.
 
+\clearpage
 \section{Conclusion}
 
 For the specified reflected conserved-flow diffusion, the exact stationary law
 gives a finite noise window and a finite-population correction. The upper bound
 states when rare large states cease to dominate pooled throughput in the
-large-range limit. Its algebra is established moment mathematics. The paper's
-contribution is to make that interpretation exact for a coupled model and to
-provide finite-system predictions and reproducible checks. Whether this model
-describes a physical system remains an experimental question.
+large-range limit. Its algebra is established moment mathematics. The paper makes that interpretation exact for a coupled model and places it
+within a proposed route from deterministic disturbance to selective reproduction.
+The lattice and copying examples give concrete steps in that route, while also
+exposing the missing connections. The scientific question is whether those
+steps can be joined under one physically justified set of rules. Established
+mathematics does not answer that question by itself, and the separate examples
+do not yet amount to a derivation of natural selection from an energy gradient.
 
 \paragraph{Code and reproducibility.}
 The editable manuscript, compiled PDF, figure data and generation script are in
@@ -430,5 +451,13 @@ Connectivity of growing random networks,
 Wealth condensation in a simple model of the economy,
 \emph{Physica A} \textbf{282}, 536--545 (2000).
 \href{https://arxiv.org/abs/cond-mat/0002374}{arXiv:cond-mat/0002374}.
+\bibitem{melbourne} I. Melbourne and A. M. Stuart,
+A note on diffusion limits of chaotic skew-product flows,
+\emph{Nonlinearity} \textbf{24}, 1361--1367 (2011), corrected version (2015).
+\href{https://arxiv.org/abs/1101.3087}{arXiv:1101.3087}.
+\bibitem{gottwald} G. A. Gottwald and I. Melbourne,
+Homogenization for deterministic maps and multiplicative noise,
+\emph{Proc. R. Soc. A} \textbf{469}, 20130201 (2013), corrected version (2015).
+\href{https://arxiv.org/abs/1304.6222}{arXiv:1304.6222}.
 \end{thebibliography}
 \end{document}
