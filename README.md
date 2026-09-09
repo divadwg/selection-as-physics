@@ -15,9 +15,13 @@ repository supplies the implementations, independent stationary checks and
 retained example runs, alongside further work on memory and inheritance.
 The whole sequence has not yet been demonstrated in one physical system.
 
-The exact stationary model starts with channels already present. It does not derive
-channel formation from an energy gradient or identify spatial regions where
-channels emerge. Known power-law mathematics does not establish that broader
+The models specify possible routes and their response to flow; they do not
+prescribe which routes become dominant. An [equal-start lattice control](docs/research_examples/README.md#equal-coarse-route-start)
+starts all forty routes identically: microscopic dynamics produce top-three
+flow shares of 46–61%, compared with 7.5% initially and in frozen controls.
+This demonstrates seeding of unequal sharing within the specified geometry.
+The development of spatial paths and their connectivity in a material is not
+yet modeled. Known power-law mathematics does not establish that broader
 physical proposition, and this literature check has not shown that proposition
 to be prior art.
 
@@ -35,6 +39,29 @@ The contribution being investigated is this physical connection. The familiar
 mathematics of one step does not establish that the complete connection is old,
 nor do the separate examples prove it. The missing work is to join the steps
 under consistent physical rules and test them together.
+
+## Next priority: reproduction with portable heredity
+
+The next test is whether a small transferable state can recreate a
+flow-affecting property at a new site, and whether that property helps it leave
+more descendants. A catalytic structure or reproducible composition is a
+candidate; DNA and a complete genetic code are not prerequisites for this
+thought experiment. Catalysis alone does not establish copying or heredity.
+The carrier could itself perform the catalytic function.
+
+The current channel state `g` summarizes behaviour. Copying it in software
+assumes transmission. The proposed extension separates a carrier state `h` from
+the channel response it produces. Fine-lattice disturbances become mutations
+when they change that transmissible state and the change reaches descendants.
+A fluctuation that disappears before transmission is not a heritable mutation.
+
+First transfer the carrier into fresh sites with channel state and stored work
+reset. Then measure reconstruction of the trait and reproduction over repeated
+generations, with resource costs accounted for. Compare scrambled carrier
+states and equal reproduction opportunities to isolate heredity and selection.
+These tests are proposed in the paper; the portable carrier mechanism has not
+yet been demonstrated. Failure at one fidelity or observation time would limit
+that construction, not reject every version of the hypothesis.
 
 ## What the stationary calculation establishes
 

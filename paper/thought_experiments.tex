@@ -17,6 +17,16 @@ reports identical summary statistics. These are demonstrations of deterministic
 driving with irregular coarse fluctuations and concentrated flow, not a proof
 that the coarse process is Markovian or converges to the It\^o model above.
 
+An equal-start control removes the initial differences between coarse routes
+by setting every $g_i=1$, while retaining microscopic variation in the fine
+lattice. After 60,000 deterministic updates, the top-three shares are $0.615$,
+$0.463$ and $0.529$ for three fine-state seeds, from $3/40=0.075$ initially.
+The matched frozen controls remain at $0.075$. Fine-scale dynamics therefore
+seed differentiated sharing without initial coarse-channel size differences
+in these runs. The possible routes and coupling rule are specified, but the
+dominant routes are not supplied as an initial pattern. This is a test of
+seeding within that geometry, not a test of the full two-sided window.
+
 The periodic control is informative: it gives an even larger top-three share,
 $0.95$. The experiment therefore does not show that chaos is necessary, despite
 an earlier description of that control. Low autocorrelation alone would not
@@ -84,19 +94,61 @@ models investigate whether copying refreshes memory faster than restoring
 dynamics erase it. Those address another necessary condition for the proposed
 sequence, rather than following automatically from the concentration theorem.
 
+\subsection{Portable state as the next test}
+
+The next priority is reproduction with heredity: a transferred state must
+recreate a flow-affecting property in a new site, and that property must affect
+its descendants' reproduction. The channel variable $g$ currently summarizes
+behaviour; copying that number in software assumes transmission. A physical
+extension should distinguish a carrier state $h$ from the channel state $g$
+that develops through its interaction with local material and resources.
+
+A candidate carrier could be a small catalytic structure or a reproducible
+chemical composition. Its arrangement would hold information in the operational
+sense that changing the arrangement changes what develops at the receiving
+site. It need not encode an entire channel or use DNA. The same structure could
+both carry the state and catalyse its expression; separation from the large
+flow path need not imply separate genetic and catalytic machinery.
+Schr\"odinger's aperiodic crystal supplies a historical image for a stable
+arrangement with non-repeating informational content \cite{schrodinger}, but
+naming such a carrier does not specify how it is copied. Experiments on
+autocatalytic RNA networks illustrate why reproduction and persistence of
+inherited composition require separate checks \cite{ameta}. Synthetic
+self-replicators selected for photocatalytic function provide a closer chemical
+comparison \cite{photocatalysis}; neither study tests this conserved-flow window.
+
+The fine lattice supplies a candidate source of variation in this extension.
+Its disturbances count as mutations only when they alter a transmissible state
+and the alteration survives into descendants. Temporary fluctuations of $g$
+need not do so. Copying fidelity, stability during transport and the coupling
+from fine dynamics to $h$ therefore need explicit rules.
+
+A minimal test would transfer $h$ into a fresh site, reset local $g$ and stored
+work, and ask whether the carrier recreates its characteristic response under
+matched conditions. Copies must consume accounted resources. Repeated transfers
+would then measure whether inherited differences predict successful descendant
+numbers. Scrambling the transmitted state while retaining its amount and cost
+would control for material transfer alone; equalizing reproduction opportunities
+would control for flow-funded selection. A failed run would constrain the tested
+carrier, fidelity and timescales, not disprove the broader route. This portable
+carrier construction is proposed here, not yet implemented or demonstrated.
+
 \subsection{What the combined proposal commits to}
 
 The scientific proposal is the connection between these steps, including the
 bounded concentration condition. The theorem constrains this concentration
 mechanism, not every possible route to Darwinian selection. It would gain substance from a construction
 in which the same physical rules supply effective variation, cross both noise
-boundaries, preserve inherited differences and fund reproduction. Whether
-channels themselves must be supplied or can form from an initially unchannelled
-material is a further question. No such complete construction is established
-here. Nor does the prior art cited for the separate ingredients establish that
+boundaries, preserve inherited differences and fund reproduction. The
+equal-start lattice control demonstrates a seed mechanism for differentiation
+among initially equivalent possible routes. Extending that mechanism to a
+material whose spatial flow paths and connectivity also develop requires a
+spatial model of that response. What remains incomplete is the joining of
+seeding, the controlled window test, memory and reproduction in one construction.
+Nor does the prior art cited for the separate ingredients establish that
 the complete proposed mechanism is already known.
 
-All default outputs discussed in this section are retained with source hashes
+The default outputs and equal-start controls are retained with source hashes
 and reproduction commands in \texttt{docs/research\_examples/}. They report
 finite-time toy-model behaviour. They neither establish empirical validity nor
 replace the stationary checks below.

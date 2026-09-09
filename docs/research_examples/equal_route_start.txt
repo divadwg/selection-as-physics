@@ -1,0 +1,6 @@
+Equal coarse-route initialization; fine-lattice initialization unchanged.
+All other parameters are experiment 08 defaults.
+Python 3.12.14; NumPy 2.3.5
+Source SHA256: 22201ca29ac2caa5b0522e66464741eaf6956606765238217cba4f3c9662c19d
+Runner SHA256: 46a50a0d5d040cfec95496e8cc9f5c61b1f882eef6fd7a596509a2ee5e06ae3b
+Frozen correlations and variance slopes are undefined (nan).

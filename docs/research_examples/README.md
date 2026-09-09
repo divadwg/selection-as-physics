@@ -32,6 +32,33 @@ Default parameters: 40 routes, 6×6 cells per route, 60,000 steps, coupling 3,
 state floor 0.02, seed 0. The duplicate check uses seed 3. The source records
 block means every ten steps, so the reported lag refers to that sampling interval.
 
+## Equal coarse-route start
+
+[Results](equal_route_start.csv), [provenance](equal_route_start.txt),
+[runner](../../sims/core/19_equal_route_lattice_control.py).
+
+This control starts all forty coarse states at exactly `g=1`, retaining the
+heterogeneous microscopic initial lattice. It uses experiment 08's remaining
+default parameters and takes 60,000 deterministic updates. Chaotic and frozen
+cases use matched microscopic initial states for each seed.
+
+| Fine-state seed | Initial top-three share | Chaotic final share | Frozen final share |
+|---|---:|---:|---:|
+| 0 | 0.075 | 0.614599 | 0.075 |
+| 1 | 0.075 | 0.462626 | 0.075 |
+| 2 | 0.075 | 0.529488 | 0.075 |
+
+The fine-scale dynamics can therefore seed differentiated sharing without any
+initial coarse-route size differences. The system has microscopic variation,
+not an exactly uniform state at every scale. The model supplies possible routes
+and their response law, rather than an initial pattern of dominant channels.
+This tests seeding within the specified geometry. It neither models the spatial
+formation of the geometry nor crosses both boundaries of the noise window.
+
+Experiment 08 now exposes `initial_spread`, whose default `0.01` preserves the
+original numerical instructions. This control sets it to zero. Frozen-route
+shares are checked against `3/40` in the runner.
+
 ## Contact geometry
 
 [Output](contact_geometry.txt),
@@ -87,9 +114,10 @@ The proposed connection is:
 2. Variation and flow obey rules that place concentration inside a bounded window.
 3. States persist and are copied, with reproduction funded by flow.
 
-The scripts provide examples for parts of that connection. They have not yet
-joined it in one model or derived channels from an initially unchannelled
-energy-gradient system. Failure of one incomplete bridge is not a test of the
+The scripts provide examples for parts of that connection, including a seed
+mechanism for differentiating equivalent coarse routes. They have not yet
+joined it in one model or represented the development of spatial flow paths
+and connectivity in a material. Failure of one incomplete bridge is not a test of the
 entire physical proposal. Conversely, agreement in separate examples does not
 prove the complete proposal.
 
@@ -101,9 +129,11 @@ From the repository root after installing `requirements-validation.txt`:
 python sims/core/08_mutation_from_unseen_layers_no_rng.py
 python sims/core/09_footprint_extensive_vs_coherent_q_emerges.py
 python sims/core/18_copying_derived_accumulator.py
+python sims/core/19_equal_route_lattice_control.py
 ```
 
-The retained outputs are rounded by the original scripts. These runs were made
+The first three retained outputs are rounded by the original scripts. Those runs were made
 from implementation `980fd41`; subsequent changes to script descriptions do
 not change their numerical instructions. The provenance hashes identify the
-source files used for the runs.
+source files used for the runs. The equal-start control has its own source hashes
+and retains unrounded results in CSV. Its runner overwrites its two result files.

@@ -14,10 +14,10 @@ def fine_step(x, eps=0.1, mode='chaotic'):
         return np.roll(x,1,axis=0)          # pure transport: orderly, non-mixing
     y=4*x*(1-x)                              # logistic, chaotic
     return (1-eps)*y + eps*0.25*(np.roll(y,1,0)+np.roll(y,-1,0)+np.roll(y,1,1)+np.roll(y,-1,1))
-def run(mode='chaotic', N=40, K=6, steps=60000, kappa=3.0, gmin=0.02, seed=0):
+def run(mode='chaotic', N=40, K=6, steps=60000, kappa=3.0, gmin=0.02, seed=0, initial_spread=0.01):
     rng=np.random.default_rng(seed)          # used ONLY for initial condition
     X=rng.random((N*K, K))                   # each channel's block: rows [i*K:(i+1)*K]
-    g=np.full(N,1.0)+0.01*rng.standard_normal(N)
+    g=np.full(N,1.0)+initial_spread*rng.standard_normal(N)
     grays=np.zeros((steps//10, N)); kicks=[]; shares=[]
     mu=np.array([X[i*K:(i+1)*K].mean() for i in range(N)])   # running mean per block
     for t in range(steps):

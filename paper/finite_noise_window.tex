@@ -86,9 +86,11 @@ changes relaxation times, but leaves all stationary results below unchanged.
 \section{A model with conservation imposed at every instant}
 
 Let $N\geq1$ channels have dimensionless states $g_i\in[1,R]$, where $R>1$.
-The channels are supplied in advance. No spatial energy-gradient field, channel
-creation or channel extinction is modeled. The calculation therefore does not
-establish spontaneous channel formation in a driven material.
+The model specifies possible flow routes and their response law; it does not
+prescribe which routes become dominant. The lattice experiment in
+Sec.~\ref{sec:thought} tests differentiation from identical coarse-route states.
+Spatial formation and connectivity of routes in a material are abstracted out:
+no spatial energy-gradient field or changing network topology is modeled here.
 For $m>0$, define the total weight $S$ and the actual flow through channel $i$ by
 \begin{equation}
  S(\mathbf g)=\sum_{j=1}^N g_j^m,\qquad
@@ -405,7 +407,6 @@ establishment and transport of stored states. These extend the proposed route
 toward selection but introduce further assumptions. The README distinguishes
 their status from the exact stationary result and its numerical checks.
 
-\clearpage
 \section{Conclusion}
 
 For the specified reflected conserved-flow diffusion, the exact stationary law
@@ -429,7 +430,7 @@ instructions are in \texttt{paper/README.md}. This revision supersedes the
 August 2026 draft's uncorrected finite-population claim, limiting-slope endpoint
 claim, independent-walker convergence claim and coupled-takeover interpretation.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{landauer} R. Landauer, Motion out of noisy states,
 \emph{J. Stat. Phys.} \textbf{53}, 233--248 (1988).
 \href{https://doi.org/10.1007/BF01011555}{doi:10.1007/BF01011555}.
@@ -459,5 +460,15 @@ A note on diffusion limits of chaotic skew-product flows,
 Homogenization for deterministic maps and multiplicative noise,
 \emph{Proc. R. Soc. A} \textbf{469}, 20130201 (2013), corrected version (2015).
 \href{https://arxiv.org/abs/1304.6222}{arXiv:1304.6222}.
+\bibitem{schrodinger} E. Schr\"odinger, \emph{What is Life?},
+Cambridge University Press (1944), Chapters 2 and 5.
+\bibitem{ameta} S. Ameta et al., Darwinian properties and their trade-offs in
+ autocatalytic RNA reaction networks, \emph{Nature Communications}
+\textbf{12}, 842 (2021).
+\href{https://doi.org/10.1038/s41467-021-21000-1}{doi:10.1038/s41467-021-21000-1}.
+\bibitem{photocatalysis} Selection for photocatalytic function through Darwinian
+ evolution of synthetic self-replicators, \emph{Nature Catalysis}
+\textbf{8}, 1000--1009 (2025).
+\href{https://doi.org/10.1038/s41929-025-01409-3}{doi:10.1038/s41929-025-01409-3}.
 \end{thebibliography}
 \end{document}

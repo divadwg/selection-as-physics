@@ -11,10 +11,11 @@ comprehensive literature review. Known results for power laws and deterministic
 effective noise do not by themselves establish that the combined physical
 proposal has already been demonstrated.
 
-The exact model treats pre-existing channels. It does not settle the broader proposal
-that channels self-organize in an energy gradient, or establish that proposal
-as prior art. The established mathematics and the untested physical mechanism
-are different claims.
+The models specify possible flow routes. An equal-start lattice control shows
+that fine-scale dynamics can differentiate routes with identical initial coarse
+states; dominant channels need not be supplied as an initial pattern. Spatial
+formation of paths and changing connectivity in a material remain outside this
+model. This distinction does not establish the broader proposal as prior art.
 
 This revision replaces the August draft's single-path treatment of shared flow
 with the exact joint stationary law. It defines the pooled observable, includes
@@ -23,6 +24,8 @@ independent-walker convergence claim with the retained coupled checks. It also
 presents the [deterministic-lattice and copying thought experiments](thought_experiments.tex)
 as steps in the broader proposed connection to selection, with their
 [retained outputs and limitations](../docs/research_examples/README.md).
+The next proposed test distinguishes portable carrier state from channel response,
+then checks transmission and flow-funded reproduction over generations.
 Further memory, lineage and state-transport models remain repository extensions.
 
 The upper threshold is presented as an application of established moment
