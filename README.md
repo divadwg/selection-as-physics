@@ -4,6 +4,23 @@
 
 ---
 
+## Validation update: conserved flow
+
+The coupled model now has an explicit stationary joint law and a finite-population
+correction. With S=sum(g_i^m) and D_i=N g_i^q/S, the joint density is proportional
+to S product(g_i^(-q)); occupancy is p_N=(1-1/N)p_0+f/N, while the pooled flow
+density remains f proportional to g^(m-q). The original occupancy law is its
+large-population limit at fixed state range. The inclusive noise-window endpoints
+require exact powers or stronger tail assumptions than limiting slopes alone.
+
+[Derivation, scope and reproduction commands](docs/conserved_flow_validation.md).
+[Retained numerical results](docs/validation_results/README.md).
+The validation suite tests relaxation from different initial conditions using
+physical-time observations of a reflecting event process. The old four-figure
+independent-walker result started at the q=1 stationary distribution and did not
+establish convergence; it is retained as an optional legacy diagnostic.
+The broader research claims below should be read subject to this correction.
+
 ## 0. The claim
 
 Everything that persists in a flow is a pattern the flow keeps re-making. On a fixed energy input the total entropy production is set by the input, not by what stands in the way: structure changes flux, inputs and routes, never entropy per joule of output. Order does not cost extra entropy up front; entropy is produced when order degrades, not when it is created. So the only thing patterns in a shared flow can compete over is share of the flow, and the question "is natural selection physics?" becomes precise: under what conditions does sharing a conserved flow, plus the noise of layers too fine to see, produce Darwin's phenomenon?
@@ -12,11 +29,11 @@ The answer here is one stationary law with four conditions read off it, plus one
 
 ## 1. The law
 
-Any coarse variable g (a channel's width, a filament's conductance, a firm's capacity) is driven by layers its own description cannot resolve. Mori-Zwanzig makes the consequence exact: the unresolved layers deliver both moments of their influence at once, a fluctuating part with diffusivity D(g) = ½ · r(g) · σ²(g) (event rate times kick size squared), and a mean part v(g), the re-templating pull back toward whatever the drive and geometry dictate. Kicks are the mutation; the pull is the forgetting; one source, two moments. Stationary occupancy is
+Any coarse variable g (a channel's width, a filament's conductance, a firm's capacity) is driven by layers its own description cannot resolve. Mori-Zwanzig makes the consequence exact: the unresolved layers deliver both moments of their influence at once, a fluctuating part with diffusivity D(g) = ½ · r(g) · σ²(g) (event rate times kick size squared), and a mean part v(g), the re-templating pull back toward whatever the drive and geometry dictate. Kicks are the mutation; the pull is the forgetting; one source, two moments. For a scalar diffusion with zero stationary probability current, occupancy is
 
 **p(g) ∝ (1/D(g)) · exp(∫ v/D)**
 
-and with share of a conserved flux J(g) ∝ g^m and D(g) ∝ g^q, the flux-weighted density is ∝ g^(m−q). Four conditions are read off this one object:
+At zero drift, weighting that scalar law by g^m gives density proportional to g^(m−q). In the coupled conserved-flow model, the joint law and finite-population occupancy correction above must also be included. The research programme connects this calculation to four conditions:
 
 1. **Heredity**: the pull is weak enough that deviations outlive the timescale on which they matter.
 2. **Sorting**: the diffusivity's growth with state sits in a finite window, and the noise differs between individuals.
@@ -33,15 +50,15 @@ Status. The dent-life law is sketched (Kramers: dials give persistence linear in
 
 ## 3. Condition 2: sorting is a finite window on the noise
 
-With v ≈ 0, occupancy is p ∝ g^(−q) while flux density is ∝ g^(m−q). Count individuals and the population piles where jitter is least; count flux and it sits with the few disturbed most. The two censuses separate, a vanishing fraction of the population carrying a dominant fraction of the throughput, exactly when
+With v = 0, the independent occupancy is p_0 ∝ g^(−q), while pooled flow density is ∝ g^(m−q). In the coupled model, occupancy is p_N=(1-1/N)p_0+f/N. For exact powers, the pooled half-flow population fraction tends to zero as both state range and population size grow exactly when
 
 **1 ≤ q ≤ m + 1**
 
-with both edges marginal: below the window nothing concentrates, above it the high states are emptied so hard that even the flux ends up low. Equivalently, the window is a moment-divergence window for a physically generated heavy-tailed stationary distribution. The noise must also be idiosyncratic: kicks that hit every channel identically sort nothing, because variation only counts when it differs between competitors (09). The window also survives drift, calculated rather than assumed (derivations D6): drift one power below the noise shifts both edges by the drift-to-noise ratio (1 + a ≤ q ≤ m + 1 + a, and can rescue a system into the window); stronger reinforcement drift replaces noise-dominated sharing with the takeover regime, which is where write-back selection (05) lives; s = q − 1 is the phase boundary between sorting and takeover.
+with both edges marginal: below the window nothing concentrates, above it the high states are emptied so hard that even the flux ends up low. Equivalently, the window is a moment-divergence window for a physically generated heavy-tailed stationary distribution. The noise must also be idiosyncratic: kicks that hit every channel identically sort nothing, because variation only counts when it differs between competitors (09). The scalar drift calculation (derivations D6) identifies when drift changes the tail: matched-power drift shifts both edges by the drift-to-noise ratio. Stronger positive drift pushes scalar occupancy toward the cutoff, but this does not by itself prove takeover in a coupled population. The heterogeneous write-back experiment (05) is a separate model; a general coupled drift result remains open.
 
-Where does q come from? Not from an assumption. Growth geometry sets it: when throughput rises by recruiting more independently perturbed degrees of freedom (wider contact, more patches, more transactions), throughput and noise variance are extensive in the same units, so D ∝ J and q = m, the window's lower edge, inside for m ≥ 1. When forcing is coherent, amplitudes add before squaring, D ∝ J² and q = 2m, at or beyond the upper edge for m ≥ 1. The two correlation classes of the hidden layer land exactly on the window's two boundaries. This was demonstrated in-substrate with the exponent emerging rather than injected (footprint ∝ share at fixed per-patch coupling: measured 1.01 and 2.00; 09), and with no random number generator anywhere (a deterministic chaotic substrate supplies kicks that are dice to the coarse observer and reproduce to the digit on rerun; 08). One flagged defence still owed for the paper: identify the physically natural variable in which perturbations are additive and unbiased, since a nonlinear change of variables introduces noise-induced drift.
+A proposed mechanism fixes q once contact geometry and correlations are specified: when throughput rises by recruiting more independently perturbed degrees of freedom (wider contact, more patches, more transactions), throughput and noise variance are extensive in the same units, so D ∝ J and q = m, inside the window for m ≥ 1. When forcing is coherent, amplitudes add before squaring, D ∝ J² and q = 2m, at or beyond the upper edge for m ≥ 1. For m=1, the two correlation classes land on the two boundaries. This was demonstrated in-substrate with the exponent emerging rather than injected (footprint ∝ share at fixed per-patch coupling: measured 1.01 and 2.00; 09), and with no random number generator anywhere (a deterministic chaotic substrate supplies kicks that are dice to the coarse observer and reproduce to the digit on rerun; 08). One flagged defence still owed for the paper: identify the physically natural variable in which perturbations are additive and unbiased, since a nonlinear change of variables introduces noise-induced drift.
 
-Contact with the world. The exact law is verified by integration and large-N SDE (04: fitted q = 1.00, half-flux fraction matching to four figures). Published exponents place cities (q ≈ 2), GDP (≈ 1.7), firms (≈ 1.5-1.6) and growing networks (≈ 1) inside the window; these are suggestive rather than validating, since observed Var(Δg|g) ∝ g^q can also reflect drift, births and deaths, ageing, nonstationarity, finite windows and measurement noise. The strongest physical case is memristive filaments, where g is genuinely a conductance: measured noise exponents put the diffusive regime far below the window (predicted no sorting; the stable low-resistance state engineers rely on), the ballistic regime inside it (winner-take-all filament formation, as observed), and the broken regime on the upper edge (docs/memristor_q_analysis.md). The caveat is that these are read-noise measurements and the theory wants the state-rewriting rate; the specified parallel-filament array experiment, which can cross both boundaries in one apparatus, is the decisive test.
+Contact with the world. Exact-power integrals reproduce the window (04). Coupled finite-population stationarity is checked separately by the validation suite above; the former independent-SDE check did not establish equilibration. Published exponents place cities (q ≈ 2), GDP (≈ 1.7), firms (≈ 1.5-1.6) and growing networks (≈ 1) inside the window; these are suggestive rather than validating, since observed Var(Δg|g) ∝ g^q can also reflect drift, births and deaths, ageing, nonstationarity, finite windows and measurement noise. The strongest physical case is memristive filaments, where g is genuinely a conductance: measured noise exponents put the diffusive regime far below the window (predicted no sorting; the stable low-resistance state engineers rely on), the ballistic regime inside it (winner-take-all filament formation, as observed), and the broken regime on the upper edge (docs/memristor_q_analysis.md). The caveat is that these are read-noise measurements and the theory wants the state-rewriting rate; the specified parallel-filament array experiment, which can cross both boundaries in one apparatus, is the decisive test.
 
 ## 4. Condition 3: establishment is an escape race
 

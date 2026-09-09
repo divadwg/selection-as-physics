@@ -16,13 +16,22 @@
 
 ## Which sim is which
 
+### Conserved-flow validation update
+
+`sims/validation/` derives and checks the coupled finite-population stationary law.
+It tests multiple initial conditions at fixed physical times, compares against an
+independent exact joint-law sampler, and separates pooled from snapshot half-flow
+fractions. See [the derivation](conserved_flow_validation.md) and
+[retained results](validation_results/README.md). This replaces the interpretation
+of script 04 as a validation of conserved-flow dynamics.
+
 ### Core (paper 1: the theorem and its checks)
 | Script | What it shows | Figure |
 |---|---|---|
 | `sims/core/01_concentration_forty_routes.py` | forty routes, undirected kicks at rate ∝ share: flux concentrates; flat noise: no | `figures/core/concentration_only_when_noise_scales_with_share.png` |
 | `sims/core/02_heredity_copying_climb.py` | add undirected copying ∝ share: population mean trait climbs; controls flat | `figures/core/heredity_copying_population_climbs.png` |
 | `sims/core/03_exponent_sweep_toy_line.py` | on the line q = m: no concentration below m = 1, marginal at 1 | `figures/core/exponent_sweep_toy_line_selection_iff_m_ge_1.png` |
-| `sims/core/04_selection_window_exact_law.py` | exact stationary law integrated over (m, q); large-N Itô SDE check | `figures/core/selection_window_phase_diagram_m_q.png` |
+| `sims/core/04_selection_window_exact_law.py` | exact power-law integrals; historical independent-SDE run retained only as an optional diagnostic, not a convergence check | `figures/core/selection_window_phase_diagram_m_q.png` |
 | `sims/core/05_writeback_free_sign_selection.py` | free-sign flow-to-rule coupling: positive sign takes over; controls | `figures/core/writeback_self_reinforcing_sign_takes_over.png` |
 | `sims/core/06_one_substrate_no_channel_supplied.py` | material obstructs flow, flow moves material by its own property: erodible sign wins; no channel drawn | `figures/core/one_substrate_self_clearing_material_takes_over.png` |
 | `sims/core/18_copying_derived_accumulator.py` | copying derived, not imposed: accumulator A += ηJ, copy at cost E; emergent b(J) linear, slope ≈ 0.9·η/E (200: 0.0045 vs 0.0050; 500: 0.0017 vs 0.0020); mean-g climbs 8.7 / 4.3 scaling inversely with cost; flat without copying. Closes the J→b bridge | (numbers in record) |

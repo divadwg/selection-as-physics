@@ -55,9 +55,25 @@ Add an advected state field a(x,t): ∂a/∂t + ∇·(u a) = writing − erasure
 
 ## D6 (from second-opinion critique). The window with drift: the matched calculation
 
-Critique: the window was derived on the v = 0 slice, but reinforcement means v > 0; does it survive? Answer, from the full law p ∝ (1/D)·exp(∫v/D) with v = a·g^s, D ∝ g^q:
+The following is a scalar calculation, not a joint stationary law for a coupled population. From p ∝ (1/D)·exp(∫v/D), take v=a·g^s and D=d_0·g^q. The formulas below set d_0=1; otherwise replace a in the exponent and window shift by a/d_0:
 - Subcritical (s < q−1): the exponential saturates at large g; tails unchanged; window verbatim.
 - Marginal (s = q−1): exp(∫v/D) = g^a exactly, so q_eff = q − a and the window generalises to **1 + a ≤ q ≤ m + 1 + a**: both edges shift by the drift-to-noise ratio. Numerically verified (q=1.5, a=1.0 → de-concentrates, P_half 0.001 → 0.21; q=2.5, a=1.0 → rescued into the window, P_half 0.001). Drift can move systems into the window as well as out. Edges logarithmically soft at finite R, as at the undrifted margins.
-- Supercritical (s > q−1; includes reinforcement v ∝ J for any q ≤ m+1): occupancy runs away to the cutoff; population and flux distributions coincide at the top (P_half ≈ 0.5 in the independent-channel calculation). The Darwin-shaped split is succeeded, not refuted: under a conserved total this is the takeover/consolidation regime (write-back, sims/core/05). Phase structure: noise-dominated sorting inside the window below the drift boundary; s = q−1 is the boundary; beyond it, sharing gives way to takeover.
+- Supercritical positive drift (a > 0, s > q−1): scalar occupancy runs toward the cutoff; population and flow distributions coincide there (P_half approximately 0.5 in the independent-channel calculation). This does not establish takeover under a conserved total. The heterogeneous write-back/copying model in sims/core/05 is separate, and a general coupled drift result remains open. For a < 0, the tail is instead suppressed. Reinforcement v proportional to g^m is supercritical for q < m+1 and marginal at equality.
 
 Owed follow-ups from the same critique: (a) coordinate-free statement of the theorem in terms of invariant observables (population fraction carrying half the flux), with exponents as chart-dependent bookkeeping; (b) the continuum-to-branching seam stated (p(g) is the sorting phase; countable lineages begin at establishment, where the branching diffusion takes over); (c) prior-art table (Yule-Simon, Büttiker/van Kampen, ratchets, England, autocatalytic sets, attachment-detachment inheritance models) with one line each on the difference; (d) finite-R behaviour presented from sims/core/04 rather than left as an R → ∞ idealisation; (e) the essay to show the sweep figure and link the repo.
+
+
+## D7. Coupled finite-population stationarity
+
+The independent stationary law is not exact for finite populations sharing a
+conserved flow. For D_i=N g_i^q/S, S=sum(g_i^m), the zero-current joint law is
+pi proportional to S product(g_i^(-q)). Consequently p_N=(1-1/N)p_0+f/N,
+where f=g^m p_0/E_0[g^m]. Pooled flow retains density f. The pooled half-flow
+population fraction is (1-1/N)P_0+1/(2N); the original window is recovered when
+population size and state range grow. Snapshot concentration is a separate
+observable. The proof, endpoint qualifications and numerical checks are in
+[conserved_flow_validation.md](conserved_flow_validation.md).
+
+This result does not establish the takeover assertion in D6. That section's
+independent-channel upper-cutoff pileup and the heterogeneous write-back/copying
+experiment are different models; a general coupled drift theorem remains owed.
