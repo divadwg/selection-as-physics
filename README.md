@@ -198,6 +198,15 @@ is needed for inherited differences to last and spread. Their results are
 model-specific. The current work does not derive life, persistent winners, or
 Darwinian evolution from diffusion alone.
 
+## Entropy and the original motivation
+
+The programme began with a proposed entropy-production explanation, then moved
+to competition for input flow. The [corrected entropy ledger](docs/entropy_ledger.md)
+explains what fixed boundary entropy flows do constrain, why nonlinearity differs
+from discrete memory storage, and where copying costs and fidelity could provide
+a thermodynamic connection. The stationary channel-state process has detailed
+balance; its concentration window is not an entropy-production maximum.
+
 ## Evidence still needed
 
 A physical test needs simultaneous individual channel states and flows under a

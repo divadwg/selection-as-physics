@@ -1,41 +1,112 @@
-# The entropy ledger: why order does not change total entropy production
+# Entropy, shared flow and inherited structure
 
-**The headline.** Entropy is produced when order degrades, not when it is created. Creation defers; decay repays; over the whole cycle the sun's account closes exactly. The misunderstanding was that order costs extra entropy up front. It doesn't. It borrows against a fall that was already scheduled, and we notice the price only when the bill comes due. (Precise form: creation degrades less than the bare gradient would, since the light spent building is only partially degraded on the way; degradation-of-order repays the difference; the cycle closes at the bare total.)
+Revised 9 September 2026. The original motivating question was whether life
+maximises entropy production to compensate for its maintained order. The current
+programme instead models competition for a share of supplied flow. It does not
+assume a maximum-entropy-production principle. The [earlier ledger](entropy_ledger_before_audit.md)
+is preserved, but several of its general claims were incorrect.
 
-**The resolving fact.** Everything on Earth we call ordered is higher entropy per joule than the sunlight that paid for it: sunlight at 5800 K carries ~0.0002 J/K per joule; chemical order at 300 K ~0.003 J/K per joule; heat leaves at 255 K. Turning a joule of light into a joule of diamond, leaf or brain raises its entropy tenfold. Order on Earth is a rung on the way down, not a reversal, which is why no extra export is ever needed to pay for it: the payment happens inside, at the moment the photon's low entropy is spent.
+## What the fixed-boundary argument establishes
 
-Per square metre of Earth, per second. Identity used throughout: in steady state, entropy produced inside a system = entropy leaving − entropy entering. Internal structure never appears in that equation.
+For an open system, counting heat, matter and radiation consistently,
 
-**Fixed by the boundaries.** Absorbed sunlight P = 240 W (albedo 0.30). Radiated at effective temperature T_e = 255 K, from 240 = σT⁴. Radiation carries entropy at (4/3)·power/temperature.
-- In with sunlight: (4/3)·240/5800 = 0.055 W/K.
-- Out to space: (4/3)·240/255 = 1.255 W/K.
-- Net exported, Σ = 1.20 W/K.
+```
+dS_system/dt = entropy_in - entropy_out + entropy_produced,
+entropy_produced >= 0.
+```
 
-**Case 1, dead rock, steady.** Production = Σ, all at the surface, at once.
+At a stationary state the stored entropy does not change, so internal production
+equals entropy out minus entropy in. If both boundary entropy flows are fixed,
+rearranging the interior cannot change their difference. Different processes can
+receive different portions of that budget. This does not specify which process
+wins a competition or require that life maximise the total.
 
-**Case 2, living, steady, same albedo.** Same P, same T_e, same Σ. Split: 237.6 W on rock (≈1.19 W/K); 2.4 W through leaf, sugar, animal, soil, finally heat at ~300 K (≈0.010 W/K). Sum 1.20 W/K. Same total, different location and timing. Inside the leaf: entropy −δ (repair) + δ (heat) = 0 per second; the δ is a slice of Σ, not an addition to it.
+Fixed energy input or fixed effective infrared temperature alone is insufficient
+to fix every entropy flow. Radiation entropy depends on the spectrum and angular
+distribution; matter exchange and storage may also matter. Structure can change
+absorption, atmospheric composition, emission and transport. A fixed-boundary
+comparison deliberately holds these effects constant; it does not prove they
+cannot occur. For ideal blackbody radiation Sdot=(4/3)*P/T; using it for the
+whole Sun–Earth exchange is an approximation, not an exact planetary ledger.
+See [Wu and Liu (2010)](https://doi.org/10.1029/2008RG000275).
 
-**Case 3, living, growing.** Biomass storing 0.1 W: radiated 239.9 W, T_e down 0.01 percent, production Σ minus a sliver. Storage lowers production while it lasts; when growth stops it returns to Σ; if biomass burns the deficit is repaid then.
+The earlier claims that entropy is produced only when order degrades, that
+chemical storage at temperature T has entropy per joule 1/T, and that every
+complete ordering/decay cycle produces an identical entropy total are withdrawn.
+Order can form in an irreversible process that produces entropy. The expression
+Q/T concerns reversible heat transfer at a reservoir temperature, not a universal
+entropy-to-energy ratio of chemical structures. Complete-cycle totals require
+specified boundary exchanges and final states.
 
-**Case 4, living, albedo shifted.** Albedo 0.30 → 0.29: P = 243.4 W, T_e = 255.9 K, Σ = 1.212 W/K. The one route by which structure changes the total: through the inflow, not through order needing compensation.
+## Where entropy can enter the proposed sequence
 
-**Proof in one line.** Steady state: production = out − in. Out is fixed by P and T_e; in by P and the sun; neither contains Earth's internal arrangement. A heat engine between two reservoirs at fixed heat flow cannot increase total entropy production; it can only match it (waste everything) or fall below it (store or export work). The bare gradient is the ceiling.
+| Step | Meaningful quantity | What the current models establish |
+|---|---|---|
+| Unequal flow sharing | Shannon entropy of shares; entropy production of state trajectories | Unequal shares can be quantified informationally, but that number is not thermodynamic entropy in joules per kelvin. The exact stationary state process obeys detailed balance. |
+| Maintained structure | Dissipated power, free-energy storage, physical state lifetime | A physical flow can dissipate while maintaining a pattern. The channel variable alone does not specify its energy or entropy. |
+| Reproduction | Usable work per viable offspring and physical irreversibility | The copying-cost threshold assumes a cost; it does not calculate that cost from thermodynamics. |
+| Heredity and portable state | Parent–child information, error probability, work and dissipation | New assays quantify transmission. Physical copying and resetting rules are needed to connect fidelity to an entropy budget. |
 
-## Three Earths, same Σ
+There is a useful exact distinction at the first step. The conserved-flow model
+has stationary density pi with zero probability current. Its validated event
+process satisfies pi_x*k_xy=pi_y*k_yx. Therefore the standard stationary Markov
+entropy-production expression
 
-- **Dirt.** High entropy, kinetically trapped, no flow structure. Production = Σ at the surface. Nothing to maintain.
-- **Diamond.** Very low entropy, kinetically trapped, no flow structure. Production = Σ at the surface. Its order was paid once, when it formed; costs nothing per second. Low entropy and low entropy production are unrelated. Outside the theory's domain: no rent, nothing to select on.
-- **Whirlpool.** Zero trapped order; all flow structure. Decays and is rebuilt continuously from the 240 W. Vortex entropy −δ + δ = 0 per second; production still Σ, spread through the vortex over its turnover time. This is the only Earth with a running cost bounded by the flux (T2), so the only one where share of flux decides how much order can exist. Selection lives here.
+```
+Sigma_coarse = (k_B/2) * sum_xy (pi_x*k_xy - pi_y*k_yx)
+                              * log((pi_x*k_xy)/(pi_y*k_yx))
+```
 
-## What structure can and cannot do
-Structure acts on inputs and routes: how much is absorbed (albedo), what is unlocked (fuel, catalysis), where the degradation happens and over what time. It cannot act on outputs: entropy per joule leaving is set by where the flow ends (the sea, 255 K space). Hence: currency of selection is share of flux; entropy production is the bill, fixed by the gradient, the same for any arrangement.
+is zero. This applies to the resolved channel-state process, with the usual
+state-reversal convention. It does not say that a physical apparatus carrying
+the flow dissipates nothing: reservoirs, driven currents and unresolved variables
+are not represented by those transitions. The concentration window consequently
+cannot be interpreted as an entropy-production maximum of this process.
 
-Albedo change is a tendency, not a law: favoured only while reflection is the cheapest share in reach and only while absorbing more does not break the absorber (heat, drought, fire). Earth's albedo has been moved both ways by life; absorbed power has wandered but not run away.
+## Nonlinearity and a gate that stores memory
 
-## The two objections every sharp reader raises
+The earlier gate argument used two meanings. A stack of affine neural-network
+layers without intervening nonlinearities is itself one affine map. Adding a
+nonlinearity changes the class of possible input–output functions. This is an
+algebraic statement, not a claim of topological inequivalence for every nonlinear
+system. Nonlinearity alone does not imply memory, bistability or heredity.
 
-**Fossil fuels.** Burning them does raise entropy production above the solar steady state. But fossil carbon is banked order: sunlight captured long ago, partially degraded to the 300 K of chemistry, then trapped. Burning resumes a degradation that was paused. The forest that banked it was the below-ceiling phase; the smokestack is the above-ceiling phase; sum them and it is the same sunlight, fully degraded, three hundred million years late. (The larger climate effect runs through the greenhouse boundary, an inflow/boundary change, and dwarfs the direct waste heat.) A civilisation on fossil fuels is living inside the repayment phase of an account someone else opened, which is why "order makes entropy" looks obviously true from where we stand, and is backwards about the mechanism.
+A storage gate is more specific: a threshold or barrier protects a state against
+small disturbances. The original memory simulation uses a threshold on writing.
+The new continuous-carrier assay tests whether discrete storage is necessary for
+finite-time transmission. It does not test an entirely linear world: its common
+destination response contains tanh, and its reproductive allocation is normalized
+by the population's total response. Thus it does not refute the original idea
+that a nonlinearity may be needed somewhere in a proposed construction. Neither
+test establishes that every nonlinear mechanism needs a discrete memory gate.
 
-**A Dyson sphere.** It raises solar-system entropy production enormously, by capturing flux that was leaking past undegraded and degrading it now. That is share captured from the leak taken to 100 percent, the ultimate causing loop; not order paying for itself with export. The sphere's own material is banked order like the diamond, paid for once at construction. And the sphere is detectable exactly as routed flux (infrared), not as extra entropy per joule, which is Dyson's own point.
+## The most useful thermodynamic extension
 
-**The cycle, per parcel of order, at fixed inflow.** Creation: production below the ceiling (degradation withheld, banked). Maintained existence: production at the ceiling, no higher. Degradation: production above the ceiling by exactly the banked amount. Full cycle: the bare-gradient total, to the joule. Structure is thermodynamically a timing device: it cannot change how much entropy a gradient will ultimately produce, only when and where. One more reason the currency of selection cannot be entropy production: over any full cycle, every channel's total is identical; what differs is only what each did with the flux while it had it.
+The next physical question is how much usable work is required to produce an
+offspring with a specified fidelity and lifetime. It could make the existing
+copying-cost and establishment threshold less arbitrary without assuming a
+maximum of total entropy production.
+
+A concrete test would give a carrier an energy landscape, a fuel-driven copying
+reaction and reverse rates consistent with reservoir exchanges. It would account
+for work and heat while measuring transmission errors and viable descendants.
+Varying the copy protocol would then test whether the predicted establishment
+boundary follows measured copying cost and fidelity. Finite-speed costs and
+storage barriers need explicit models; there is no universal charge per turnover
+of an unspecified pattern.
+
+Landauer's familiar k_B*T*ln(2) bound applies to resetting an unbiased bit under
+the usual assumptions. Logical copying into a prepared target need not itself
+incur that universal dissipation; preparing/reusing targets and the full cycle
+must be counted. [Bennett (2003)](https://arxiv.org/abs/physics/0210005).
+
+Physical replication has thermodynamic bounds associated with its irreversibility,
+internal entropy changes and reverse process:
+[England (2013)](https://arxiv.org/abs/1209.1179). These are constraints, not proof
+that selection universally maximises dissipation.
+
+Biochemical copying can connect accuracy and dissipation under specified reaction
+mechanisms: [Ouldridge, Govern and ten Wolde (2017)](https://arxiv.org/abs/1503.00909).
+This is relevant prior art for turning the repository's assumed copying cost and
+fidelity into physically accountable quantities. No such thermodynamic carrier
+simulation is claimed in the current results.
