@@ -16,31 +16,21 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Can variation, unequal flow sharing and reproduction be connected within a
-physical description of selection? We examine a sequence of models in which
-unresolved deterministic dynamics supply effective disturbance, a bounded range
-of disturbance scaling permits concentration, and flow can fund copying.
-State-dependent diffusion changes how often a channel occupies a given state.
-When channels share a fixed total throughput, their population distribution and
-their flow distribution can differ substantially. We study a bounded, reflected
-It\^o model with independent noise, share proportional to $g_i^m$, and diffusivity
-$D_i=N g_i^q/\sum_j g_j^m$. Its exact joint stationary density is proportional to
-$\left(\sum_j g_j^m\right)\prod_i g_i^{-q}$. The tagged-channel density is
-$p_N=(1-1/N)p_0+f/N$, where $p_0\propto g^{-q}$ and $f\propto g^{m-q}$;
-$f$ is also the pooled flow density. The population fraction above the pooled
-half-flow threshold tends to zero as both state range and population grow
-if and only if $1\leq q\leq m+1$, for exact powers. At fixed population it instead
-approaches $1/(2N)$ inside the window. The upper boundary is the familiar
-weighted-moment threshold, here given an exact conserved-flow interpretation.
-It limits a specific noise-driven concentration mechanism; it is neither a
-universal noise limit nor a result about persistent winners. Independent event
-simulations check the stationary predictions on bounded grids. Separate lattice
-and copying experiments illustrate further steps in the proposed connection.
-An inherited-state branching extension predicts a copying-cost threshold and,
-under activity-dependent carrier damage, a reversal of restoration's effect
-as transit grows. These conditional predictions use established mathematics.
-The models do not yet derive channel emergence, the full window and reproduction in
-one physical system. Empirical applicability remains untested.
+Can unequal sharing of a driven flow contribute to a physical account of
+selection? For a bounded reflected diffusion in which channels share a conserved
+total, we derive the exact joint stationary law and distinguish the population
+of channel states from the flow they carry. With flow weight $g^m$ and diffusion
+factor $g^q$, the population fraction above the pooled half-flow threshold tends
+to zero as both state range and population grow precisely when $1\le q\le m+1$,
+for exact powers. At fixed population $N$ it instead approaches $1/(2N)$ inside
+the window. The upper edge is the established weighted-moment threshold, made
+exact here for the coupled model. Independent simulations check the stationary
+predictions on bounded grids. We distinguish this sorting result from spatial
+channel formation, persistent structures, reproduction and portable heredity.
+Existing and constructive models identify possible steps between them; they do
+not yet establish the whole sequence in one physical system. A conditional
+branching threshold states what further measurements would be needed to predict
+lineage establishment. Empirical applicability remains untested.
 \end{abstract}
 
 \section{The physical question and the upper boundary}
@@ -387,54 +377,22 @@ log-uniformly, which is already the target stationary law at $q=1$, and did not
 establish relaxation. It is retained in the repository as a labelled legacy
 diagnostic. The exact power integrals remain valid.
 
-\section{Drift and related models}
-
-Scalar diffusion with drift has the zero-current law
-\begin{equation}
- p(g)\propto\frac1{D(g)}\exp\!\left(\int^g\frac{v(x)}{D(x)}\dd x\right).
-\end{equation}
-For $D=d_0g^q$ and $v=ag^{q-1}$, this shifts the scalar exponent to $q-a/d_0$.
-It does not give a general drift correction for the coupled model above.
-Likewise, scalar accumulation near an upper cutoff does not prove that one
-channel takes over a shared total. Coupled drift and winner persistence remain
-separate problems.
-
-Preferential attachment \cite{krapivsky} concerns growing networks with attachment
-rules. Its linear boundary is not a derivation of this model's lower noise edge.
-Wealth condensation \cite{bouchaud} couples exchange and multiplicative growth;
-the variable being condensed and its dynamics differ from the fixed-throughput
-observable used here. These are related comparisons, not equivalent mechanisms.
-
-The repository audit distinguishes the lineage and transport checks discussed
-here from older exploratory models and unreproduced historical summaries.
-Their copying, storage and loss rules remain assumptions separate from the
-exact stationary result.
-
 \section{Conclusion}
 
-For the specified reflected conserved-flow diffusion, the exact stationary law
-gives a finite noise window and a finite-population correction. The upper bound
-states when rare large states cease to dominate pooled throughput in the
-large-range limit. Its algebra is established moment mathematics. The paper makes that interpretation exact for a coupled model and places it
-within a proposed route from deterministic disturbance to selective reproduction.
-The lattice and copying examples give concrete steps in that route, while also
-exposing the missing connections. The inherited-state extension supplies a copying-cost threshold and a candidate
-reversal of restoration's effect when carrier damage grows with activity. These
-conditional predictions use established branching mathematics. The scientific
-question is whether the steps can be joined under one physically justified set
-of rules. Established
-mathematics does not answer that question by itself, and the separate examples
-do not yet amount to a derivation of natural selection from an energy gradient.
+The conserved-flow model gives an exact concentration window and a
+finite-population correction. The upper bound states when rare large states
+cease to dominate pooled throughput; its mathematics is established. The
+physical proposal is the connection from such sorting to structures whose
+variations persist and reproduce. The repository makes several steps concrete
+and keeps their assumptions separate. A complete account must derive the
+connections under consistent physical rules and test them independently;
+concentration alone is not a derivation of selection.
 
 \paragraph{Code and reproducibility.}
-The editable manuscript, compiled PDF, figure data and generation script are in
-\texttt{paper/} at \url{https://github.com/divadwg/selection-as-physics}.
-The stationary implementation and tests are in \texttt{sims/validation/} and
-\texttt{tests/}; retained data are in \texttt{docs/validation\_results/}.
-The underlying validation was committed as \texttt{e802c6f}. Build and run
-instructions are in \texttt{paper/README.md}. This revision supersedes the
-August 2026 draft's uncorrected finite-population claim, limiting-slope endpoint
-claim, independent-walker convergence claim and coupled-takeover interpretation.
+Manuscript sources, model implementations, tests and retained data are at
+\url{https://github.com/divadwg/selection-as-physics}.
+Build and reproduction commands are in \texttt{paper/README.md}; the repository
+separates current evidence from historical interpretations and secondary models.
 
 \begin{thebibliography}{99}
 \bibitem{landauer} R. Landauer, Motion out of noisy states,
@@ -450,14 +408,6 @@ claim, independent-walker convergence claim and coupled-takeover interpretation.
 Power-law distributions in empirical data,
 \emph{SIAM Review} \textbf{51}, 661--703 (2009).
 \href{https://arxiv.org/abs/0706.1062}{arXiv:0706.1062}.
-\bibitem{krapivsky} P. L. Krapivsky, S. Redner and F. Leyvraz,
-Connectivity of growing random networks,
-\emph{Phys. Rev. Lett.} \textbf{85}, 4629--4632 (2000).
-\href{https://arxiv.org/abs/cond-mat/0005139}{arXiv:cond-mat/0005139}.
-\bibitem{bouchaud} J.-P. Bouchaud and M. M\'ezard,
-Wealth condensation in a simple model of the economy,
-\emph{Physica A} \textbf{282}, 536--545 (2000).
-\href{https://arxiv.org/abs/cond-mat/0002374}{arXiv:cond-mat/0002374}.
 \bibitem{melbourne} I. Melbourne and A. M. Stuart,
 A note on diffusion limits of chaotic skew-product flows,
 \emph{Nonlinearity} \textbf{24}, 1361--1367 (2011), corrected version (2015).
@@ -466,25 +416,26 @@ A note on diffusion limits of chaotic skew-product flows,
 Homogenization for deterministic maps and multiplicative noise,
 \emph{Proc. R. Soc. A} \textbf{469}, 20130201 (2013), corrected version (2015).
 \href{https://arxiv.org/abs/1304.6222}{arXiv:1304.6222}.
-\bibitem{schrodinger} E. Schr\"odinger, \emph{What is Life?},
-Cambridge University Press (1944), Chapters 2 and 5.
-\bibitem{ameta} S. Ameta et al., Darwinian properties and their trade-offs in
- autocatalytic RNA reaction networks, \emph{Nature Communications}
-\textbf{12}, 842 (2021).
-\href{https://doi.org/10.1038/s41467-021-21000-1}{doi:10.1038/s41467-021-21000-1}.
-\bibitem{photocatalysis} Selection for photocatalytic function through Darwinian
- evolution of synthetic self-replicators, \emph{Nature Catalysis}
-\textbf{8}, 1000--1009 (2025).
-\href{https://doi.org/10.1038/s41929-025-01409-3}{doi:10.1038/s41929-025-01409-3}.
 \bibitem{branching} S. Hautphenne, G. Latouche and G. Nguyen,
 Extinction probabilities of branching processes with countably infinitely many types,
 \emph{Advances in Applied Probability} \textbf{45}, 1068--1082 (2013).
 \href{https://arxiv.org/abs/1211.4129}{arXiv:1211.4129}.
-\bibitem{puffs} G. Lemoult et al., Directed percolation and puff jamming near
- the transition to pipe turbulence, \emph{Nature Physics} (2024).
-\href{https://doi.org/10.1038/s41567-024-02513-0}{doi:10.1038/s41567-024-02513-0}.
-\bibitem{speedfidelity} A speed--fidelity trade-off determines the mutation rate
- and virulence of an RNA virus, \emph{PLOS Biology} (2018).
-\href{https://doi.org/10.1371/journal.pbio.2006459}{doi:10.1371/journal.pbio.2006459}.
+\bibitem{pearson} J. E. Pearson, Complex patterns in a simple system,
+\emph{Science} \textbf{261}, 189--192 (1993).
+\href{https://arxiv.org/abs/patt-sol/9304003}{arXiv:patt-sol/9304003}.
+\bibitem{spots} W. N. Reynolds, S. Ponce-Dawson and J. E. Pearson,
+Self-replicating spots in reaction-diffusion systems,
+\emph{Physical Review E} \textbf{56}, 185--198 (1997).
+\href{https://doi.org/10.1103/PhysRevE.56.185}{doi:10.1103/PhysRevE.56.185}.
+\bibitem{chemicalspots} K.-J. Lee, W. D. McCormick, J. E. Pearson and H. L. Swinney,
+Experimental observation of self-replicating spots in a reaction--diffusion system,
+\emph{Nature} \textbf{369}, 215--218 (1994).
+\href{https://doi.org/10.1038/369215a0}{doi:10.1038/369215a0}.
+\bibitem{peptide} D. H. Lee et al., A self-replicating peptide,
+\emph{Nature} \textbf{382}, 525--528 (1996).
+\href{https://doi.org/10.1038/382525a0}{doi:10.1038/382525a0}.
+\bibitem{lbm} M. Junk, A. Klar and L.-S. Luo, Asymptotic analysis of the lattice Boltzmann equation,
+\emph{Journal of Computational Physics} \textbf{210}, 676--704 (2005).
+\href{https://doi.org/10.1016/j.jcp.2005.05.003}{doi:10.1016/j.jcp.2005.05.003}.
 \end{thebibliography}
 \end{document}

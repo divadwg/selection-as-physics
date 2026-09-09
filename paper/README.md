@@ -11,25 +11,18 @@ comprehensive literature review. Known results for power laws and deterministic
 effective noise do not by themselves establish that the combined physical
 proposal has already been demonstrated.
 
-The models specify possible flow routes. An equal-start lattice control shows
-that fine-scale dynamics can differentiate routes with identical initial coarse
-states; dominant channels need not be supplied as an initial pattern. Spatial
-formation of paths and changing connectivity in a material remain outside this
-model. This distinction does not establish the broader proposal as prior art.
+The concise manuscript distinguishes channel formation, sorting, persistent flow
+patterns, reproduction with inherited differences, and portable information. Its
+main mathematical result concerns sorting. The existing pole-and-lattice model
+is the simple example of a flow responding to a persistent irregularity.
 
-This revision replaces the August draft's single-path treatment of shared flow
-with the exact joint stationary law. It defines the pooled observable, includes
-the finite-population correction, qualifies the endpoints, and replaces the old
-independent-walker convergence claim with the retained coupled checks. It also
-presents the [deterministic-lattice and copying thought experiments](thought_experiments.tex)
-as steps in the broader proposed connection to selection, with their
-[retained outputs and limitations](../docs/research_examples/README.md).
-The [heredity audit](../docs/heredity_audit.md) restores the sequence of renewal,
-local reproduction and portable state. New checks compare lineage equations
-with independent simulations and test a copying-cost threshold. A candidate
-reversal under activity-dependent transmission damage is conditional on the
-stated model; its originality is not established. Older exploratory models
-remain available.
+Detailed [spatial checks](../docs/construction_results/README.md),
+[heredity audits](../docs/heredity_audit.md) and
+[secondary threshold predictions](../docs/heredity_results/README.md) stay in the
+repository. The longer previous discussion is archived in
+[the expanded section](../docs/thought_experiments_expanded_2026-09-09.tex).
+The models demonstrate separate possibilities and conditional consequences;
+they do not yet establish the complete physical connection.
 
 The upper threshold is presented as an application of established moment
 mathematics. The draft does not claim discovery of a new power-law threshold or
@@ -42,7 +35,6 @@ From the repository root, using Python 3.10 or later and Tectonic:
 ```sh
 python -m pip install -r paper/requirements.txt
 python paper/make_figure_data.py
-python paper/make_heredity_figure.py
 cd paper
 tectonic finite_noise_window.tex
 ```

@@ -1,4 +1,8 @@
 """
+Historical implementation: its routing can send water uphill from a pit.
+Use sims/validation/construction.py and run_construction for the corrected
+downhill and outlet accounting. These old results are not current validation.
+
 Held-back gradient test. A raised, nearly flat, noisy plateau of erodible material.
 Rain falls uniformly. Water can only leave at the bottom edge (base level).
 Rules: water flows to the lowest of 8 neighbours; a cell's discharge = its rain + everything routed into it;

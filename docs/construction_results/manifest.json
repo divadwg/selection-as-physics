@@ -1,0 +1,118 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "landscape": {
+    "n": 48,
+    "steps": 600,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "rain_total": 1,
+    "exponents": [
+      0,
+      0.5
+    ],
+    "initial_slope": 0.04,
+    "initial_roughness": 0.003,
+    "base_erosion": 0.03,
+    "maximum_fractional_drop": 0.25
+  },
+  "reaction_diffusion": {
+    "feed": 0.03,
+    "kill": 0.062,
+    "Du": 0.16,
+    "Dv": 0.08,
+    "duration": 4000,
+    "initial_radius": 5,
+    "initial_u": 0.5,
+    "initial_v": 0.25,
+    "initial_noise": 0.01,
+    "settings": [
+      [
+        "seeded",
+        1.0,
+        1.0,
+        0,
+        96.0
+      ],
+      [
+        "seeded",
+        1.0,
+        1.0,
+        1,
+        96.0
+      ],
+      [
+        "seeded",
+        1.0,
+        1.0,
+        2,
+        96.0
+      ],
+      [
+        "unseeded",
+        1.0,
+        1.0,
+        0,
+        96.0
+      ],
+      [
+        "small_noise",
+        1.0,
+        1.0,
+        0,
+        96.0
+      ],
+      [
+        "no_reaction",
+        1.0,
+        1.0,
+        0,
+        96.0
+      ],
+      [
+        "no_feed",
+        1.0,
+        1.0,
+        0,
+        96.0
+      ],
+      [
+        "seeded",
+        1.0,
+        0.5,
+        0,
+        96.0
+      ],
+      [
+        "seeded",
+        0.5,
+        0.25,
+        0,
+        96.0
+      ],
+      [
+        "seeded",
+        1.0,
+        1.0,
+        0,
+        144.0
+      ]
+    ],
+    "thresholds": [
+      0.15,
+      0.2,
+      0.25
+    ],
+    "minimum_spot_area": 5,
+    "boundary": "periodic"
+  },
+  "source_sha256": {
+    "run_construction.py": "90bcd3050f48d8490679328bf47c19241ae9d41890f0609029bf7b4709c81c25",
+    "construction.py": "b2291af84e1785022d8f92cebb2ca83f7d5b1881367e0842c05c7dcd33305c33"
+  }
+}

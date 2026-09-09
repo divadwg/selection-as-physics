@@ -1,0 +1,81 @@
+{
+  "settings": [
+    [
+      2,
+      false,
+      true,
+      180,
+      60,
+      6
+    ],
+    [
+      20,
+      false,
+      true,
+      180,
+      60,
+      6
+    ],
+    [
+      20,
+      true,
+      true,
+      180,
+      60,
+      6
+    ],
+    [
+      20,
+      false,
+      false,
+      180,
+      60,
+      6
+    ],
+    [
+      20,
+      false,
+      true,
+      240,
+      80,
+      8
+    ],
+    [
+      40,
+      false,
+      true,
+      180,
+      60,
+      6
+    ],
+    [
+      40,
+      true,
+      true,
+      180,
+      60,
+      6
+    ],
+    [
+      40,
+      false,
+      true,
+      240,
+      80,
+      8
+    ]
+  ],
+  "u0": 0.03,
+  "total_steps": "14000*r/6",
+  "tracer_steps": 32000,
+  "tracer_dt": 2,
+  "return_radius": 1,
+  "minimum_turn": 6.283185307179586,
+  "minimum_path": "2*r",
+  "boundary": "open x, periodic y",
+  "source_sha256": {
+    "sims/boundaries/01_lattice_flow_loops_above_threshold.py": "618afc2dcad256ec57977d6d89ec14195345814305f795d416d5cd5430ef6c03",
+    "sims/boundaries/lg.py": "6eb2cf1c9b3c12f21ae0b88f374666467815c4008096a5973b663657a148ab4f",
+    "sims/validation/run_pole_flow.py": "7f3f31294d369b6108882dcd881951892c095a8144cdaddd2f8518c4e3f311e6"
+  }
+}

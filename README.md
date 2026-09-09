@@ -25,59 +25,42 @@ yet modeled. Known power-law mathematics does not establish that broader
 physical proposition, and this literature check has not shown that proposition
 to be prior art.
 
-## The proposed connection
+## Five distinct steps
 
-1. A fine-grained deterministic lattice drives irregular disturbances in a coarse
-   flow model, without fresh random input after initialization.
-2. The stationary theory identifies a **bounded scaling window** for extreme
-   flow concentration. Merely obtaining concentration is not enough to test it;
-   the two failure regimes matter too.
-3. Further models add persistent inherited states and copying funded by flow,
-   asking how unequal sharing could become differential reproduction.
+| Question | Current evidence |
+|---|---|
+| Do flow paths form? | Corrected runoff and erosion models develop bed geometry from a rough slope. |
+| Does flow sort among paths? | The exact conserved-flow theorem and independent stationary checks. |
+| Does a flow pattern persist? | The existing pole-and-lattice model, restored and checked against low-drive, linear and no-pole controls. |
+| Can a pattern reproduce with inherited differences? | Known reaction–diffusion spot multiplication is reproduced without a spot-copy instruction. Inherited selectable differences remain to be demonstrated in that construction. |
+| Can information recreate a property elsewhere? | Existing portable-state models test assumed carriers; a physical mechanism joining this to the earlier steps remains open. |
 
-The contribution being investigated is this physical connection. The familiar
-mathematics of one step does not establish that the complete connection is old,
-nor do the separate examples prove it. The missing work is to join the steps
-under consistent physical rules and test them together.
+These are separate questions, not necessarily a fixed chronological ladder.
+Unequal channel sizes describe a distribution; circulation describes a spatial
+flow pattern. The concentration theorem establishes the former, not the latter.
+The [spatial construction checks](docs/construction_results/README.md) retain the
+methods, snapshots and limits. The pole is one persistent environmental
+irregularity: it is supplied, while the circulating response emerges from the
+local lattice rules. Its formation from noise is not claimed. The next
+[flow–material connection](docs/flow_material_link.md) would derive the feature
+from persistent lower-layer states; coarse occupancy can be an average of binary
+sites. The existing hybrid bed model supplies a candidate coupling, not yet a
+validated microscopic construction.
 
-## The heredity sequence and its checks
+The fine deterministic lattice supplies a source of coarse disturbance. A
+physical copying capability must likewise follow from interaction rules; merely
+instructing a model to copy does not establish that capability. Prepared rare
+configurations can test possibility without estimating historical waiting times.
+Establishment and spread are separate questions even when copying occurs often.
 
-The original programme already distinguishes three stages:
-
-1. A pattern persists while flow replaces its material. Test whether a particular
-   deviation survives renewal, as well as whether the general shape persists.
-2. The pattern produces descendants. Test inherited differences and reproduction
-   against disappearance, with individual identities and finite observation times.
-3. A separate carrier recreates a property elsewhere. Test transmission using the
-   same destination response and matched surroundings.
-
-The [heredity audit](docs/heredity_audit.md) maps these stages to the existing
-models, repairs the earlier claims and describes the new checks. Portable-token
-simulations already existed; this revision strengthens their controls. A slowly
-relaxing continuous carrier also succeeds in the new finite-time assay, so
-universal claims that gates are necessary have been withdrawn.
-
-The [new retained runs](docs/heredity_results/README.md) compare a lineage
-extinction equation with independent event simulations, test both sides of a
-copying threshold, and track transmitted state over repeated reproduction.
-Copying and carrier laws remain explicit assumptions. Fine-lattice fluctuations
-would count as mutation when they change a state that descendants inherit; that
-coupling has not yet been joined to these new stochastic checks.
-
-## A candidate prediction about establishment
-
-With inherited states, the relevant reproduction threshold counts the kinds of
-offspring a lineage produces, not just one founder's total births. Applying
-established branching mathematics gives a predicted maximum copying cost from
-flow, state transitions, disappearance and transmission fidelity.
-
-In the tested extension, restoration toward a lower channel state **hinders
-establishment over short transit but can help over long transit**, when greater
-activity also damages portable information. The reversal survives grid refinement
-and disappears in the state-independent damage control. This is a conditional,
-testable prediction of the stated model; its originality is not established.
-It is distinct from the stationary concentration window. See the
-[threshold results and assumptions](docs/heredity_results/README.md#candidate-threshold-reversal).
+The [heredity audit](docs/heredity_audit.md) and
+[branching checks](docs/heredity_results/README.md) address consequences of
+specified copying and carrier rules. They include a copying-cost threshold and
+a conditional reversal under activity-dependent transmission damage. Those
+secondary results remain in the repository so the paper can keep one argument.
+Their originality is not established. The [entropy note](docs/entropy_ledger.md)
+also distinguishes a nonlinearity from a discrete memory gate; successful
+continuous storage does not demonstrate an entirely linear system.
 
 ## What the stationary calculation establishes
 
@@ -169,8 +152,8 @@ must not be presented as one completed derivation.
 | [Heredity and establishment checks](docs/heredity_results/README.md) | Independently checks lineage probabilities, copying thresholds and transmission into fresh sites. |
 | [Paper source and figure data](paper/README.md) | Makes the manuscript editable and the figure reproducible from the tested formula. |
 
-The eight conserved-flow tests pass; six additional tests check the lineage and
-carrier models against analytic controls and conservation requirements. Across the retained ensemble runs on `[1,3]`,
+All 20 automated checks pass: eight for conserved flow, six for lineage and
+carrier models, and six for spatial constructions and fluid moments. Across the retained ensemble runs on `[1,3]`,
 the largest final occupancy and flow CDF errors are approximately `0.0203` and
 `0.0245`; the largest mean snapshot half-flow fraction error is `0.0114`.
 All are below the declared `0.05` tolerance. This checks bounded implementations;

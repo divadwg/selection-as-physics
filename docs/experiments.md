@@ -5,6 +5,8 @@
 earlier interpretations; claims of universal gating necessity, failure of all
 R0 descriptions, or completed physical bridges are superseded by that audit.
 Script 17 is a prose record, not runnable validation.
+The [spatial construction update](construction_results/README.md) restores the
+existing pole experiment and corrects the earlier plateau routing.
 
 Current reading: the [revised paper](../paper/README.md) connects the stationary
 window to deterministic-lattice and copying thought experiments. The

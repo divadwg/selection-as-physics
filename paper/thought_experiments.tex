@@ -1,247 +1,76 @@
-\section{Thought experiments toward selection}
+\section{From shared flow to selection}
 \label{sec:thought}
 
-\subsection{Effective noise in a deterministic world}
+Concentration is organisation across channels, not necessarily structure within
+a channel. Fixed pipes can share flow unequally without forming a whirlpool;
+a whirlpool can persist without a few structures dominating the total flow.
+The proposed connection therefore contains five distinct questions, which need
+not occur in a fixed chronological order:
 
-The first construction, \texttt{sims/core/08}, puts each of forty coarse routes
-over a block of a coupled logistic-map lattice. The lattice evolves
-deterministically. A route responds to the difference between its block mean
-and a slowly updated running mean, with a coupling proportional to its share.
-Random numbers initialize the lattice and routes; none are drawn during their
-subsequent evolution. Fixing the complete initial state fixes the trajectory.
+\begin{center}
+\begin{tabular}{@{}p{.25\linewidth}p{.70\linewidth}@{}}
+\toprule
+Step & Evidence and remaining distinction \\
+\midrule
+Flow paths form & Erosion models develop channels from a rough slope. Routing
+and erosion laws are specified; geometry develops through them. \\[3pt]
+Flow sorts & The theorem gives an exact pooled concentration window for its
+specified dynamics. It does not establish spatial structure or persistent winners. \\[3pt]
+A pattern persists & The existing lattice-Boltzmann model examines circulation
+behind a supplied pole. Persistence of shape is distinct from inheritance of a
+particular perturbation. \\[3pt]
+A pattern reproduces & Reaction--diffusion spots can divide through local
+reaction and transport laws. Division alone does not establish inherited variants. \\[3pt]
+Information travels & A carrier may recreate a property elsewhere. Existing token
+models assume its copying and expression; a physical carrier must supply them. \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-In the retained default run, the chaotic lattice gives a final top-three flow
-share of $0.62$, compared with $0.08$ for a frozen lattice. Its sampled block
-means have mean lag-one autocorrelation about $0.01$, and the repeated run
-reports identical summary statistics. These are demonstrations of deterministic
-driving with irregular coarse fluctuations and concentrated flow, not a proof
-that the coarse process is Markovian or converges to the It\^o model above.
+The flow-structure example uses local lattice updates, a maintained inflow and
+one fixed irregularity: the pole. Directional particle populations stream to
+neighbours and relax through collisions. Lattice-Boltzmann rules recover
+Navier--Stokes behaviour in the appropriate hydrodynamic limit \cite{lbm};
+non-binary values alone do not ensure that limit. The pole's persistence is
+supplied, while the circulation is produced by the dynamics. The repaired model
+shows returning tracers in its nearly steady wake, absent in the low-drive,
+linear and no-pole controls. Numerical details remain in the repository.
 
-An equal-start control removes the initial differences between coarse routes
-by setting every $g_i=1$, while retaining microscopic variation in the fine
-lattice. After 60,000 deterministic updates, the top-three shares are $0.615$,
-$0.463$ and $0.529$ for three fine-state seeds, from $3/40=0.075$ initially.
-The matched frozen controls remain at $0.075$. Fine-scale dynamics therefore
-seed differentiated sharing without initial coarse-channel size differences
-in these runs. The possible routes and coupling rule are specified, but the
-dominant routes are not supplied as an initial pattern. This is a test of
-seeding within that geometry, not a test of the full two-sided window.
+The deterministic fine-lattice experiment addresses a source of disturbance.
+Starting forty coarse routes at identical states, three fine-state seeds give
+final top-three flow shares of $.615$, $.463$ and $.529$, against $.075$ initially
+and in frozen controls. No random numbers are drawn after initialization.
+A periodic control also concentrates, so chaos is not shown necessary.
+Deterministic effective noise has established mathematical precedents
+\cite{melbourne,gottwald}; this lattice's drift, correlations and stochastic
+convention have not been matched to Eq.~\eqref{eq:model}. It consequently does
+not test the complete two-sided window.
 
-The periodic control is informative: it gives an even larger top-three share,
-$0.95$. The experiment therefore does not show that chaos is necessary, despite
-an earlier description of that control. Low autocorrelation alone would not
-establish unpredictability from all coarse information either. The contribution
-of the lattice experiment is to make the absence of ongoing random input
-explicit and reproducible within a flow-sharing example.
+For a constructive step, the capability must follow from the interaction rules,
+rather than an instruction to copy a detected structure. The repository retains
+controlled spatial examples and numerical checks separately. Its Gray--Scott
+example reproduces known spot multiplication \cite{pearson,spots}; related
+chemical spot replication has been observed experimentally \cite{chemicalspots}.
+These are supplied reaction networks and finite prepared perturbations, not an
+estimate of spontaneous origin rates. They do not yet connect the concentration
+window to heredity. Molecular templating, including peptide self-replication
+\cite{peptide}, provides relevant physical precedent for a carrier simpler than
+a complete genetic system; it is not a demonstrated product of these flow models.
 
-Deterministic dynamics admitting stochastic effective descriptions are already
-established mathematically \cite{melbourne,gottwald}. Their role here is as a
-candidate physical source for the disturbance, not a new discovery that
-determinism and statistical noise can coexist. A diffusion limit for this
-particular lattice, including its effective drift and stochastic convention,
-remains to be derived. This matters because deterministic multiplicative
-forcing need not produce a driftless It\^o limit \cite{gottwald}.
-
-\subsection{Contact geometry and the window are separate tests}
-
-The next construction, \texttt{sims/core/09}, recruits more lattice patches for
-a route with a larger share, keeping coupling per patch fixed. In the retained
-run, the variance-versus-mean-share slope is $1.01$ for sums over separate
-patches. A common coherent patch gives slope $2.00$; using fixed patches with
-amplitude proportional to share gives $1.99$. These are across-route diagnostic
-slopes, not direct estimates of conditional infinitesimal diffusivity.
-
-The final top-three shares are $0.17$, $0.08$ and $0.63$, respectively.
-The coherent case uses the same fluctuation for all routes and so changes
-cross-route correlation as well as variance scaling. It cannot isolate the
-effect of moving $q$ to the upper edge. Both slopes near two are also at the
-$m=1$ boundary, rather than beyond it. The lattice examples consequently
-support a mechanism for effective disturbance and its scaling; they do not
-demonstrate the full two-sided window in a single deterministic substrate.
-
-The exact theorem answers a different, controlled question: for the specified
-diffusion, when does pooled concentration vanish as a population fraction?
-The lattice routes have a lower clipping rule and no fixed upper reflecting
-cutoff, and their effective drift and shared clock have not been matched to
-Eq.~\eqref{eq:model}. A next test must connect those models before treating
-their results as one experiment.
-
-\subsection{From unequal sharing to differential reproduction}
-
-Concentration alone contains no lineage. Suppose each route also has a store
-of usable work $A_i$, increasing at rate $\dot A_i=\eta J_i$, and a copy costs
-$E_{\rm copy}$. With constant flow and no intervening loss, the time between
-copies is $E_{\rm copy}/(\eta J_i)$. For time-varying flow, accumulated work
-sets the number of completed copies, up to the remainder in the store. Thus
-the ideal long-run rate is $b_i=\eta\overline J_i/E_{\rm copy}$.
-This derives the rate conditional on a copying mechanism, an efficiency and a
-cost; it does not derive the existence of copying machinery.
-
-In \texttt{sims/core/18}, a funded copy replaces a randomly chosen route with
-an inherited state plus a perturbation. The default run with copy cost $200$
-ends at mean state $8.67\pm1.27$, compared with $4.32\pm1.17$ at cost $500$
-and $1.05\pm0.19$ without copying. These are means and population standard
-deviations across three runs, not confidence intervals. Fitted copying-rate
-slopes are $0.0045$ and $0.0017$, against ideal values $0.0050$ and $0.0020$;
-replacement can erase stored resources, and self-targeted attempts are counted.
-
-Here the connection to selection becomes explicit: state varies, is inherited,
-and affects reproduction through throughput. The simulation supplies
-inheritance and replacement rules and uses random draws during evolution.
-It is therefore a separate thought experiment, not a completed demonstration
-of selection driven entirely by the deterministic lattice. Other repository
-models investigate whether copying refreshes memory faster than restoring
-dynamics erase it. Those address another necessary condition for the proposed
-sequence, rather than following automatically from the concentration theorem.
-
-\subsection{The existing heredity sequence}
-
-The original repository distinguishes renewal of a pattern, reproduction across
-lineages, and transfer through a separate carrier. A whirlpool illustrates
-continuity of organisation through material turnover. Heredity of a variant asks
-whether a particular deviation survives that renewal. Boundary models explore
-maintained loops and reconstruction from a persistent bed; they do not establish
-a general law of heredity. Channel-junction correlations also reflect spatial
-continuity. A confluence viewed backwards is not itself an observed reproductive
-event. Turbulent puffs that split and decay provide a physical comparison for
-reproduction versus loss \cite{puffs}, without establishing inheritance of
-selectable variants in the present model.
-
-Core 12 supplies copying and tests preservation against restoration. Core 13
-already implements detached tokens affecting another site's response; core 15
-examines transit. These are existing toy constructions, not absent mechanisms.
-Their transmission and response laws are assumptions. A small catalytic
-configuration could carry a property without carrying an entire channel, and
-could itself perform the catalytic function. Schr\"odinger's aperiodic crystal
-is a historical image for stored arrangement \cite{schrodinger}, not a copying
-mechanism. Autocatalytic RNA experiments distinguish reproduction from persistence
-of composition \cite{ameta}; synthetic self-replicators selected for photocatalytic
-function provide a chemical comparison \cite{photocatalysis}.
-
-Deterministic disturbances become mutations when they alter a transmissible state
-that reaches descendants. Temporary channel fluctuations need not do so. The new
-checks below use explicit random draws; the deterministic lattice and inherited
-carrier have not yet been joined in one construction.
-
-\subsection{Establishment with inherited states}
-
-The old lineage instrument counted births at a site, allowing confusion between
-the founder and later occupants. It now tracks individual identity. Survival at
-a finite horizon cannot establish eventual survival. Nor does a failed scalar
-founder-birth count invalidate branching theory.
-
-The new calculation uses a finite trait lattice with row transition generator
-$T$, birth-attempt rates $b_i$, disappearance rates $d_i>0$, and a substochastic
-offspring matrix $P$. Here $P_{ij}$ is the probability an attempt by type $i$
-produces a viable daughter of type $j$; missing row mass means a failed copy.
-Parents survive birth events. In a fixed background the probability $Q_i(t)$ of
-extinction by time $t$, from one individual, obeys
+Once a copying mechanism exists, its consequences have a precise mathematical
+question. If usable work arrives at rate $\eta J$ and a copy costs $E$, the ideal
+long-run copying rate is $\eta\overline J/E$, subject to losses. In a rare-lineage
+branching approximation, let $T$ describe inherited-state changes, $d$ disappearance,
+and $P$ viable offspring states per copying attempt. Established branching theory
+\cite{branching} gives the conditional establishment threshold
 \begin{equation}
- \dot Q=TQ+b\mathbin{\odot}Q\mathbin{\odot}(PQ-P\mathbf1)
-              +d\mathbin{\odot}(\mathbf1-Q),\qquad Q(0)=0,
+ E<\eta\rho\!\left[(\operatorname{diag}d-T)^{-1}\operatorname{diag}(J)P\right].
 \end{equation}
-where $\odot$ means elementwise multiplication. With perfect inheritance $P=I$,
-the birth term is $b_i(Q_i^2-Q_i)$. Eventual extinction is the minimal fixed point.
-This is established multitype branching mathematics \cite{branching}. For the
-finite irreducible, nonsingular process used here, positive eventual survival is
-equivalent to
-\begin{equation}
- \rho(K)>1,\qquad K=(\operatorname{diag}d-T)^{-1}\operatorname{diag}(b)P.
-\end{equation}
-With $b_i=\eta J_i/E_{\rm copy}$, the corresponding copying-cost threshold is
-\begin{equation}
- E_{\rm copy}<E_{\rm critical}
- =\eta\rho\!\left[(\operatorname{diag}d-T)^{-1}\operatorname{diag}(J)P\right].
-\end{equation}
-This applies known mathematics to measured flow, state change, loss and
-transmission under the stated approximation. Exponential birth clocks are
-assumed; a deterministic accumulator needs an additional work or age state.
-The background is fixed while a lineage is rare, so this is not a prediction of
-takeover of a finite shared flow.
-
-Analytic one-state birth/death cases check the implementation. Another 18,000
-exact-event trials check finite-time extinction, and 12,000 trials examine both
-sides of the threshold. Cap hits are censored rather than counted as survival.
-All 30 predictions lie within marginal 99\% Wilson intervals widened for
-censoring. These are not simultaneous bounds or proof of continuum convergence.
-Raw outcomes, timestep refinement and hashes are in \texttt{docs/heredity\_results/}.
-
-\subsection{A conditional reversal of the threshold}
-
-The retained extension takes $g\in[1,3]$, diffusion $.02g$, restoration
-$-k(g-1)$, disappearance $.4$, and birth attempts $cg$. It assumes viable
-transmission probability $\exp(-.02g\tau)$ over transit time $\tau$: greater
-activity also damages the carrier, with a damaging event preventing a viable
-copy. This is an additional hypothesis, not a consequence of the noise exponent.
-Transit survival is applied at birth without an explicit travel delay.
-
-On 64 grid intervals, restoration $k=.7$ raises the critical copying coefficient
-from $.1747$ to $.3517$ at $\tau=0$, but lowers it from $1.5880$ to $1.3803$ at
-$\tau=60$. The sign reversal also occurs on 16 and 32 intervals. Replacing the
-damage rate $.02g$ by the constant $.02$ removes the reversal at every tested
-transit time (Fig.~\ref{fig:heredity}). Restoration sacrifices flow but can improve
-transmission enough to help establishment. For a fixed trait the viable birth
-rate $cg\exp(-.02g\tau)$ peaks at $g=1/(.02\tau)$ if that lies in the allowed
-range. The branching calculation includes changes of trait during life.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{heredity_threshold.pdf}
-\caption{Critical copying coefficient on 64 trait intervals. Lower values make
-establishment easier. Points are numerical calculations; lines guide the eye.
-Activity-dependent damage allows restoration to change from a disadvantage to an
-advantage as transit grows. The constant-damage control does not. These are model
-predictions, not empirical observations.}
-\label{fig:heredity}
-\end{figure}
-
-This is a candidate prediction of the specified couplings, distinct from the
-stationary concentration window. Its originality is not established.
-Reproduction--fidelity trade-offs already have experimental precedents
-\cite{speedfidelity}. A physical test must measure carrier damage rather than
-infer it from channel diffusivity alone.
-
-\subsection{Matched transfer and repeated reproduction}
-
-The new assay gives binary and continuous carriers identical initial values
-$h=\pm1$ and the same destination response $g=1+.5\tanh(h)$. Destinations are
-fresh: no original channel state or work store accompanies the carrier. Binary
-carriers flip at rate $.005$; continuous carriers follow an Ornstein--Uhlenbeck
-law with noise amplitude $.1$ and restoration $.005$ or $.3$. Exact transition
-sampling avoids timestep error. At transit time 40 the destination response
-difference between source types averages $.510$ for binary, $.578$ for slow
-continuous, and approximately zero for fast continuous carriers (ten seeds of
-10,000 packets). Permutation effects are near zero. Continuous storage can
-transmit state over these finite times; universal gating necessity is not
-supported. Physical storage costs are not matched.
-
-A separate generational model funds 256 unit-cost births from total flow one
-over 256 time units. Parent opportunities are proportional to flow, or equal in
-a neutral control; only carrier state is transmitted and each site's response
-is rebuilt. After 40 generations, positive-state fractions average $.919$ for
-binary and $.966$ for slow continuous carriers, versus $.483$ and $.486$ in the
-neutral control (20 seeds). Fast continuous carriers remain near $.5$. This
-assumes a common funding pool and copying rules. Shuffling the recorded
-parent--child pairing preserves population trajectories while removing their
-association. It is a statistical null: a rising mean alone cannot identify
-inheritance. Carrier origins and physical copying remain open.
-
-\subsection{What the combined proposal commits to}
-
-The scientific proposal is the connection between these steps, including the
-bounded concentration condition. The theorem constrains this concentration
-mechanism, not every possible route to Darwinian selection. It would gain substance from a construction
-in which the same physical rules supply effective variation, cross both noise
-boundaries, preserve inherited differences and fund reproduction. The
-equal-start lattice control demonstrates a seed mechanism for differentiation
-among initially equivalent possible routes. Extending that mechanism to a
-material whose spatial flow paths and connectivity also develop requires a
-spatial model of that response. What remains incomplete is the joining of
-seeding, the controlled window test, memory and reproduction in one construction.
-Nor does the prior art cited for the separate ingredients establish that
-the complete proposed mechanism is already known.
-
-The default outputs and equal-start controls are retained with source hashes
-and reproduction commands in \texttt{docs/research\_examples/}. They report
-finite-time toy-model behaviour. They neither establish empirical validity nor
-replace the stationary checks below.
+The repository checks this calculation against independent event simulations.
+It assumes exponential copying clocks and a fixed background while the lineage
+is rare. It does not derive $T$, $d$ and $P$ from the same substrate as the
+concentration model, or predict finite-population takeover. Establishing that
+connection, with perturbations becoming inherited variations through the
+physical dynamics, is the remaining task. Rare origins need not be simulated
+at historical waiting times, but their possibility requires a physical
+construction and their spread requires a separate establishment test.
