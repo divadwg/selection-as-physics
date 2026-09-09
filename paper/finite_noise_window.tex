@@ -1,0 +1,434 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{microtype}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\dd}{\mathrm{d}}
+\setlength{\emergencystretch}{2em}
+\title{A finite noise window for concentration of a shared flow\\[0.4em]
+\large Exact stationarity and the finite-population correction}
+\author{David Galbraith}
+\date{Revised draft, 9 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+State-dependent diffusion changes how often a channel occupies a given state.
+When channels share a fixed total throughput, their population distribution and
+their flow distribution can differ substantially. We study a bounded, reflected
+It\^o model with independent noise, share proportional to $g_i^m$, and diffusivity
+$D_i=N g_i^q/\sum_j g_j^m$. Its exact joint stationary density is proportional to
+$\left(\sum_j g_j^m\right)\prod_i g_i^{-q}$. The tagged-channel density is
+$p_N=(1-1/N)p_0+f/N$, where $p_0\propto g^{-q}$ and $f\propto g^{m-q}$;
+$f$ is also the pooled flow density. The population fraction above the pooled
+half-flow threshold tends to zero as both state range and population grow
+if and only if $1\leq q\leq m+1$, for exact powers. At fixed population it instead
+approaches $1/(2N)$ inside the window. The upper boundary is the familiar
+weighted-moment threshold, here given an exact conserved-flow interpretation.
+It limits a specific noise-driven concentration mechanism; it is neither a
+universal noise limit nor a result about persistent winners. Independent event
+simulations check the stationary predictions on bounded grids. Empirical
+applicability remains untested.
+\end{abstract}
+
+\section{What the upper boundary says}
+
+A collection of paths can be counted in two ways: by the number of paths in each
+state, or by the fraction of throughput they carry. A rare large state can matter
+little to the first count and greatly to the second. The question here is when
+that difference becomes extreme as the accessible state range grows.
+
+Noise affects this comparison through residence times. In a scalar driftless
+It\^o diffusion with reflecting boundaries, the stationary density is inversely
+proportional to diffusivity. State-dependent noise and occupation probabilities
+have a long history \cite{landauer,maes}. Weighting a power-law distribution by a
+power of its argument introduces a standard moment threshold \cite{newman}.
+Neither ingredient is new.
+
+Newman explicitly discusses both the general moment condition and the fraction
+of a weighted total held in a population tail (Secs.~III.B and III.D of
+Ref.~\cite{newman}). Their use for a fixed shared flow requires care: each channel's share depends on
+every other channel, and the same normalization can change the physical clock
+of the state dynamics. We give an exactly solvable coupled model in which this
+dependence is explicit. The result identifies the finite-population correction
+and makes the observable behind the noise window precise.
+
+For $m=1$, the upper edge is $q=2$. Beyond it, increasing the upper state cutoff
+does not make a vanishing population fraction account for half the pooled flow.
+This does not mean that flow becomes equally distributed. A small but nonzero
+fraction can still carry half. Nor is $q$ a noise amplitude: it describes how
+diffusivity changes with state. Multiplying every diffusivity by one constant
+changes relaxation times, but leaves all stationary results below unchanged.
+
+\section{A model with conservation imposed at every instant}
+
+Let $N\geq1$ channels have dimensionless states $g_i\in[1,R]$, where $R>1$.
+The channels are supplied in advance. No spatial energy-gradient field, channel
+creation or channel extinction is modeled. The calculation therefore does not
+establish spontaneous channel formation in a driven material.
+For $m>0$, define the total weight $S$ and the actual flow through channel $i$ by
+\begin{equation}
+ S(\mathbf g)=\sum_{j=1}^N g_j^m,\qquad
+ J_i(\mathbf g)=I\frac{g_i^m}{S(\mathbf g)}.
+ \label{eq:share}
+\end{equation}
+Thus $\sum_i J_i=I$ for every configuration, not only in expectation. We choose
+the interior dynamics
+\begin{equation}
+ \dd g_i=\sqrt{2D_i(\mathbf g)}\,\dd W_i,\qquad
+ D_i(\mathbf g)=\frac{N g_i^q}{S(\mathbf g)},
+ \label{eq:model}
+\end{equation}
+with independent Wiener processes, normal reflection at both endpoints, and
+zero interior drift. Boundary local-time terms are implicit. A positive common
+prefactor has been absorbed into the time unit. The lower cutoff sets the state
+unit; all powers refer to this specified coordinate.
+
+The normalization in Eq.~\eqref{eq:model} is a constitutive assumption. On the
+line $q=m$, $D_i=(N/I)J_i$, so noise variance rate is proportional to actual
+flow. Away from that line the model keeps the common factor $1/S$. The apparently
+similar choice $D_i\propto J_i^{q/m}$ instead contains $S^{-q/m}$ and defines
+different dynamics. Conservation of flow alone does not select either rule.
+
+The It\^o convention would follow from an appropriate small-kick limit of
+conditionally unbiased additive events in $g$, evaluated at the pre-event
+state. Such a limit also needs control of temporal correlations and higher
+moments. Unresolved deterministic dynamics do not automatically satisfy these
+conditions. Under a nonlinear change $y=h(g)$, It\^o's formula adds the drift
+$D(g)h''(g)$ even when the drift in $g$ is zero. The zero-drift assumption must
+therefore be justified in the measured coordinate, rather than restored after
+arbitrary relabelling.
+
+\section{Exact stationary population and flow distributions}
+
+On $[1,R]$, write
+\begin{equation}
+ Z_R=\int_1^R g^{-q}\dd g,\quad p_0(g)=\frac{g^{-q}}{Z_R},\quad
+ \mu_R=\int_1^R g^m p_0(g)\dd g,\quad
+ f_R(g)=\frac{g^m p_0(g)}{\mu_R}.
+ \label{eq:base}
+\end{equation}
+All quantities are finite at finite $R$, for every real $q$.
+
+\begin{proposition}
+The unique stationary density of Eq.~\eqref{eq:model} on the reflecting box is
+\begin{equation}
+ \pi_{N,R}(\mathbf g)=\frac{S(\mathbf g)}{N\mu_R}
+                 \prod_{j=1}^N p_0(g_j).
+ \label{eq:joint}
+\end{equation}
+Its tagged-channel marginal and its pooled flow density are, respectively,
+\begin{align}
+ p_{N,R}(g)&=\left(1-\frac1N\right)p_0(g)+\frac1N f_R(g),
+ \label{eq:marginal}\\
+ \E_{\pi}\!\left[\sum_{i=1}^N\frac{J_i}{I}\delta(g-g_i)\right]&=f_R(g).
+ \label{eq:flow}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Integration of $S\prod_j p_0(g_j)$ gives $N\mu_R$, establishing normalization.
+For each coordinate,
+\[
+ D_i\pi_{N,R}=\frac{1}{Z_R\mu_R}\prod_{j\ne i}p_0(g_j)
+\]
+is independent of $g_i$. Every probability current
+$-\partial_i(D_i\pi_{N,R})$ therefore vanishes, including at the boundaries.
+The diffusion is uniformly nondegenerate on the connected compact box, giving
+uniqueness. Expanding the sum $S$ and integrating out the other coordinates
+gives Eq.~\eqref{eq:marginal}. Multiplication by $J_i/I=g_i^m/S$ cancels $S$
+in the joint law; integration and summation give Eq.~\eqref{eq:flow}.
+\end{proof}
+
+The calculation also has a simple clock interpretation. If
+$L_0=\sum_i g_i^q\partial_i^2$ is the generator of independent reflected
+channels, the coupled generator is $L=(N/S)L_0$. Configurations with larger
+$S$ are traversed more slowly relative to that independent process; their
+stationary weight acquires the factor $S$. This explains both the solvability
+and the dependence of the result on the chosen normalization.
+
+An exact independent sampling construction is useful: choose one channel
+uniformly, draw its state from $f_R$, and draw the other $N-1$ states independently
+from $p_0$. Averaging over the chosen channel reproduces Eq.~\eqref{eq:joint}.
+That designation is resampled for each configuration; it does not identify a
+permanent winner.
+
+The correction matters even in simple cases. For $N=1$ and $q=m$, the channel
+carries all the flow and has constant diffusivity. Its stationary density is
+uniform, not $g^{-m}$. At fixed $R$, the tagged marginal approaches $p_0$ as
+$N\to\infty$. The independent-channel calculation is recovered in that limit.
+
+\section{The concentration observable and its window}
+
+Let $a_R$ be the state threshold above which half of the pooled flow lies:
+\begin{equation}
+ \int_{a_R}^R f_R(g)\dd g=\frac12.
+\end{equation}
+Define $P_0(R)=\int_{a_R}^R p_0(g)\dd g$ and
+$P_N(R)=\int_{a_R}^R p_{N,R}(g)\dd g$. Equation~\eqref{eq:marginal} gives
+\begin{equation}
+ \boxed{P_N(R)=\left(1-\frac1N\right)P_0(R)+\frac{1}{2N}.}
+ \label{eq:correction}
+\end{equation}
+This counts a population fraction above one threshold fixed across stationary
+observations. It is a pooled observable, with each observation weighted equally
+in physical time.
+
+\begin{theorem}
+For Eqs.~\eqref{eq:share}--\eqref{eq:model} with exact powers and $m>0$,
+$P_N(R)\to0$ as both $R\to\infty$ and $N\to\infty$ if and only if
+\begin{equation}
+ \boxed{1\leq q\leq m+1.}
+ \label{eq:window}
+\end{equation}
+At fixed $N$, the limit inside this window is $1/(2N)$.
+\end{theorem}
+
+\begin{proof}
+Put $A=m-q+1$ and $B=1-q$. Direct integration gives
+\begin{equation}
+ a_R=\begin{cases}
+ [(R^A+1)/2]^{1/A},&A\ne0,\\
+ \sqrt R,&A=0,
+ \end{cases}\qquad
+ P_0(R)=\begin{cases}
+ (R^B-a_R^B)/(R^B-1),&B\ne0,\\
+ \log(R/a_R)/\log R,&B=0.
+ \end{cases}
+ \label{eq:quantile}
+\end{equation}
+For $q<1$, $a_R/R\to2^{-1/A}$ and
+$P_0\to1-2^{-B/A}>0$. At $q=1$,
+$P_0\sim\log2/(m\log R)\to0$. For $1<q<m+1$, $a_R$ grows proportionally
+to $R$, while the normalized population tail above it vanishes.
+At $q=m+1$, $P_0=1/(R^{m/2}+1)\to0$.
+For $q>m+1$, $a_R\to2^{1/(q-m-1)}$, so
+$P_0\to2^{-(q-1)/(q-m-1)}>0$.
+Equation~\eqref{eq:correction} supplies the finite-$N$ result and the joint limit.
+\end{proof}
+
+Either iterated limit gives this classification, as does any sequence with both
+$R$ and $N$ tending to infinity. Stationarity is taken at each bounded pair
+$(N,R)$ first. No unbounded diffusion or uniform equilibration time is asserted.
+The same classification holds for any fixed pooled flow fraction strictly
+between zero and one, with the corresponding fraction divided by $N$ replacing
+$1/(2N)$.
+
+The integrals behind the two edges are $\int g^{-q}\dd g$ and
+$\int g^{m-q}\dd g$. At the lower edge the population normalization is
+logarithmic; at the upper edge the flow normalization is logarithmic.
+The upper-edge population fraction itself decays as a power of $R$.
+Figure~\ref{fig:window} displays the finite-range expressions.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.94\textwidth]{window_figure.pdf}
+\caption{Exact stationary predictions, not empirical measurements or large-range
+dynamic simulations. The asymptotic window is between the dotted lines. Finite
+range smooths both boundaries; finite population supplies a floor. $P_0$ is the
+large-population limit at each fixed $R$. The curve at $R=10^8$ is not the
+infinite-range limit.}
+\label{fig:window}
+\end{figure}
+
+\subsection{Pooled concentration is not a snapshot winner count}
+
+In a single configuration, rank shares in descending order and count the
+smallest number of whole channels whose shares sum to at least one half.
+Call that count divided by $N$ $H_N$. It always satisfies $H_N\geq1/N$.
+In contrast, $P_N$ can approach $1/(2N)$ because its fixed threshold need not
+carry half the flow in every snapshot. These observables must not be substituted
+for one another. The numerical checks measure $\E H_N$ separately against the
+exact joint sampler. Neither statistic measures how long a particular channel
+remains dominant. Stationary concentration alone establishes neither persistent
+structure nor Darwinian selection.
+
+For example, at $m=1$, $q=2$, $R=10^8$, $P_0\simeq0.000100$, whereas
+$P_{40}\simeq0.012598$. This is a substantial relative correction to the tail
+fraction, even though $1/N$ is small.
+
+\subsection{Limiting slopes do not determine the endpoints}
+
+The inclusive endpoints require exact powers or additional tail assumptions.
+On $g\geq e$, consider the unnormalized flow weight $w(g)=g$ and noise factor
+$d(g)=g^2(\log g)^2$. Their limiting log-log slopes are $m=1$ and $q=2$, but
+$\int_e^\infty w(g)/d(g)\dd g$ converges. The upper-edge separation fails.
+This example also fits the coupled construction with $S=\sum_i w(g_i)$ and
+$D_i=N d(g_i)/S$: replace $p_0$ by the normalized $1/d$ and $f_R$ by the
+normalized $w/d$ in the proof. Logarithmic corrections do not change the strict
+interior power inequalities, but can decide the boundary cases. An estimated
+slope near an edge is consequently insufficient to classify a measured system.
+
+\section{What would make the result physically useful?}
+
+The upper bound excludes a proposed mechanism when the measured disturbance
+scaling is too steep relative to the flow weight, provided the rest of the model
+applies. It also distinguishes state-dependent disturbance from monotonic
+reinforcement intuition. At $m=1$, the large-range, large-population half-flow
+fraction vanishes for $q=2$, but approaches $1/8$ for $q=2.5$.
+Above the boundary it can still be very small, especially close to $q=2$.
+The mathematical transition is the loss of a vanishing fraction, not an abrupt
+return to equal sharing in a finite apparatus.
+
+The basic inequality is a standard power-law moment condition \cite{newman}.
+Its value here is the connection to actual conserved shares and the observable
+correction in Eq.~\eqref{eq:correction}. These make a conditional prediction
+that can be checked. They do not establish a new general law of nature, and no
+priority claim for the elementary threshold is made.
+
+One possible microscopic route to state-dependent variance uses contact patches.
+If each patch contributes an unbiased additive perturbation in the same measured
+coordinate, $n$ independent patches give variance proportional to $n$; perfectly
+coherent patches within a channel give variance proportional to $n^2$.
+Inferring $q=m$ or $q=2m$ additionally requires $n\propto g^m$, fixed coupling
+per patch, and a suitable time scale. It does not derive the common $1/S$ clock
+in Eq.~\eqref{eq:model}. In particular, a rule proportional to squared actual
+flow would have a different normalization. Coherence within a channel must also
+be distinguished from correlations between channels, which violate the
+independent-noise assumption.
+
+A fair physical test needs simultaneous channel states and individual flows,
+with a fixed total and a stable channel population. It must estimate both
+conditional drift and variance rate in the chosen coordinate, check cross-channel
+correlations, and allow enough relaxation before comparing stationary statistics.
+For Eq.~\eqref{eq:model}, conditioning on the configuration or accounting for $S$
+is necessary: a regression on $g_i$ alone need not recover $q$. Drift, measurement
+noise, jumps, changing populations and limited state range can each prevent the
+test from addressing this model. Power-law fits themselves also need checks
+against alternatives \cite{clauset}.
+
+A useful experiment would vary the state dependence of disturbance across the
+upper edge while measuring the finite-range prediction, rather than expecting
+an infinite-limit discontinuity. No physical dataset is used as validation in
+this paper.
+
+\section{Numerical checks and their limits}
+
+The repository implements a continuous-time nearest-neighbour chain on a uniform
+state lattice with spacing $h$. Each allowed jump of channel $i$ by $+h$ or $-h$
+has rate
+\begin{equation}
+ \lambda_i(\mathbf g)=\frac{N g_i^q}{S(\mathbf g)h^2}.
+\end{equation}
+Outward boundary jumps are absent. Exponential holding times and rate-weighted
+event selection simulate this finite chain without a time-step approximation.
+The lattice invariant law is exactly Eq.~\eqref{eq:joint} with sums replacing
+integrals. Grid refinement remains necessary for a continuous-state comparison.
+Observations are taken at fixed physical times, because sampling only jump
+events would bias residence-time statistics.
+
+Eight automated tests include detailed balance on every edge of an enumerated
+three-channel, three-state system; independent marginal calculations; the
+single-channel case; the finite-population quantile identity; sampling checks;
+continuum integral comparisons; grid refinement; and relaxation from both
+boundaries in a simple control. The retained ensemble runs use six exponent pairs:
+$(1,0.5)$, $(1,1)$, $(1,1.5)$, $(1,2)$, $(1,2.5)$ and $(2,4)$.
+For each pair they use lower-boundary, upper-boundary, log-uniform and exact
+stationary initial conditions, with three seeds and 128 independent ensembles
+per seed. Physical observation times are $0,1,4,16$.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{rrrrr}
+\toprule
+$N$ & Grid intervals & Occupancy CDF & Flow CDF & Mean snapshot fraction\\
+\midrule
+8 & 4 & 0.017014 & 0.021730 & 0.011423\\
+8 & 8 & 0.020299 & 0.024502 & 0.005979\\
+40 & 8 & 0.009496 & 0.008539 & 0.001585\\
+\bottomrule
+\end{tabular}
+\caption{Largest final absolute errors across the six exponent pairs and four
+initial conditions for each retained run, all on $[1,3]$. CDF errors compare
+with the exact lattice law. The snapshot reference uses 100,000 independent
+joint-law samples per pair. Seeds are pooled at the final observation time.}
+\label{tab:checks}
+\end{table}
+
+All retained final errors are below the declared tolerance of $0.05$
+(Table~\ref{tab:checks}). This is an acceptance criterion, not a confidence
+interval. Separate exact-law calculations check grid refinement and evaluate
+large state ranges; they are not dynamical runs at those ranges. The checks
+support the implementation on the tested bounded grids. They do not establish
+large-range equilibration times or empirical applicability.
+
+The earlier independent-walker check is excluded from this evidence. It started
+log-uniformly, which is already the target stationary law at $q=1$, and did not
+establish relaxation. It is retained in the repository as a labelled legacy
+diagnostic. The exact power integrals remain valid.
+
+\section{Scope and relation to the wider repository}
+
+Scalar diffusion with drift has the zero-current law
+\begin{equation}
+ p(g)\propto\frac1{D(g)}\exp\!\left(\int^g\frac{v(x)}{D(x)}\dd x\right).
+\end{equation}
+For $D=d_0g^q$ and $v=ag^{q-1}$, this shifts the scalar exponent to $q-a/d_0$.
+It does not give a general drift correction for the coupled model above.
+Likewise, scalar accumulation near an upper cutoff does not prove that one
+channel takes over a shared total. Coupled drift and winner persistence remain
+separate problems.
+
+Preferential attachment \cite{krapivsky} concerns growing networks with attachment
+rules. Its linear boundary is not a derivation of this model's lower noise edge.
+Wealth condensation \cite{bouchaud} couples exchange and multiplicative growth;
+the variable being condensed and its dynamics differ from the fixed-throughput
+observable used here. These are related comparisons, not equivalent mechanisms.
+
+Beyond the paper, the repository explores inherited states, copying funded by
+throughput, memory loss and transport of stored states. If throughput supplies
+usable work at rate $\eta J$ and each copy costs $E_{\rm copy}$, ideal sustained
+operation gives a copy rate $\eta J/E_{\rm copy}$. Inheritance, losses, resets and
+population replacement must still be specified. Those exploratory models ask
+how concentration could connect to reproduction. Their conclusions do not
+follow from the stationary theorem and are not evidence for its physical
+premises. The README distinguishes the tested paper implementation from these
+extensions and historical claims.
+
+\section{Conclusion}
+
+For the specified reflected conserved-flow diffusion, the exact stationary law
+gives a finite noise window and a finite-population correction. The upper bound
+states when rare large states cease to dominate pooled throughput in the
+large-range limit. Its algebra is established moment mathematics. The paper's
+contribution is to make that interpretation exact for a coupled model and to
+provide finite-system predictions and reproducible checks. Whether this model
+describes a physical system remains an experimental question.
+
+\paragraph{Code and reproducibility.}
+The editable manuscript, compiled PDF, figure data and generation script are in
+\texttt{paper/} at \url{https://github.com/divadwg/selection-as-physics}.
+The stationary implementation and tests are in \texttt{sims/validation/} and
+\texttt{tests/}; retained data are in \texttt{docs/validation\_results/}.
+The underlying validation was committed as \texttt{e802c6f}. Build and run
+instructions are in \texttt{paper/README.md}. This revision supersedes the
+August 2026 draft's uncorrected finite-population claim, limiting-slope endpoint
+claim, independent-walker convergence claim and coupled-takeover interpretation.
+
+\begin{thebibliography}{9}
+\bibitem{landauer} R. Landauer, Motion out of noisy states,
+\emph{J. Stat. Phys.} \textbf{53}, 233--248 (1988).
+\href{https://doi.org/10.1007/BF01011555}{doi:10.1007/BF01011555}.
+\bibitem{maes} C. Maes and K. Neto\v{c}n\'y, Heat bounds and the blowtorch theorem,
+\emph{Ann. Henri Poincar\'e} \textbf{14}, 1193--1202 (2013).
+\href{https://arxiv.org/abs/1207.1122}{arXiv:1207.1122}.
+\bibitem{newman} M. E. J. Newman, Power laws, Pareto distributions and Zipf's law,
+\emph{Contemporary Physics} \textbf{46}, 323--351 (2005).
+\href{https://arxiv.org/abs/cond-mat/0412004}{arXiv:cond-mat/0412004}.
+\bibitem{clauset} A. Clauset, C. R. Shalizi and M. E. J. Newman,
+Power-law distributions in empirical data,
+\emph{SIAM Review} \textbf{51}, 661--703 (2009).
+\href{https://arxiv.org/abs/0706.1062}{arXiv:0706.1062}.
+\bibitem{krapivsky} P. L. Krapivsky, S. Redner and F. Leyvraz,
+Connectivity of growing random networks,
+\emph{Phys. Rev. Lett.} \textbf{85}, 4629--4632 (2000).
+\href{https://arxiv.org/abs/cond-mat/0005139}{arXiv:cond-mat/0005139}.
+\bibitem{bouchaud} J.-P. Bouchaud and M. M\'ezard,
+Wealth condensation in a simple model of the economy,
+\emph{Physica A} \textbf{282}, 536--545 (2000).
+\href{https://arxiv.org/abs/cond-mat/0002374}{arXiv:cond-mat/0002374}.
+\end{thebibliography}
+\end{document}

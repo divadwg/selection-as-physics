@@ -1,14 +1,32 @@
-# Papers
+# Papers and research directions
 
+## Current draft
 
-1. *State-dependent diffusivity, throughput share, and a finite selection window.* Bergin-Lipman: state-dependent mutation rates can select anything. Here: for a zero-drift Itô process occupancy is 1/D(g); with throughput share ∝ g^m and D ∝ g^q, population and flux separate iff 1 ≤ q ≤ m+1, a two-sided window with two falsifiable failure regimes; the constitutive hypothesis D ∝ J places physical systems on q = m; copying ∝ share converts concentration into Darwinian selection (Price on the trait, not Fisher on share); free-sign write-back gives replicator feedback selection. Related to Landauer's blowtorch and nonlinear preferential attachment; cite both; claim the window, the inversion, the physical placement. Validation section: q from published fluctuation exponents (cities, firms, GDP, networks) all inside the window; firm case a quantitative near-miss with a stationary-vs-transient explanation to test. PRE / J. Stat. Phys.
-2. *Structure needs a threshold: four boundaries in driven systems.* Linear systems can't loop, remember, concentrate, or compete; here is the threshold for each. Done; armour for 1. Send first if smoothest entry wanted.
-3. *Everything is flow: rebuild rules, loops, and memory as a copy step.* Whirlpool and DNA are both ships of Theseus; only one keeps its dents. Substack then journal.
-4. *One real system.* Measure noise vs flux, share exponent, concentration in one physical system (self-modifying parallel channels, memristive filaments, braided rivers); plus biological cross-checks for P6a and P10.
-Not yet: the synthesis. It waits for 4.
+[A finite noise window for concentration of a shared flow](../paper/finite_noise_window.pdf),
+David Galbraith, revised 9 September 2026.
+[Source, figure data and build instructions](../paper/README.md).
 
+The paper studies one reflected, driftless Itô model with a fixed shared flow.
+It derives the exact joint stationary law, the finite-population correction and
+the precise pooled concentration window. The upper edge is presented as an
+application of established moment mathematics, without a priority claim for
+the threshold itself. It is a working draft, not a peer-reviewed publication.
 
-## Paper 1 spec (revised per third review, 2026-08)
-Central claim: **state-dependent diffusivity produces a finite throughput-concentration window.** Almost ruthlessly: state-dependent noise → stationary occupancy → throughput weighting → copying. No entropy argument in this paper (the entropy thesis is Substack/ledger material and a later paper; it adds a second large reviewer target without strengthening the theorem).
-Structure: (1) dg = v dt + √(2D) dW; stationary p = (C/D)exp(∫v/D). (2) v=0, D ∝ g^q, J ∝ g^m ⇒ p ∝ g^(−q), Jp ∝ g^(m−q); derive the window 1 ≤ q ≤ m+1 (moment-divergence framing). (3) Microscopic q: independent perturbations ⇒ q = m; coherent (amplitudes add before squaring) ⇒ q = 2m; state the variable-choice defence (D0). (4) Numerics as consistency demonstrations, labelled as such. (5) Copying derived, not imposed: the copy-resource accumulator gives b = ηJ/E_copy from throughput-supplies-work plus finite copy cost (D5, sims/core/18); with hidden-layer inheritance noise this yields variation + heredity + differential reproduction, replicator/Price dynamics, and Paper 1's endpoint becomes Darwinian selection rather than concentration: geometry → throughput → variation and copying → inheritance → selection. (6) Close with the falsifiable m=1 prediction: q<1 no concentration; 1≤q≤2 concentration; q>2 no concentration again. The upper boundary is the headline: naive positive-feedback intuition says more state-dependent disturbance always concentrates harder; this theory says sufficiently fast-growing disturbance destroys concentration. Counterintuitive, two-sided, falsifiable.
-Real-system exponents: cited as suggestive placements only, with the confound list; memristor parallel-filament experiment named as the decisive test (both boundaries crossable in one system).
+The numerical evidence is the bounded coupled validation suite. Published
+fluctuation exponents and exploratory substrate models are not empirical
+validation. The discontinued aggregate-nanowire route supplies no verdict.
+
+## Work beyond this paper
+
+The repository also contains models of copying funded by throughput, memory
+refresh, lineage establishment and transport of stored state. Each introduces
+additional assumptions. They remain separate research directions rather than
+parts of the stationary theorem.
+
+A physical test would require states and flows resolved by channel, a fixed total,
+checks of the joint variance rule and drift, and adequate relaxation and state
+range. Until such a test is available, the broader synthesis remains a hypothesis.
+
+The earlier paper specification is preserved in Git history. It overstated
+several links between the window, preferential attachment and empirical exponent
+placements, and is superseded by the current draft.
