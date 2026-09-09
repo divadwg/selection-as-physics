@@ -94,44 +94,137 @@ models investigate whether copying refreshes memory faster than restoring
 dynamics erase it. Those address another necessary condition for the proposed
 sequence, rather than following automatically from the concentration theorem.
 
-\subsection{Portable state as the next test}
+\subsection{The existing heredity sequence}
 
-The next priority is reproduction with heredity: a transferred state must
-recreate a flow-affecting property in a new site, and that property must affect
-its descendants' reproduction. The channel variable $g$ currently summarizes
-behaviour; copying that number in software assumes transmission. A physical
-extension should distinguish a carrier state $h$ from the channel state $g$
-that develops through its interaction with local material and resources.
+The original repository distinguishes renewal of a pattern, reproduction across
+lineages, and transfer through a separate carrier. A whirlpool illustrates
+continuity of organisation through material turnover. Heredity of a variant asks
+whether a particular deviation survives that renewal. Boundary models explore
+maintained loops and reconstruction from a persistent bed; they do not establish
+a general law of heredity. Channel-junction correlations also reflect spatial
+continuity. A confluence viewed backwards is not itself an observed reproductive
+event. Turbulent puffs that split and decay provide a physical comparison for
+reproduction versus loss \cite{puffs}, without establishing inheritance of
+selectable variants in the present model.
 
-A candidate carrier could be a small catalytic structure or a reproducible
-chemical composition. Its arrangement would hold information in the operational
-sense that changing the arrangement changes what develops at the receiving
-site. It need not encode an entire channel or use DNA. The same structure could
-both carry the state and catalyse its expression; separation from the large
-flow path need not imply separate genetic and catalytic machinery.
-Schr\"odinger's aperiodic crystal supplies a historical image for a stable
-arrangement with non-repeating informational content \cite{schrodinger}, but
-naming such a carrier does not specify how it is copied. Experiments on
-autocatalytic RNA networks illustrate why reproduction and persistence of
-inherited composition require separate checks \cite{ameta}. Synthetic
-self-replicators selected for photocatalytic function provide a closer chemical
-comparison \cite{photocatalysis}; neither study tests this conserved-flow window.
+Core 12 supplies copying and tests preservation against restoration. Core 13
+already implements detached tokens affecting another site's response; core 15
+examines transit. These are existing toy constructions, not absent mechanisms.
+Their transmission and response laws are assumptions. A small catalytic
+configuration could carry a property without carrying an entire channel, and
+could itself perform the catalytic function. Schr\"odinger's aperiodic crystal
+is a historical image for stored arrangement \cite{schrodinger}, not a copying
+mechanism. Autocatalytic RNA experiments distinguish reproduction from persistence
+of composition \cite{ameta}; synthetic self-replicators selected for photocatalytic
+function provide a chemical comparison \cite{photocatalysis}.
 
-The fine lattice supplies a candidate source of variation in this extension.
-Its disturbances count as mutations only when they alter a transmissible state
-and the alteration survives into descendants. Temporary fluctuations of $g$
-need not do so. Copying fidelity, stability during transport and the coupling
-from fine dynamics to $h$ therefore need explicit rules.
+Deterministic disturbances become mutations when they alter a transmissible state
+that reaches descendants. Temporary channel fluctuations need not do so. The new
+checks below use explicit random draws; the deterministic lattice and inherited
+carrier have not yet been joined in one construction.
 
-A minimal test would transfer $h$ into a fresh site, reset local $g$ and stored
-work, and ask whether the carrier recreates its characteristic response under
-matched conditions. Copies must consume accounted resources. Repeated transfers
-would then measure whether inherited differences predict successful descendant
-numbers. Scrambling the transmitted state while retaining its amount and cost
-would control for material transfer alone; equalizing reproduction opportunities
-would control for flow-funded selection. A failed run would constrain the tested
-carrier, fidelity and timescales, not disprove the broader route. This portable
-carrier construction is proposed here, not yet implemented or demonstrated.
+\subsection{Establishment with inherited states}
+
+The old lineage instrument counted births at a site, allowing confusion between
+the founder and later occupants. It now tracks individual identity. Survival at
+a finite horizon cannot establish eventual survival. Nor does a failed scalar
+founder-birth count invalidate branching theory.
+
+The new calculation uses a finite trait lattice with row transition generator
+$T$, birth-attempt rates $b_i$, disappearance rates $d_i>0$, and a substochastic
+offspring matrix $P$. Here $P_{ij}$ is the probability an attempt by type $i$
+produces a viable daughter of type $j$; missing row mass means a failed copy.
+Parents survive birth events. In a fixed background the probability $Q_i(t)$ of
+extinction by time $t$, from one individual, obeys
+\begin{equation}
+ \dot Q=TQ+b\mathbin{\odot}Q\mathbin{\odot}(PQ-P\mathbf1)
+              +d\mathbin{\odot}(\mathbf1-Q),\qquad Q(0)=0,
+\end{equation}
+where $\odot$ means elementwise multiplication. With perfect inheritance $P=I$,
+the birth term is $b_i(Q_i^2-Q_i)$. Eventual extinction is the minimal fixed point.
+This is established multitype branching mathematics \cite{branching}. For the
+finite irreducible, nonsingular process used here, positive eventual survival is
+equivalent to
+\begin{equation}
+ \rho(K)>1,\qquad K=(\operatorname{diag}d-T)^{-1}\operatorname{diag}(b)P.
+\end{equation}
+With $b_i=\eta J_i/E_{\rm copy}$, the corresponding copying-cost threshold is
+\begin{equation}
+ E_{\rm copy}<E_{\rm critical}
+ =\eta\rho\!\left[(\operatorname{diag}d-T)^{-1}\operatorname{diag}(J)P\right].
+\end{equation}
+This applies known mathematics to measured flow, state change, loss and
+transmission under the stated approximation. Exponential birth clocks are
+assumed; a deterministic accumulator needs an additional work or age state.
+The background is fixed while a lineage is rare, so this is not a prediction of
+takeover of a finite shared flow.
+
+Analytic one-state birth/death cases check the implementation. Another 18,000
+exact-event trials check finite-time extinction, and 12,000 trials examine both
+sides of the threshold. Cap hits are censored rather than counted as survival.
+All 30 predictions lie within marginal 99\% Wilson intervals widened for
+censoring. These are not simultaneous bounds or proof of continuum convergence.
+Raw outcomes, timestep refinement and hashes are in \texttt{docs/heredity\_results/}.
+
+\subsection{A conditional reversal of the threshold}
+
+The retained extension takes $g\in[1,3]$, diffusion $.02g$, restoration
+$-k(g-1)$, disappearance $.4$, and birth attempts $cg$. It assumes viable
+transmission probability $\exp(-.02g\tau)$ over transit time $\tau$: greater
+activity also damages the carrier, with a damaging event preventing a viable
+copy. This is an additional hypothesis, not a consequence of the noise exponent.
+Transit survival is applied at birth without an explicit travel delay.
+
+On 64 grid intervals, restoration $k=.7$ raises the critical copying coefficient
+from $.1747$ to $.3517$ at $\tau=0$, but lowers it from $1.5880$ to $1.3803$ at
+$\tau=60$. The sign reversal also occurs on 16 and 32 intervals. Replacing the
+damage rate $.02g$ by the constant $.02$ removes the reversal at every tested
+transit time (Fig.~\ref{fig:heredity}). Restoration sacrifices flow but can improve
+transmission enough to help establishment. For a fixed trait the viable birth
+rate $cg\exp(-.02g\tau)$ peaks at $g=1/(.02\tau)$ if that lies in the allowed
+range. The branching calculation includes changes of trait during life.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{heredity_threshold.pdf}
+\caption{Critical copying coefficient on 64 trait intervals. Lower values make
+establishment easier. Points are numerical calculations; lines guide the eye.
+Activity-dependent damage allows restoration to change from a disadvantage to an
+advantage as transit grows. The constant-damage control does not. These are model
+predictions, not empirical observations.}
+\label{fig:heredity}
+\end{figure}
+
+This is a candidate prediction of the specified couplings, distinct from the
+stationary concentration window. Its originality is not established.
+Reproduction--fidelity trade-offs already have experimental precedents
+\cite{speedfidelity}. A physical test must measure carrier damage rather than
+infer it from channel diffusivity alone.
+
+\subsection{Matched transfer and repeated reproduction}
+
+The new assay gives binary and continuous carriers identical initial values
+$h=\pm1$ and the same destination response $g=1+.5\tanh(h)$. Destinations are
+fresh: no original channel state or work store accompanies the carrier. Binary
+carriers flip at rate $.005$; continuous carriers follow an Ornstein--Uhlenbeck
+law with noise amplitude $.1$ and restoration $.005$ or $.3$. Exact transition
+sampling avoids timestep error. At transit time 40 the destination response
+difference between source types averages $.510$ for binary, $.578$ for slow
+continuous, and approximately zero for fast continuous carriers (ten seeds of
+10,000 packets). Permutation effects are near zero. Continuous storage can
+transmit state over these finite times; universal gating necessity is not
+supported. Physical storage costs are not matched.
+
+A separate generational model funds 256 unit-cost births from total flow one
+over 256 time units. Parent opportunities are proportional to flow, or equal in
+a neutral control; only carrier state is transmitted and each site's response
+is rebuilt. After 40 generations, positive-state fractions average $.919$ for
+binary and $.966$ for slow continuous carriers, versus $.483$ and $.486$ in the
+neutral control (20 seeds). Fast continuous carriers remain near $.5$. This
+assumes a common funding pool and copying rules. Shuffling the recorded
+parent--child pairing preserves population trajectories while removing their
+association. It is a statistical null: a rising mean alone cannot identify
+inheritance. Carrier origins and physical copying remain open.
 
 \subsection{What the combined proposal commits to}
 

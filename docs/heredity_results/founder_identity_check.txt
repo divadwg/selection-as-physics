@@ -1,0 +1,6 @@
+copy rate, restoration: original-founder births and fraction alive at 20,000 steps
+c0=0.002 ktemp=0.002: founder births=1.10 alive at horizon=0.00
+c0=0.005 ktemp=0.002: founder births=1.10 alive at horizon=0.00
+c0=0.01 ktemp=0.002: founder births=1.27 alive at horizon=0.00
+c0=0.005 ktemp=0.005: founder births=0.97 alive at horizon=0.00
+c0=0.005 ktemp=0.001: founder births=1.13 alive at horizon=0.00

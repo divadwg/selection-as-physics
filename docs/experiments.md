@@ -1,4 +1,10 @@
-# Experiments (record)
+# Experiments (historical record)
+
+**Current heredity evidence:** [audit and corrections](heredity_audit.md),
+[new reproducible results](heredity_results/README.md). The entries below preserve
+earlier interpretations; claims of universal gating necessity, failure of all
+R0 descriptions, or completed physical bridges are superseded by that audit.
+Script 17 is a prose record, not runnable validation.
 
 Current reading: the [revised paper](../paper/README.md) connects the stationary
 window to deterministic-lattice and copying thought experiments. The

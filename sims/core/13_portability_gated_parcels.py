@@ -1,4 +1,9 @@
 """
+Historical exploratory model. Current controls and qualifications are in
+docs/heredity_audit.md. These assumptions do not establish universal gating
+necessity or indefinite transmission; matched replacements are in
+sims/validation/heredity.py.
+
 Rung 3: portability. Does a detached, gated parcel of state shape flow where its parent never touched?
 World: 1D chain of sites along a flow direction. Each site has a gated material type: 0 = self-silting, 1 = self-clearing
 (type is the configuration-addressed rule: local erodibility response; read by whatever flow touches it, catalysis-style).

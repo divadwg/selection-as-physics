@@ -40,28 +40,44 @@ mathematics of one step does not establish that the complete connection is old,
 nor do the separate examples prove it. The missing work is to join the steps
 under consistent physical rules and test them together.
 
-## Next priority: reproduction with portable heredity
+## The heredity sequence and its checks
 
-The next test is whether a small transferable state can recreate a
-flow-affecting property at a new site, and whether that property helps it leave
-more descendants. A catalytic structure or reproducible composition is a
-candidate; DNA and a complete genetic code are not prerequisites for this
-thought experiment. Catalysis alone does not establish copying or heredity.
-The carrier could itself perform the catalytic function.
+The original programme already distinguishes three stages:
 
-The current channel state `g` summarizes behaviour. Copying it in software
-assumes transmission. The proposed extension separates a carrier state `h` from
-the channel response it produces. Fine-lattice disturbances become mutations
-when they change that transmissible state and the change reaches descendants.
-A fluctuation that disappears before transmission is not a heritable mutation.
+1. A pattern persists while flow replaces its material. Test whether a particular
+   deviation survives renewal, as well as whether the general shape persists.
+2. The pattern produces descendants. Test inherited differences and reproduction
+   against disappearance, with individual identities and finite observation times.
+3. A separate carrier recreates a property elsewhere. Test transmission using the
+   same destination response and matched surroundings.
 
-First transfer the carrier into fresh sites with channel state and stored work
-reset. Then measure reconstruction of the trait and reproduction over repeated
-generations, with resource costs accounted for. Compare scrambled carrier
-states and equal reproduction opportunities to isolate heredity and selection.
-These tests are proposed in the paper; the portable carrier mechanism has not
-yet been demonstrated. Failure at one fidelity or observation time would limit
-that construction, not reject every version of the hypothesis.
+The [heredity audit](docs/heredity_audit.md) maps these stages to the existing
+models, repairs the earlier claims and describes the new checks. Portable-token
+simulations already existed; this revision strengthens their controls. A slowly
+relaxing continuous carrier also succeeds in the new finite-time assay, so
+universal claims that gates are necessary have been withdrawn.
+
+The [new retained runs](docs/heredity_results/README.md) compare a lineage
+extinction equation with independent event simulations, test both sides of a
+copying threshold, and track transmitted state over repeated reproduction.
+Copying and carrier laws remain explicit assumptions. Fine-lattice fluctuations
+would count as mutation when they change a state that descendants inherit; that
+coupling has not yet been joined to these new stochastic checks.
+
+## A candidate prediction about establishment
+
+With inherited states, the relevant reproduction threshold counts the kinds of
+offspring a lineage produces, not just one founder's total births. Applying
+established branching mathematics gives a predicted maximum copying cost from
+flow, state transitions, disappearance and transmission fidelity.
+
+In the tested extension, restoration toward a lower channel state **hinders
+establishment over short transit but can help over long transit**, when greater
+activity also damages portable information. The reversal survives grid refinement
+and disappears in the state-independent damage control. This is a conditional,
+testable prediction of the stated model; its originality is not established.
+It is distinct from the stationary concentration window. See the
+[threshold results and assumptions](docs/heredity_results/README.md#candidate-threshold-reversal).
 
 ## What the stationary calculation establishes
 
@@ -150,9 +166,11 @@ must not be presented as one completed derivation.
 | [Validation runner](sims/validation/run_validation.py) | Starts from low, high, log-uniform and stationary states; observes at physical times and retains transient as well as final errors. |
 | [Retained results](docs/validation_results/README.md) | Records the default run, a [finer grid](docs/validation_results/finer_grid/README.md), and [forty channels](docs/validation_results/forty_channels/README.md), with seeds and parameters. |
 | [Detailed model note](docs/conserved_flow_validation.md) | Derives the joint law and correction, explains the limits, and documents why the older walker check was insufficient. |
+| [Heredity and establishment checks](docs/heredity_results/README.md) | Independently checks lineage probabilities, copying thresholds and transmission into fresh sites. |
 | [Paper source and figure data](paper/README.md) | Makes the manuscript editable and the figure reproducible from the tested formula. |
 
-The eight automated tests pass. Across the retained ensemble runs on `[1,3]`,
+The eight conserved-flow tests pass; six additional tests check the lineage and
+carrier models against analytic controls and conservation requirements. Across the retained ensemble runs on `[1,3]`,
 the largest final occupancy and flow CDF errors are approximately `0.0203` and
 `0.0245`; the largest mean snapshot half-flow fraction error is `0.0114`.
 All are below the declared `0.05` tolerance. This checks bounded implementations;
@@ -162,7 +180,9 @@ simulations at those ranges.
 
 ## Further work beyond the paper
 
-These are exploratory models with their own assumptions. They suggest further
+These older models have their own assumptions; the current
+[heredity audit](docs/heredity_audit.md) distinguishes retained evidence from
+superseded interpretations. They suggest further
 questions; they are not consequences of the stationary theorem, and they have
 not all received the same validation as `sims/validation/`.
 

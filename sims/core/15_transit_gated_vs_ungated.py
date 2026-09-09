@@ -1,4 +1,9 @@
 """
+Historical exploratory model. Current controls and qualifications are in
+docs/heredity_audit.md. These assumptions do not establish universal gating
+necessity or indefinite transmission; matched replacements are in
+sims/validation/heredity.py.
+
 Prediction (D4): transit survival vs distance is near-flat for GATED parcels, exponential-decaying for UNGATED.
 Clean redesign of the confounded control: NO types anywhere; inheritance only via the carried value.
 Parcel = a value v carried for d steps through churn before landing.

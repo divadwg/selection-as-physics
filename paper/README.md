@@ -24,9 +24,12 @@ independent-walker convergence claim with the retained coupled checks. It also
 presents the [deterministic-lattice and copying thought experiments](thought_experiments.tex)
 as steps in the broader proposed connection to selection, with their
 [retained outputs and limitations](../docs/research_examples/README.md).
-The next proposed test distinguishes portable carrier state from channel response,
-then checks transmission and flow-funded reproduction over generations.
-Further memory, lineage and state-transport models remain repository extensions.
+The [heredity audit](../docs/heredity_audit.md) restores the sequence of renewal,
+local reproduction and portable state. New checks compare lineage equations
+with independent simulations and test a copying-cost threshold. A candidate
+reversal under activity-dependent transmission damage is conditional on the
+stated model; its originality is not established. Older exploratory models
+remain available.
 
 The upper threshold is presented as an application of established moment
 mathematics. The draft does not claim discovery of a new power-law threshold or
@@ -39,6 +42,7 @@ From the repository root, using Python 3.10 or later and Tectonic:
 ```sh
 python -m pip install -r paper/requirements.txt
 python paper/make_figure_data.py
+python paper/make_heredity_figure.py
 cd paper
 tectonic finite_noise_window.tex
 ```

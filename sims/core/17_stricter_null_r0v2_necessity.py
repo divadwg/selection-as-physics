@@ -1,5 +1,10 @@
 """
-Three follow-ups run 2026-08-22 (methods and numbers; see docs/experiments.md for the record):
+HISTORICAL SUMMARY ONLY: no runnable implementation of these follow-ups is
+present in this file. Numbers below have not been reproduced in the current
+audit. Claims ruling out all R0 descriptions or proving gating necessary are
+withdrawn; see docs/heredity_audit.md and sims/validation/heredity.py.
+
+Three follow-ups reported 2026-08-22 (methods and numbers; see docs/experiments.md for the record):
 1. Stricter same-drainage null on h2 (junction pairs vs straight-segment pairs, lam=0):
    junction +0.40±0.18, straight +0.66±0.07. The h2 signal is carved-line CONTINUITY, not
    branching-specific transmission; at bifurcation in this system inheritance = connectivity.
