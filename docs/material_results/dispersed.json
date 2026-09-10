@@ -1,0 +1,22 @@
+{
+  "case": "dispersed",
+  "seed": 0,
+  "dispersed": true,
+  "block": 4,
+  "steps": 14000,
+  "material_sweeps": 140,
+  "initial_mass": 1599,
+  "final_mass": 1599,
+  "initial_bonds": 29,
+  "final_bonds": 682,
+  "largest_dense_component": 0,
+  "initial_overlap": 0.2589118198874296,
+  "final_material_change": 0.46779237023139464,
+  "relative_field_change": 0.052533082355565044,
+  "relative_wake_change": 0.002583612482799405,
+  "returning_tracers": 0,
+  "tracers": 120,
+  "reverse_fraction": 0.0,
+  "rho_min": 1.0,
+  "rho_max": 1.0913203139814285
+}

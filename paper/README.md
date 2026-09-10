@@ -4,7 +4,7 @@
 [finite_noise_window.tex](finite_noise_window.tex).
 
 **A finite noise window for concentration of a shared flow: deterministic
-disturbance and steps toward selection**, David Galbraith, revised 9 September 2026.
+disturbance and steps toward selection**, David Galbraith, revised 10 September 2026.
 This is a working paper, not a peer-reviewed publication. The
 originality of the full model and correction has not been established by a
 comprehensive literature review. Known results for power laws and deterministic
@@ -15,6 +15,11 @@ The concise manuscript distinguishes channel formation, sorting, persistent flow
 patterns, reproduction with inherited differences, and portable information. Its
 main mathematical result concerns sorting. The existing pole-and-lattice model
 is the simple example of a flow responding to a persistent irregularity.
+
+The [binary-material extension](../docs/material_results/README.md) lets local
+cohesion retain a prepared obstruction whose coarse occupancy reflects fluid.
+It assumes substrate support and a specified coupling; it does not establish
+spontaneous formation from uniform noise.
 
 Detailed [spatial checks](../docs/construction_results/README.md),
 [heredity audits](../docs/heredity_audit.md) and

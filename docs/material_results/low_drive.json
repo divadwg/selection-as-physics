@@ -1,0 +1,22 @@
+{
+  "case": "low_drive",
+  "seed": 0,
+  "re": 2,
+  "block": 4,
+  "steps": 14000,
+  "material_sweeps": 140,
+  "initial_mass": 1599,
+  "final_mass": 1599,
+  "initial_bonds": 2726,
+  "final_bonds": 2881,
+  "largest_dense_component": 110,
+  "initial_overlap": 0.9562226391494684,
+  "final_material_change": 0.01125703564727955,
+  "relative_field_change": 0.0032484763951213104,
+  "relative_wake_change": 0.00011101913888940848,
+  "returning_tracers": 0,
+  "tracers": 120,
+  "reverse_fraction": 0.0,
+  "rho_min": 1.0,
+  "rho_max": 1.0282436553383043
+}

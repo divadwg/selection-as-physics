@@ -20,8 +20,8 @@ prescribe which routes become dominant. An [equal-start lattice control](docs/re
 starts all forty routes identically: microscopic dynamics produce top-three
 flow shares of 46–61%, compared with 7.5% initially and in frozen controls.
 This demonstrates seeding of unequal sharing within the specified geometry.
-The development of spatial paths and their connectivity in a material is not
-yet modeled. Known power-law mathematics does not establish that broader
+This sorting example does not derive spatial paths and their connectivity
+in a material. Known power-law mathematics does not establish that broader
 physical proposition, and this literature check has not shown that proposition
 to be prior art.
 
@@ -31,7 +31,7 @@ to be prior art.
 |---|---|
 | Do flow paths form? | Corrected runoff and erosion models develop bed geometry from a rough slope. |
 | Does flow sort among paths? | The exact conserved-flow theorem and independent stationary checks. |
-| Does a flow pattern persist? | The existing pole-and-lattice model, restored and checked against low-drive, linear and no-pole controls. |
+| Does a flow pattern persist? | The checked pole-and-lattice model, plus an extension in which evolving binary material supplies the obstruction. |
 | Can a pattern reproduce with inherited differences? | Known reaction–diffusion spot multiplication is reproduced without a spot-copy instruction. Inherited selectable differences remain to be demonstrated in that construction. |
 | Can information recreate a property elsewhere? | Existing portable-state models test assumed carriers; a physical mechanism joining this to the earlier steps remains open. |
 
@@ -40,12 +40,13 @@ Unequal channel sizes describe a distribution; circulation describes a spatial
 flow pattern. The concentration theorem establishes the former, not the latter.
 The [spatial construction checks](docs/construction_results/README.md) retain the
 methods, snapshots and limits. The pole is one persistent environmental
-irregularity: it is supplied, while the circulating response emerges from the
-local lattice rules. Its formation from noise is not claimed. The next
-[flow–material connection](docs/flow_material_link.md) would derive the feature
-from persistent lower-layer states; coarse occupancy can be an average of binary
-sites. The existing hybrid bed model supplies a candidate coupling, not yet a
-validated microscopic construction.
+irregularity. A [flow–material extension](docs/flow_material_link.md) replaces its
+fixed mask with a fine binary layer: cohesive local exchanges retain a prepared
+material patch, whose coarse occupancy reflects fluid and creates a circulating
+wake. The [retained controls and figure](docs/material_results/README.md) separate
+material persistence from circulation. This assumes a supporting substrate and
+a specified fluid coupling; it does not show a patch forming from uniform noise
+or derive both layers from the earlier chaotic lattice.
 
 The fine deterministic lattice supplies a source of coarse disturbance. A
 physical copying capability must likewise follow from interaction rules; merely

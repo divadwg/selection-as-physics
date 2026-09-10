@@ -27,14 +27,18 @@ models assume its copying and expression; a physical carrier must supply them. \
 \end{tabular}
 \end{center}
 
-The flow-structure example uses local lattice updates, a maintained inflow and
-one fixed irregularity: the pole. Directional particle populations stream to
-neighbours and relax through collisions. Lattice-Boltzmann rules recover
-Navier--Stokes behaviour in the appropriate hydrodynamic limit \cite{lbm};
-non-binary values alone do not ensure that limit. The pole's persistence is
-supplied, while the circulation is produced by the dynamics. The repaired model
-shows returning tracers in its nearly steady wake, absent in the low-drive,
-linear and no-pole controls. Numerical details remain in the repository.
+The flow-structure example uses lattice-Boltzmann streaming and collisions,
+which recover Navier--Stokes behaviour in the appropriate limit \cite{lbm}.
+The repaired pole model has returning tracers in its nearly steady wake,
+absent in low-drive, linear and no-pole controls. A repository extension replaces
+the fixed pole mask with evolving binary material. Local cohesive exchanges
+retain a prepared irregular patch; its block occupancy sets fluid reflection.
+Thus non-binary material values can be averages of binary sites, and a persistent
+environmental feature can be their coarse expression. This construction assumes
+a supporting substrate, zero-temperature relaxation and a specified reflection
+rule. It demonstrates persistence and a circulating response from a favourable
+initial configuration, not the patch's spontaneous origin from uniform noise.
+Methods and controls remain in the repository.
 
 The deterministic fine-lattice experiment addresses a source of disturbance.
 Starting forty coarse routes at identical states, three fine-state seeds give

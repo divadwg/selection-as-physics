@@ -1,0 +1,53 @@
+{
+  "settings": {
+    "patch_0": {
+      "seed": 0
+    },
+    "patch_1": {
+      "seed": 1
+    },
+    "patch_2": {
+      "seed": 2
+    },
+    "dispersed": {
+      "seed": 0,
+      "dispersed": true
+    },
+    "uncoupled": {
+      "seed": 0,
+      "coupled": false
+    },
+    "low_drive": {
+      "seed": 0,
+      "re": 2
+    },
+    "block_2": {
+      "seed": 0,
+      "block": 2
+    },
+    "no_cohesion": {
+      "seed": 0,
+      "cohesive": false
+    }
+  },
+  "grid": [
+    180,
+    60
+  ],
+  "r": 6,
+  "u0": 0.03,
+  "default_re": 40,
+  "default_block": 4,
+  "material_sweep_every_fluid_steps": 100,
+  "fluid_steps": 14000,
+  "tracer_steps": 32000,
+  "tracer_dt": 2,
+  "tracer_exclusion": "any material occupancy",
+  "source_sha256": {
+    "sims/validation/run_material.py": "245000e0c08872cce355b523b63b52e76151d3127d36819fc3b4983eea83dd84",
+    "sims/validation/material.py": "047095195e9acfa475fc9313607cd6335b15ccb0addac721d1fbcf19bf332294",
+    "sims/validation/construction.py": "b2291af84e1785022d8f92cebb2ca83f7d5b1881367e0842c05c7dcd33305c33",
+    "sims/validation/run_pole_flow.py": "7f3f31294d369b6108882dcd881951892c095a8144cdaddd2f8518c4e3f311e6",
+    "sims/boundaries/lg.py": "6eb2cf1c9b3c12f21ae0b88f374666467815c4008096a5973b663657a148ab4f"
+  }
+}

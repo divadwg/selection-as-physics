@@ -1,0 +1,21 @@
+{
+  "case": "patch_0",
+  "seed": 0,
+  "block": 4,
+  "steps": 14000,
+  "material_sweeps": 140,
+  "initial_mass": 1599,
+  "final_mass": 1599,
+  "initial_bonds": 2726,
+  "final_bonds": 2881,
+  "largest_dense_component": 110,
+  "initial_overlap": 0.9562226391494684,
+  "final_material_change": 0.01125703564727955,
+  "relative_field_change": 0.10790132477976658,
+  "relative_wake_change": 0.006592801915001126,
+  "returning_tracers": 43,
+  "tracers": 120,
+  "reverse_fraction": 0.10185185185185185,
+  "rho_min": 1.0,
+  "rho_max": 1.0241535738499756
+}
