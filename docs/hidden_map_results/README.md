@@ -63,6 +63,11 @@ is not a sufficient test of a white-noise limit or conditional drift.
 snapshots. `manifest.json` records settings and source hashes. No physical data
 or large-range dynamical run is included.
 
+The [subsequent calibration audit](../hidden_audit_results/README.md) measures
+interior increments, predicts independent runs and widens the state range. It
+retains the remaining drift concern. The following list records the gaps at
+the time of this original pilot.
+
 ## What remains before strengthening the paper's claim
 
 Measure conditional coarse drift, variance and cross-route correlations along
@@ -88,4 +93,4 @@ python -m unittest tests.test_hidden_map
 
 The runner overwrites these retained files. Three structural tests check the
 hidden map's inverse, repeated-boundary reflection and deterministic reproduction
-of finite trajectories. The complete repository suite now has 29 tests.
+of finite trajectories. The repository suite had 29 tests when this pilot was completed.

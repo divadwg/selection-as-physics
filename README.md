@@ -32,13 +32,14 @@ overall noise strength. Independent contributions proportional to actual flow gi
 the model's `q=m` case; the complete two-sided window has not yet been demonstrated
 by the same deterministic microscopic construction.
 
-A [new deterministic-map pilot](docs/hidden_map_results/README.md) compares one
-unchanged hidden update rule against the stationary prediction at three coupling
-exponents. Its finite-range results improve with a smaller step, but do not yet
-establish the full microscopic limit. The [memristor assay audit](docs/memristor_q_analysis.md)
-specifies the required branch-resolved measurements and separates read noise from
-state-changing disturbance. Existing measurements are candidate evidence, not a
-completed test of the window.
+A [deterministic calibration and prediction audit](docs/hidden_audit_results/README.md)
+measures the supplied fluctuation law before predicting separate runs from
+different initial states and over a wider range. The finite-range predictions
+remain close, while residual drift and the microscopic limit remain unresolved.
+The [memristor assay audit](docs/memristor_q_analysis.md) specifies the required
+branch-resolved measurements and separates read noise from state-changing
+disturbance. Existing measurements are candidate evidence, not a completed test
+of the window.
 
 The models specify possible routes and their response to flow; they do not
 prescribe which routes become dominant. An [equal-start lattice control](docs/research_examples/README.md#equal-coarse-route-start)

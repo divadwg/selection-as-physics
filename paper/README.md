@@ -42,8 +42,9 @@ python -m sims.validation.run_copy_clock
 The copying-clock runner overwrites its retained output directory. The existing
 [stationary](../docs/conserved_flow_validation.md),
 [deterministic contact](../docs/research_examples/README.md),
+[hidden-layer calibration](../docs/hidden_audit_results/README.md),
 [spatial](../docs/construction_results/README.md),
 [material](../docs/material_results/README.md) and
 [heredity](../docs/heredity_results/README.md) notes give their own commands,
-parameters and limits. The repository currently has 29 passing unit tests;
+parameters and limits. The repository currently has 32 passing unit tests;
 these check the specified models rather than establish physical applicability.
