@@ -45,5 +45,5 @@ The copying-clock runner overwrites its retained output directory. The existing
 [spatial](../docs/construction_results/README.md),
 [material](../docs/material_results/README.md) and
 [heredity](../docs/heredity_results/README.md) notes give their own commands,
-parameters and limits. The repository currently has 26 passing unit tests;
+parameters and limits. The repository currently has 29 passing unit tests;
 these check the specified models rather than establish physical applicability.

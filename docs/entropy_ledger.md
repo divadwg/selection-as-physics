@@ -63,6 +63,39 @@ the flow dissipates nothing: reservoirs, driven currents and unresolved variable
 are not represented by those transitions. The concentration window consequently
 cannot be interpreted as an entropy-production maximum of this process.
 
+## Does sorting maximise anything?
+
+The theorem fixes total throughput by construction. It does not derive that
+constraint from entropy maximisation, or predict a monotonic increase in total
+conductance, power, concentration or the share of a particular channel.
+Zero disturbance freezes the initial channel states; equal channels are one
+possible frozen start. Above the scaling window, extreme pooled concentration
+fails in the defined joint limit, but equality need not return. Increasing a
+common noise amplitude changes the clock, not the stationary law.
+
+There is a mathematical convergence principle. If p is the current probability
+density and pi the stationary density, the relative entropy
+K=integral p log(p/pi) decreases under the reflected diffusion:
+
+```text
+dK/dt = -sum_i integral D_i p [partial_i log(p/pi)]^2 <= 0.
+```
+
+This follows by integration by parts with zero boundary current and the identity
+partial_i(D_i*pi)=0. It describes approach of an ensemble distribution to its
+stationary law. It does not say that a single trajectory is always becoming more
+concentrated or that physical entropy production is maximised. Equivalently,
+negative relative entropy is maximised at p=pi, but this mathematical rewriting
+does not supply an independent physical objective or explain why that pi applies.
+The noise and flow laws determine pi first.
+
+For the proposed electrical test, fixed current is different from fixed power.
+Parallel ohmic branches satisfy P=I_total^2/G_tot under current control. At equal
+G_tot, redistributing conductance can change shares without changing power.
+The [memristor assay note](memristor_q_analysis.md) keeps these boundary conditions
+separate. We retain this interpretation here rather than adding an entropy
+maximisation claim to either paper.
+
 ## Nonlinearity and a gate that stores memory
 
 The earlier gate argument used two meanings. A stack of affine neural-network

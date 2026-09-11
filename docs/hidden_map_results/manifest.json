@@ -1,0 +1,25 @@
+{
+  "n": 8,
+  "m": 1,
+  "upper": 3,
+  "horizon": 16,
+  "replicas": 512,
+  "seeds": [
+    0,
+    1
+  ],
+  "q": [
+    0.5,
+    1.5,
+    2.5
+  ],
+  "dt": [
+    0.0078125,
+    0.001953125
+  ],
+  "initial_g": 2,
+  "source_sha256": {
+    "sims/validation/run_hidden_map.py": "c02c9806f1026b70ccb94ce79dfa09f736d5d27dfaa7ffb543d22d49c2922c8f",
+    "sims/validation/hidden_map.py": "2b525f506de391f44ce23a8284b7105b736934bd285178ffbcc87a7a2a0ffddc"
+  }
+}
