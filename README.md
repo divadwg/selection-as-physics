@@ -8,8 +8,8 @@ can use flow to reproduce.
 ## Two papers
 
 1. **[A noise-scaling window for concentration of a shared flow](paper/finite_noise_window.pdf).**
-   Uniform microscopic activity can give larger contact footprints greater
-   disturbance. The paper connects that mechanism to an exact conditional
+   Uniform microscopic activity can give channels coupled to more interactions
+   greater disturbance, without requiring a particular spatial geometry. The paper connects that mechanism to an exact conditional
    sorting window, its finite-population correction and physical tests.
 2. **[From driven flow to inherited growth](paper/flow_to_selection.pdf).**
    The broader physical programme, with separate constructions for its steps
@@ -21,11 +21,14 @@ can use flow to reproduce.
 The repository retains the detailed checks, raw outcomes and historical models
 so that each paper can keep a short argument.
 
-Uniform activity and differential disturbance are compatible: more contacts can
-collect more fluctuations under the same local rule. But multiplying all noise
+Uniform activity and differential disturbance are compatible: more microscopic
+interactions can contribute more fluctuations under the same local rule. The
+lattice can represent abstract degrees of freedom; a spatial contact footprint
+is one realization. Flow-dependent interaction allocation is specified in the
+model, and independent variance addition gives the resulting noise scaling. But multiplying all noise
 rates by one constant only changes the clock in the sorting model. The proved
 window concerns **how variance grows with state**, not a universal interval of
-overall noise strength. Independent contacts proportional to actual flow give
+overall noise strength. Independent contributions proportional to actual flow give
 the model's `q=m` case; the complete two-sided window has not yet been demonstrated
 by the same deterministic microscopic construction.
 

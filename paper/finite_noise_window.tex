@@ -16,15 +16,15 @@
 \maketitle
 \begin{abstract}
 Uniform microscopic activity need not give every flow channel equal disturbance:
-larger contact footprints can collect more fluctuations. We connect this mechanism
+channels coupled to more interactions can collect more fluctuations. We connect this mechanism
 to a conditional prediction for concentrated sharing of a fixed total flow.
 For reflected driftless dynamics with flow weight $g^m$ and variance rate
 proportional to $g^q/\sum_jg_j^m$, we derive the exact joint stationary law.
 The population fraction above the pooled half-flow threshold vanishes as both
 state range and population grow precisely when $1\le q\le m+1$, for exact powers.
 At fixed population $N$, it instead approaches $1/(2N)$ inside that window.
-Independent contacts proportional to actual flow recover the case $q=m$;
-existing deterministic lattice examples demonstrate seeding and contact-dependent
+Independent interaction contributions proportional to actual flow recover $q=m$;
+existing deterministic lattice examples demonstrate seeding and flow-dependent
 variation, without establishing the complete diffusion limit or both boundaries.
 The window concerns scaling across channel states, not overall noise amplitude.
 We state finite-range physical tests, including an amplitude-rescaling null.
@@ -36,8 +36,8 @@ Physical applicability remains untested.
 \section{The physical prediction}
 
 Can the same microscopic activity, acting throughout a substrate, sort a fixed
-flow into a small fraction of large-share channels? Larger footprints can collect
-more perturbations even when each contact obeys the same rule. This paper asks
+flow into a small fraction of large-share channels? A route coupled to more
+microscopic interactions can collect more perturbations under the same local rule. This paper asks
 when that state-dependent disturbance permits extreme concentration. It addresses
 sharing among available routes; it does not derive the formation of those routes.
 
@@ -52,9 +52,9 @@ The distinction between scaling and amount is essential. After accounting for
 the shared normalization, doubling channel state multiplies flow weight by $2^m$
 and variance rate by $2^q$. The exponent $q$ concerns variance, not the size of a
 typical kick, which scales with its square root. Increasing activity equally at
-every contact multiplies all variance rates by a constant. In this model that
+every interaction multiplies all variance rates by a constant. In this model that
 speeds up evolution without changing the stationary distribution. It cannot by
-itself traverse the window. The physical question is how contact geometry and
+itself traverse the window. The physical question is how coupling to microscopic activity and its
 correlations make disturbance increase across channel states.
 
 Noise-dependent residence times and stationary occupation have a long history
@@ -106,34 +106,39 @@ $D(g)h''(g)$ even when the drift in $g$ is zero. The zero-drift assumption must
 therefore be justified in the measured coordinate, rather than restored after
 arbitrary relabelling.
 
-\section{From uniform contact activity to differential disturbance}
+\section{From uniform microscopic activity to differential disturbance}
 \label{sec:contact}
 
-Let each contact contribute a conditionally unbiased increment with the same
+Let each microscopic contribution be conditionally unbiased, with the same
 variance $v\,\dd t$ in the specified state coordinate. For $n_i$ independent
-contacts, variance addition gives $2D_i=n_iv$. More generally,
+contributions, variance addition gives $2D_i=n_iv$. More generally,
 \begin{equation}
  \operatorname{Var}\!\left(\sum_{a=1}^{n_i}\xi_a\right)
  =\sum_a\operatorname{Var}(\xi_a)+2\sum_{a<b}\operatorname{Cov}(\xi_a,\xi_b).
  \label{eq:contacts}
 \end{equation}
 Thus uniform local activity can produce unequal coarse disturbance through
-contact number and correlations. Statistical uniformity means equal microscopic
+interaction number and correlations. Here $n_i$ is an effective count of coupled
+contributions, not a surface area or a spatial dimension. The lattice can index
+unresolved degrees of freedom rather than physical positions. A spatial contact
+footprint is one realization; the event construction below instead uses interaction
+rates. Statistical uniformity means equal microscopic
 rules and statistics, not identical states or synchronized trajectories.
 
-If contact allocation obeys $n_i=M J_i/I=M g_i^m/S$, independence gives
+If the coupling obeys $n_i=M J_i/I=M g_i^m/S$, independence gives
 $D_i=(Mv/2)g_i^m/S$. A common choice of time unit recovers Eq.~\eqref{eq:model}
-with $q=m$. Here differential noise follows from the contact rule rather than
+with $q=m$. Here differential noise follows from the interaction rule rather than
 being specified separately for each channel. This line lies in the concentration
-window for $m\ge1$; it lies below it for $0<m<1$. More contact alone is therefore
+window for $m\ge1$; it lies below it for $0<m<1$. More interactions alone are therefore
 not a universal sufficient condition.
 
 One explicit small-kick construction gives the same connection. At total rate
-$2N/h^2$, an identical contact event chooses route $i$ with probability $J_i/I$
+$2N/h^2$, an identical interaction event chooses route $i$ with probability $J_i/I$
 and adds $+h$ or $-h$ with equal probability; attempted outward moves are rejected.
 Each allowed signed jump then has rate $Ng_i^m/(Sh^2)$, the lattice approximation
-to the $q=m$ diffusion. Event placement implements the contact allocation; it is
-a constitutive assumption, not a derived law of spatial geometry. This identifies
+to the $q=m$ diffusion. Event placement implements the flow-dependent coupling. That coupling is a
+constitutive assumption; the variance scaling then follows without specifying
+channel geometry. This identifies
 the target coarse generator; its event statistics still need to be recovered
 from the deterministic substrate.
 
@@ -152,7 +157,7 @@ These examples establish parts of the mechanism, not a complete match to the
 bounded diffusion. Their regressions use route-wise time averages; their boundaries
 and temporal correlations differ. Deterministic diffusion limits have established
 precedents \cite{melbourne,gottwald}, but require conditions not verified here.
-Perfectly coherent contacts would give variance proportional to $n_i^2$;
+Perfectly coherent contributions would give variance proportional to $n_i^2$;
 with $n_i\propto J_i$, that also changes the shared denominator to $S^2$.
 It cannot be substituted into this theorem by changing $q$ alone. A microscopic
 construction crossing both boundaries under the same normalization remains open.
@@ -345,8 +350,8 @@ test from addressing this model. Power-law fits themselves also need checks
 against alternatives \cite{clauset}.
 
 The discriminating test has two parts. First, vary a common activity prefactor
-at fixed contact law: after adequate relaxation, the stationary curve should
-remain unchanged. Second, vary the state dependence of contact disturbance,
+at fixed interaction law: after adequate relaxation, the stationary curve should
+remain unchanged. Second, vary the state dependence of interaction-driven disturbance,
 while verifying the same shared normalization, and compare the finite-range
 curve across the upper edge. Fit the dynamical parameters without fitting the
 concentration outcome; predict that outcome on separate observations. Change $R$
@@ -408,27 +413,23 @@ large state ranges; they are not dynamical runs at those ranges. The checks
 support the implementation on the tested bounded grids. They do not establish
 large-range equilibration times or empirical applicability.
 
-The earlier independent-walker check is excluded from this evidence. It started
-log-uniformly, which is already the target stationary law at $q=1$, and did not
-establish relaxation. It is retained in the repository as a labelled legacy
-diagnostic. The exact power integrals remain valid.
+The legacy independent-walker check started at the target stationary law
+(log-uniform at $q=1$). It did not establish relaxation and is excluded here.
 
 \section{Conclusion}
 
-Uniform activity at microscopic contacts can give larger-footprint channels
-stronger state fluctuations. Under the specified conserved-flow dynamics, their
+Uniform microscopic activity can give channels coupled to more interactions
+stronger state fluctuations, without reference to a particular spatial geometry. Under the specified conserved-flow dynamics, their
 stationary residence times yield an exact concentration window and a measurable
 finite-population correction. The upper edge limits extreme pooled concentration;
 it does not forbid all large channels or unequal sharing. The proposed physical
-test concerns the contact mechanism, its conditional variance law and the resulting
+test concerns the interaction mechanism, its conditional variance law and the resulting
 finite-range curve. It is not a universal amplitude window, a theorem of channel
 formation or a derivation of biological selection.
 
 \paragraph{Code and reproducibility.}
-Manuscript sources, model implementations, tests and retained data are at
-\url{https://github.com/divadwg/selection-as-physics}.
-Build and reproduction commands are in \texttt{paper/README.md}; the repository
-separates current evidence from historical interpretations and secondary models.
+Sources, tests, retained data and reproduction commands are at
+\url{https://github.com/divadwg/selection-as-physics}; see \texttt{paper/README.md}.
 
 \begin{thebibliography}{99}
 \bibitem{landauer} R. Landauer, Motion out of noisy states,

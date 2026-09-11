@@ -5,12 +5,17 @@ and a fair test. Familiar mathematics can support a new physical prediction;
 it does not automatically establish or rule out that prediction's originality.
 A focused comparison with the closest physical mechanisms is still needed.
 
-## Paper 1: contact activity and sorting
+## Paper 1: microscopic activity and sorting
 
-The proposed chain is: identical microscopic activity rules, contact-dependent
+The proposed chain is: identical microscopic activity rules, flow-dependent
 coarse disturbance, residence-time differences, concentrated sharing. The hidden
-layer is part of this argument. Larger footprints can collect more fluctuations
-without imposing a different activity level on the underlying material.
+layer is part of this argument. More coupled interactions can contribute more
+fluctuations without imposing a different microscopic activity level. The lattice
+can index abstract degrees of freedom rather than physical positions. Contact
+footprints are one realization; interaction rates provide another. No particular
+spatial dimension or surface-area law is required. The flow-dependent coupling
+is specified in the existing construction, rather than derived from the existence
+of a lattice alone.
 
 The derived contact case assumes unbiased independent contributions in the measured
 state coordinate and contact allocation proportional to actual flow. It gives
