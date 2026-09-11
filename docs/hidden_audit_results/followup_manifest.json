@@ -1,0 +1,16 @@
+{
+  "heldout_seeds": [
+    1010,
+    1011
+  ],
+  "bootstrap_seed": 1400,
+  "bootstrap_draws": 2000,
+  "upper": 6,
+  "horizon": 64,
+  "dt": 0.00048828125,
+  "ensembles": 256,
+  "source_sha256": {
+    "run_hidden_followup.py": "4ed5991d26bb2d264ff2c5ab781542e5c908a0a11f36a85b468e916e473042a5",
+    "hidden_audit.py": "3bd3afd1782d086c29ada80a23b1a2362ec1a7ebec7e797613b65bc464aa16d5"
+  }
+}

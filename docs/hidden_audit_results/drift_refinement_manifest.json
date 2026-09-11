@@ -1,0 +1,18 @@
+{
+  "q": 2.5,
+  "dt": 0.0001220703125,
+  "seeds": [
+    310,
+    311
+  ],
+  "burn": 4,
+  "duration": 4,
+  "ensembles_per_seed": 256,
+  "sampling_stride": 32,
+  "selected_after_inspecting_initial_drift": true,
+  "source_sha256": {
+    "run_hidden_drift_refinement.py": "7cf02cb5a57bb805022f0801de08af9490a401b3c91cefe321fdb74ca39c78c0",
+    "hidden_audit.py": "3bd3afd1782d086c29ada80a23b1a2362ec1a7ebec7e797613b65bc464aa16d5"
+  },
+  "retained_data": "Per-ensemble counts and sums in each drift bin; sufficient to reconstruct reported drift and cluster standard errors."
+}

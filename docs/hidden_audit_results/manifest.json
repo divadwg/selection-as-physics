@@ -1,0 +1,24 @@
+{
+  "calibration_seed": 310,
+  "heldout_seeds": [
+    910,
+    911,
+    912
+  ],
+  "prediction_seeds": [
+    811,
+    812
+  ],
+  "calibration_burn": 4,
+  "calibration_duration": 4,
+  "sampling_stride": 32,
+  "heldout_horizon": 32,
+  "n": 8,
+  "upper": 3,
+  "ensembles": 256,
+  "source_sha256": {
+    "sims/validation/run_hidden_audit.py": "766800e264df112df530cddd70b5eeb931ebfcc85a3266201758f66c351e8a86",
+    "sims/validation/hidden_audit.py": "3bd3afd1782d086c29ada80a23b1a2362ec1a7ebec7e797613b65bc464aa16d5",
+    "sims/validation/hidden_map.py": "2b525f506de391f44ce23a8284b7105b736934bd285178ffbcc87a7a2a0ffddc"
+  }
+}
