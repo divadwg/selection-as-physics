@@ -1,6 +1,6 @@
 # Derivations and their current scope
 
-Revised 9 September 2026. The [previous sketches](derivations_before_heredity_audit.md)
+Revised 11 September 2026. The [previous sketches](derivations_before_heredity_audit.md)
 are preserved as history. Several necessity and threshold claims there were too
 strong. The [heredity audit](heredity_audit.md) is the current account.
 
@@ -34,6 +34,20 @@ conditional on a physical copying process and efficiency. Core 18 implements
 such an accumulator with stochastic state changes and replacement; it is not a
 joined deterministic substrate. A birth/death process with exponential waiting
 times is a different approximation, tested explicitly below.
+
+## Copying clocks and loss of inherited capability
+
+An empty store receiving constant usable power W pays cost E before every attempt.
+If copying ability survives exponentially at rate mu and each attempt independently
+produces a viable same-capability daughter with probability p, lifetime output is
+R=p/(exp(mu*E/W)-1). Independent genealogies establish with positive probability
+iff R>1, giving E<W*log(1+p)/mu. The parent remains after each attempt; every
+newborn starts empty. These are specified copying rules, not a physical origin
+construction. The Poisson approximation at attempt rate W/E instead gives
+E<W*p/mu and can change the predicted outcome. The [copying-clock checks](copy_clock_results/README.md)
+retain the derivation, event histories and work accounting. Both are applications
+of established renewal mathematics. Physical death and irreversible loss of the
+copying state contribute separately to mu; neither should be counted twice.
 
 ## Establishment of a rare lineage
 

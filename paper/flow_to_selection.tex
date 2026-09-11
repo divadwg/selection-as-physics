@@ -1,0 +1,295 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}
+\title{From driven flow to inherited growth\\[.3em]\large Constructions and establishment tests}
+\author{David Galbraith}
+\date{Working draft, 11 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can variation in a driven physical system become inherited differential growth?
+A complete answer requires a physical copying mechanism as well as a criterion
+for its spread. We separate channel formation, flow sorting, persistent patterns,
+reproduction with inherited differences, and portable information. Existing
+lattice and reaction--diffusion constructions establish some of these capabilities
+under specified rules; they do not yet realize the full sequence in one substrate.
+We then derive a conditional establishment test from measured usable power,
+copy cost, inheritance fidelity and the lifetime of copying ability. For a parent
+that accumulates work before each attempt, the critical cost is
+$E_c=W\log(1+p)/\mu$. Replacing that clock by Poisson attempts with the same
+immortal-parent mean rate gives $E_c=Wp/\mu$, and can reverse the predicted outcome.
+Independent life-history simulations check the difference. Both results apply
+established branching and renewal mathematics. Their role is to make the proposed
+physical connection testable. A common microscopic construction of variation,
+copying and inheritance remains to be established.
+\end{abstract}
+
+\section{The claim to establish}
+
+The long-term aim is to explain how local physical dynamics in an open, driven
+system can produce inherited differences that affect reproduction. The present
+claim is narrower: the necessary connections can be stated separately, some have
+constructive examples, and copying-clock assumptions have measurable consequences
+for establishment. A physical derivation must eventually join the connections
+under the same interaction rules. An analogy between replication and an epidemic
+does not establish that derivation.
+
+The system exchanges matter or energy with maintained reservoirs. Let $J_i$ be
+an intake throughput and $W_i$ its usable power after conversion losses. For a
+specified driving potential, write $W_i=\epsilon_i J_i$, where $\epsilon_i$ is work
+per unit throughput, not necessarily a dimensionless efficiency. A work budget
+must also satisfy $\sum_i W_i\le P_{\mathrm{available}}$. Sustained currents require
+external supply; the argument assumes no maximum-entropy-production principle.
+The earlier concentration model has reversible coarse state dynamics despite
+representing a maintained throughput. It is therefore not by itself a resolved
+thermodynamic model of the driven apparatus.
+
+\section{Five separate physical questions}
+
+\begin{center}
+\begin{tabular}{@{}p{.24\linewidth}p{.71\linewidth}@{}}
+\toprule
+Question & What would establish it?\\
+\midrule
+Paths form & Geometry develops under local material and transport rules.\\[3pt]
+Flow sorts & A measured small fraction of available paths carries a specified
+fraction of total throughput.\\[3pt]
+A pattern persists & Spatial organisation continues while its constituent
+material turns over.\\[3pt]
+A pattern reproduces & An identifiable parent produces a new structure, with
+perturbations that can persist across parent--offspring relations.\\[3pt]
+Information travels & A transported state recreates an inherited property
+at a separate site under common destination conditions.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These are not necessarily a chronological ladder. Unequal shares among fixed
+pipes establish sorting without circulation. A whirlpool can maintain its shape
+as water passes through it, yet need not preserve a particular perturbation or
+produce descendants. Spatially correlated patterns need not be related by copying.
+Inheritance of copying ability also has a lifetime distinct from the lifetime
+of the visible object. These distinctions determine which measurements matter.
+
+The companion paper derives an exact stationary sorting window for a specified
+conserved-flow diffusion \cite{sorting}. Independent contacts proportional to
+actual flow recover its variance-proportional-to-flow case. Deterministic lattice
+examples also seed unequal sharing from identical coarse states, without random
+draws after initialization. Deterministic effective noise has mathematical
+precedents \cite{melbourne}; the existing lattice's correlations and limiting
+clock have not been fully matched to the theorem. This supplies a candidate
+source of variation, not yet inherited variation.
+
+\section{What the constructions establish}
+
+The restored lattice-Boltzmann pole model produces returning trajectories in
+its nearly steady wake, absent in low-drive, linear and no-pole controls.
+The hydrodynamic connection of suitable lattice-Boltzmann rules to Navier--Stokes
+is established \cite{lbm}. A material extension replaces the fixed pole mask by
+binary sites with local cohesive exchanges. Their block-average occupancy sets
+fluid reflection. Three prepared patches retain about 96\% spatial occupancy
+overlap and have 30--43 returning tracers out of 120 in the frozen final field.
+Equal material dispersed through the domain and uncoupled-material controls have
+no returning tracers in that diagnostic. Removing cohesion spreads the patch
+but leaves some circulation. The substrate supplies support; the experiment does
+not derive a macroscopic patch from uniform noise, free suspension or erosion.
+
+The repository also reproduces known Gray--Scott spot multiplication from a
+finite seed using local reaction and diffusion laws \cite{pearson,spots}. It
+contains no instruction to detect and copy a spot. The reaction network itself
+supplies autocatalysis; related chemical spot replication has been observed
+experimentally \cite{chemicalspots}. Splitting therefore has a constructive
+precedent, but these runs do not establish selectable inherited differences.
+Molecular templating provides another precedent for portable information simpler
+than a complete genetic system \cite{peptide}; it has not emerged from the lattice
+models here. Existing token-carrier simulations instead assume copying and expression.
+
+A prepared rare configuration can test a possible mechanism without waiting for
+its historical occurrence. It cannot measure its origin rate. To show that disturbance can create the capability, specify an initial ensemble
+and an allowed perturbation history that reaches it under the same rules.
+A prepared capable state can be the endpoint of that construction, but its
+preparation alone does not establish reachability from the proposed background. The origin,
+establishment and spread of a capability remain separate questions.
+
+\section{From intake to establishment}
+
+Consider a rare lineage against a fixed background. A copying-capable structure
+receives constant usable power $W>0$ and starts with an empty store. Every attempt
+costs $E>0$, resets that store to zero and produces one viable daughter carrying
+the same copying capability with independent probability $p\in(0,1]$. The parent
+survives a copying attempt. The daughter starts with an empty store. Copying ability
+is lost irreversibly at exponential rate $\mu>0$; this may include physical death
+and loss of the inherited state. Copies are independent once born. Failed attempts
+still consume their work. Constant intake and independent descendants are rare-lineage
+approximations, not a model of population takeover under a fixed total budget.
+
+\begin{proposition}
+For this accumulator model, positive probability of eventual lineage survival
+occurs precisely when
+\begin{equation}
+ \mathcal R=\frac{p}{\exp(\mu E/W)-1}>1,
+ \qquad E<E_c=\frac{W}{\mu}\log(1+p).
+ \label{eq:clock}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Attempts occur at ages $nt_c$, $n=1,2,\ldots$, where $t_c=E/W$. Survival of copying
+ability to age $nt_c$ has probability $\exp(-\mu nt_c)$. The expected number of
+viable daughters over a parent's life is therefore
+$p\sum_{n\ge1}\exp(-\mu nt_c)$, giving Eq.~\eqref{eq:clock}. Identical independent
+reproduction histories define a branching genealogy with nondegenerate offspring
+law. Its survival threshold is mean offspring greater than one \cite{branching}.
+Solving that inequality gives $E_c$. Birth ages affect growth in physical time;
+they do not change this genealogical criterion.
+\end{proof}
+
+This is an application of established renewal and branching mathematics, not a
+new general threshold theorem. More generally the mean offspring is the integral
+of survival-weighted viable reproduction over age. Age-dependent reproduction
+cannot in general be replaced by a single mean attempt rate \cite{age}.
+For immediate offspring in this particular accumulator model, the renewal equation
+also gives the mean-growth exponent $\lambda=W\log(1+p)/E-\mu$. No claim about
+empirical growth or eventual population size follows without testing the model.
+
+A parent with Poisson attempts at rate $W/E$ has the same mean attempt rate if
+immortal, but a different lifetime output:
+\begin{equation}
+ \mathcal R_{\mathrm P}=\frac{Wp}{\mu E},\qquad
+ E_{c,\mathrm P}=\frac{Wp}{\mu}.
+ \label{eq:poisson}
+\end{equation}
+Because $\log(1+p)<p$, the Poisson replacement can predict establishment where
+the accumulator predicts extinction. It permits attempts before enough work
+has arrived in an empty store, so it is not an equivalent pathwise resource
+model. At faithful copying ($p=1$), the two critical costs differ by a factor
+$\log2$. This comparison identifies a model substitution that needs justification.
+
+For example, take $W=\mu=1$, $p=.8$ and $E=.7$. The accumulator has
+$\mathcal R=.789<1$; the Poisson model has $\mathcal R_{\mathrm P}=1.143>1$.
+Thus a plausible change in the copying clock reverses the predicted outcome
+without changing the nominal attempt rate. A visible structure can also be
+long-lived while its copying state is short-lived: if these are independent
+irreversible losses with rates $d$ and $r$, then $\mu=d+r$, not $d$ alone.
+
+Portable copying can enter through the same quantities. If transit independently
+destroys the required state at rate $\kappa$ over duration $\tau$, the surviving
+fidelity becomes $p=p_0\exp(-\kappa\tau)$. Substitution in Eq.~\eqref{eq:clock}
+gives a conditional transit-dependent critical cost. Transit also delays births
+and changes the growth exponent; the immediate-offspring expression for $\lambda$
+then no longer applies. The transport law and the copying mechanism must be
+measured or constructed rather than inferred from a successful threshold fit.
+
+For multiple inherited states with Markov transitions $T$, disappearance rates
+$d$, exponential attempt rates $b$, and viable daughter-state matrix $P$, the
+corresponding known criterion uses
+$K=(\operatorname{diag}d-T)^{-1}\operatorname{diag}(b)P$ and spectral radius
+$\rho(K)>1$, under finite irreducible branching assumptions \cite{branching}.
+The repository checks this conditional model independently. Its rate-only state
+space cannot represent an empty-store accumulator without adding age or stored
+work. The scalar example shows why that distinction can change the conclusion.
+
+\section{Numerical checks and physical tests}
+
+Independent event histories check the lifetime output in Eqs.~\eqref{eq:clock}
+and \eqref{eq:poisson}. Each setting uses 100,000 parents; a sampled loss time
+terminates explicit regular or exponential attempt times. Bernoulli outcomes
+record viable daughters. These are individual reproduction histories, not physical
+observations or complete population simulations.
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Clock & Cost & Predicted daughters & Observed mean (SE)\\
+\midrule
+Accumulator & .45 & 1.4077 & 1.4006 (.0058)\\
+Accumulator & .70 & .7891 & .7836 (.0037)\\
+Accumulator & 1.00 & .4656 & .4643 (.0026)\\
+Poisson & .45 & 1.7778 & 1.7643 (.0070)\\
+Poisson & .70 & 1.1429 & 1.1355 (.0049)\\
+Poisson & 1.00 & .8000 & .7960 (.0038)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All six means lie within two estimated standard errors of their predictions;
+this is a descriptive numerical check, not a simultaneous confidence statement.
+The accumulator never spends work before receipt in the retained runs. Three
+unit tests check the survival-weighted sum, the classification reversal and
+work accounting. Raw outcomes, seeds and source hashes remain in the repository.
+Existing spatial, carrier and multitype checks are retained separately.
+
+A discriminating experiment would measure usable intake, loss of copying ability,
+copy cost and parent--daughter fidelity independently of lineage outcomes.
+Time-resolved attempts distinguish accumulation from an exponential clock.
+Varying intake or cost then tests the predicted crossing of one viable daughter
+per lifetime; replicate genealogies assess establishment separately. Individual
+history and perturbation tracking must distinguish inheritance from common
+environmental forcing. More total copies are not sufficient if they systematically
+lose the copying state. Fixed-background predictions apply only while the lineage
+is rare; continued growth requires explicit accounting for competition and losses.
+
+The strongest next construction would let a flow-maintained pattern acquire a
+copying capability through a finite perturbation, then transmit a modified
+property to descendants under unchanged local interaction rules. Parent and
+recipient manipulations should separate copied state from shared surroundings.
+A transported carrier would need to recreate that property at a new site.
+Parameters measured in those histories could then predict lineage outcomes on
+held-out runs. This would join physical possibility to a quantitative test;
+programming the copying operation would leave the central connection assumed.
+
+\section{Scope of the proposed contribution}
+
+The ambition is a physical account of inherited differential growth in driven
+systems. The constructions support individual capabilities; the copying-clock
+comparison states one conditional prediction in independently measurable terms.
+Together they do not yet establish a common microscopic origin of variation,
+copying and portable inheritance. The decisive advance would be a construction
+that joins those capabilities under the same rules and predicts lineage outcomes
+from separately measured histories, or a physical test that distinguishes the
+proposed mechanism from alternatives. The present result gives that programme
+a concrete test while keeping its assumptions separate from its ambition.
+
+\paragraph{Reproducibility.}
+Sources, retained outcomes, assumptions and test commands are at
+\url{https://github.com/divadwg/selection-as-physics}, with the two-paper map in
+\texttt{paper/README.md}. The companion sorting paper is independent of this
+paper's copying assumptions.
+
+\begin{thebibliography}{99}
+\bibitem{sorting} D. Galbraith, A noise-scaling window for concentration of a shared flow,
+companion working paper (2026), repository \texttt{paper/finite\_noise\_window.pdf}.
+\bibitem{melbourne} I. Melbourne and A. M. Stuart, A note on diffusion limits of chaotic
+skew-product flows, \emph{Nonlinearity} \textbf{24}, 1361--1367 (2011), corrected version (2015).
+\href{https://arxiv.org/abs/1101.3087}{arXiv:1101.3087}.
+\bibitem{lbm} M. Junk, A. Klar and L.-S. Luo, Asymptotic analysis of the lattice Boltzmann equation,
+\emph{Journal of Computational Physics} \textbf{210}, 676--704 (2005).
+\href{https://doi.org/10.1016/j.jcp.2005.05.003}{doi:10.1016/j.jcp.2005.05.003}.
+\bibitem{pearson} J. E. Pearson, Complex patterns in a simple system,
+\emph{Science} \textbf{261}, 189--192 (1993).
+\href{https://arxiv.org/abs/patt-sol/9304003}{arXiv:patt-sol/9304003}.
+\bibitem{spots} W. N. Reynolds, S. Ponce-Dawson and J. E. Pearson,
+Self-replicating spots in reaction-diffusion systems,
+\emph{Physical Review E} \textbf{56}, 185--198 (1997).
+\href{https://doi.org/10.1103/PhysRevE.56.185}{doi:10.1103/PhysRevE.56.185}.
+\bibitem{chemicalspots} K.-J. Lee, W. D. McCormick, J. E. Pearson and H. L. Swinney,
+Experimental observation of self-replicating spots in a reaction--diffusion system,
+\emph{Nature} \textbf{369}, 215--218 (1994).
+\href{https://doi.org/10.1038/369215a0}{doi:10.1038/369215a0}.
+\bibitem{peptide} D. H. Lee et al., A self-replicating peptide,
+\emph{Nature} \textbf{382}, 525--528 (1996).
+\href{https://doi.org/10.1038/382525a0}{doi:10.1038/382525a0}.
+\bibitem{branching} S. Hautphenne, G. Latouche and G. Nguyen,
+Extinction probabilities of branching processes with countably infinitely many types,
+\emph{Advances in Applied Probability} \textbf{45}, 1068--1082 (2013).
+\href{https://arxiv.org/abs/1211.4129}{arXiv:1211.4129}.
+\bibitem{age} E. B. Stukalin, I. Aifuwa, J. S. Kim, D. Wirtz and S. X. Sun,
+Age-dependent stochastic models for understanding population fluctuations in
+continuously cultured cells, \emph{J. R. Soc. Interface} \textbf{10}, 20130325 (2013).
+\href{https://doi.org/10.1098/rsif.2013.0325}{doi:10.1098/rsif.2013.0325}.
+\end{thebibliography}
+\end{document}

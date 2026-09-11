@@ -9,68 +9,79 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\dd}{\mathrm{d}}
 \setlength{\emergencystretch}{2em}
-\title{A noise-scaling window for concentration of a shared flow}
+\title{A finite noise window for concentration of a shared flow\\[0.4em]
+\large Deterministic disturbance and steps toward selection}
 \author{David Galbraith}
-\date{Revised draft, 11 September 2026}
+\date{Revised draft, 10 September 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-Uniform microscopic activity need not give every flow channel equal disturbance:
-larger contact footprints can collect more fluctuations. We connect this mechanism
-to a conditional prediction for concentrated sharing of a fixed total flow.
-For reflected driftless dynamics with flow weight $g^m$ and variance rate
-proportional to $g^q/\sum_jg_j^m$, we derive the exact joint stationary law.
-The population fraction above the pooled half-flow threshold vanishes as both
-state range and population grow precisely when $1\le q\le m+1$, for exact powers.
-At fixed population $N$, it instead approaches $1/(2N)$ inside that window.
-Independent contacts proportional to actual flow recover the case $q=m$;
-existing deterministic lattice examples demonstrate seeding and contact-dependent
-variation, without establishing the complete diffusion limit or both boundaries.
-The window concerns scaling across channel states, not overall noise amplitude.
-We state finite-range physical tests, including an amplitude-rescaling null.
-The power-law moment threshold is established mathematics; the contribution is
-its exact conserved-flow formulation and testable physical interpretation.
-Physical applicability remains untested.
+Can unequal sharing of a driven flow contribute to a physical account of
+selection? For a bounded reflected diffusion in which channels share a conserved
+total, we derive the exact joint stationary law and distinguish the population
+of channel states from the flow they carry. With flow weight $g^m$ and diffusion
+factor $g^q$, the population fraction above the pooled half-flow threshold tends
+to zero as both state range and population grow precisely when $1\le q\le m+1$,
+for exact powers. At fixed population $N$ it instead approaches $1/(2N)$ inside
+the window. The upper edge is the established weighted-moment threshold, made
+exact here for the coupled model. Independent simulations check the stationary
+predictions on bounded grids. We distinguish this sorting result from spatial
+channel formation, persistent structures, reproduction and portable heredity.
+Existing and constructive models identify possible steps between them; they do
+not yet establish the whole sequence in one physical system. A conditional
+branching threshold states what further measurements would be needed to predict
+lineage establishment. Empirical applicability remains untested.
 \end{abstract}
 
-\section{The physical prediction}
+\section{The physical question and the upper boundary}
 
-Can the same microscopic activity, acting throughout a substrate, sort a fixed
-flow into a small fraction of large-share channels? Larger footprints can collect
-more perturbations even when each contact obeys the same rule. This paper asks
-when that state-dependent disturbance permits extreme concentration. It addresses
-sharing among available routes; it does not derive the formation of those routes.
+The motivating proposal is conditional: disturbance associated with a driven
+flow could help produce concentrated sharing only within a suitable scaling
+window, and that concentration could become relevant to selection if states
+persist and are copied. The window is essential to this proposal. A mechanism
+that concentrates under every disturbance rule would not establish it.
 
-The proposed prediction is conditional: physical systems with the flow and
-fluctuation laws specified below should follow the finite-range concentration
-curve, with asymptotic separation only in the scaling window $1\le q\le m+1$.
-This is more specific than the statement that disturbance helps channels grow.
-Outside the window, a vanishing population fraction does not carry half the pooled
-flow as the accessible range grows. Unequal sharing can nevertheless remain.
+The research programme asks whether this sequence can be constructed without
+adding random forcing as a fundamental ingredient: deterministic fine-scale
+dynamics produce effective variation; variation affects the division of flow;
+and inherited states use some of that flow to reproduce. This paper separates
+an exact stationary result from computational thought experiments that explore
+those connections. The proposed synthesis is not equivalent to the known
+power-law calculation on which one step depends.
 
-The distinction between scaling and amount is essential. After accounting for
-the shared normalization, doubling channel state multiplies flow weight by $2^m$
-and variance rate by $2^q$. The exponent $q$ concerns variance, not the size of a
-typical kick, which scales with its square root. Increasing activity equally at
-every contact multiplies all variance rates by a constant. In this model that
-speeds up evolution without changing the stationary distribution. It cannot by
-itself traverse the window. The physical question is how contact geometry and
-correlations make disturbance increase across channel states.
+A collection of paths can be counted in two ways: by the number of paths in each
+state, or by the fraction of throughput they carry. A rare large state can matter
+little to the first count and greatly to the second. The question here is when
+that difference becomes extreme as the accessible state range grows.
 
-Noise-dependent residence times and stationary occupation have a long history
-\cite{landauer,maes}. Power-weighting a power-law distribution gives a standard
-moment threshold; Newman discusses both this condition and the fraction of a
-weighted total held by a population tail \cite{newman}. These ingredients are
-not claimed as new. Shared-flow normalization also changes the dynamical clock.
-Making it explicit gives the exact joint law, finite-population correction and
-observable needed to assess this physical mechanism.
+Noise affects this comparison through residence times. In a scalar driftless
+It\^o diffusion with reflecting boundaries, the stationary density is inversely
+proportional to diffusivity. State-dependent noise and occupation probabilities
+have a long history \cite{landauer,maes}. Weighting a power-law distribution by a
+power of its argument introduces a standard moment threshold \cite{newman}.
+Neither ingredient is new.
+
+Newman explicitly discusses both the general moment condition and the fraction
+of a weighted total held in a population tail (Secs.~III.B and III.D of
+Ref.~\cite{newman}). Their use for a fixed shared flow requires care: each channel's share depends on
+every other channel, and the same normalization can change the physical clock
+of the state dynamics. We give an exactly solvable coupled model in which this
+dependence is explicit. The result identifies the finite-population correction
+and makes the observable behind the noise window precise.
+
+For $m=1$, the upper edge is $q=2$. Beyond it, increasing the upper state cutoff
+does not make a vanishing population fraction account for half the pooled flow.
+This does not mean that flow becomes equally distributed. A small but nonzero
+fraction can still carry half. Nor is $q$ a noise amplitude: it describes how
+diffusivity changes with state. Multiplying every diffusivity by one constant
+changes relaxation times, but leaves all stationary results below unchanged.
 
 \section{A model with conservation imposed at every instant}
 
 Let $N\geq1$ channels have dimensionless states $g_i\in[1,R]$, where $R>1$.
 The model specifies possible flow routes and their response law; it does not
-prescribe which routes become dominant. The deterministic example in Sec.~\ref{sec:contact} tests differentiation
-from identical coarse-route states.
+prescribe which routes become dominant. The lattice experiment in
+Sec.~\ref{sec:thought} tests differentiation from identical coarse-route states.
 Spatial formation and connectivity of routes in a material are abstracted out:
 no spatial energy-gradient field or changing network topology is modeled here.
 For $m>0$, define the total weight $S$ and the actual flow through channel $i$ by
@@ -105,57 +116,6 @@ conditions. Under a nonlinear change $y=h(g)$, It\^o's formula adds the drift
 $D(g)h''(g)$ even when the drift in $g$ is zero. The zero-drift assumption must
 therefore be justified in the measured coordinate, rather than restored after
 arbitrary relabelling.
-
-\section{From uniform contact activity to differential disturbance}
-\label{sec:contact}
-
-Let each contact contribute a conditionally unbiased increment with the same
-variance $v\,\dd t$ in the specified state coordinate. For $n_i$ independent
-contacts, variance addition gives $2D_i=n_iv$. More generally,
-\begin{equation}
- \operatorname{Var}\!\left(\sum_{a=1}^{n_i}\xi_a\right)
- =\sum_a\operatorname{Var}(\xi_a)+2\sum_{a<b}\operatorname{Cov}(\xi_a,\xi_b).
- \label{eq:contacts}
-\end{equation}
-Thus uniform local activity can produce unequal coarse disturbance through
-contact number and correlations. Statistical uniformity means equal microscopic
-rules and statistics, not identical states or synchronized trajectories.
-
-If contact allocation obeys $n_i=M J_i/I=M g_i^m/S$, independence gives
-$D_i=(Mv/2)g_i^m/S$. A common choice of time unit recovers Eq.~\eqref{eq:model}
-with $q=m$. Here differential noise follows from the contact rule rather than
-being specified separately for each channel. This line lies in the concentration
-window for $m\ge1$; it lies below it for $0<m<1$. More contact alone is therefore
-not a universal sufficient condition.
-
-One explicit small-kick construction gives the same connection. At total rate
-$2N/h^2$, an identical contact event chooses route $i$ with probability $J_i/I$
-and adds $+h$ or $-h$ with equal probability; attempted outward moves are rejected.
-Each allowed signed jump then has rate $Ng_i^m/(Sh^2)$, the lattice approximation
-to the $q=m$ diffusion. Event placement implements the contact allocation; it is
-a constitutive assumption, not a derived law of spatial geometry. This identifies
-the target coarse generator; its event statistics still need to be recovered
-from the deterministic substrate.
-
-The repository's deterministic footprint example instead sums fluctuations from
-chaotic patches with fixed coupling per patch and footprint proportional to flow
-share. It gives a variance-versus-mean-share slope of $1.01$, consistent with
-independent variance addition. A separate deterministic example starts forty
-coarse routes identically: three fine-state seeds yield final top-three shares
-$.615$, $.463$ and $.529$, against $.075$ initially and in frozen controls.
-No random numbers are drawn during evolution. The latter example prescribes a
-share-dependent amplitude, so it is a seeding demonstration rather than an
-independent derivation of contact growth. A periodic control also concentrates;
-chaos is not shown necessary.
-
-These examples establish parts of the mechanism, not a complete match to the
-bounded diffusion. Their regressions use route-wise time averages; their boundaries
-and temporal correlations differ. Deterministic diffusion limits have established
-precedents \cite{melbourne,gottwald}, but require conditions not verified here.
-Perfectly coherent contacts would give variance proportional to $n_i^2$;
-with $n_i\propto J_i$, that also changes the shared denominator to $S^2$.
-It cannot be substituted into this theorem by changing $q$ alone. A microscopic
-construction crossing both boundaries under the same normalization remains open.
 
 \section{Exact stationary population and flow distributions}
 
@@ -334,6 +294,17 @@ correction in Eq.~\eqref{eq:correction}. These make a conditional prediction
 that can be checked. They do not establish a new general law of nature, and no
 priority claim for the elementary threshold is made.
 
+One possible microscopic route to state-dependent variance uses contact patches.
+If each patch contributes an unbiased additive perturbation in the same measured
+coordinate, $n$ independent patches give variance proportional to $n$; perfectly
+coherent patches within a channel give variance proportional to $n^2$.
+Inferring $q=m$ or $q=2m$ additionally requires $n\propto g^m$, fixed coupling
+per patch, and a suitable time scale. It does not derive the common $1/S$ clock
+in Eq.~\eqref{eq:model}. In particular, a rule proportional to squared actual
+flow would have a different normalization. Coherence within a channel must also
+be distinguished from correlations between channels, which violate the
+independent-noise assumption.
+
 A fair physical test needs simultaneous channel states and individual flows,
 with a fixed total and a stable channel population. It must estimate both
 conditional drift and variance rate in the chosen coordinate, check cross-channel
@@ -344,19 +315,12 @@ noise, jumps, changing populations and limited state range can each prevent the
 test from addressing this model. Power-law fits themselves also need checks
 against alternatives \cite{clauset}.
 
-The discriminating test has two parts. First, vary a common activity prefactor
-at fixed contact law: after adequate relaxation, the stationary curve should
-remain unchanged. Second, vary the state dependence of contact disturbance,
-while verifying the same shared normalization, and compare the finite-range
-curve across the upper edge. Fit the dynamical parameters without fitting the
-concentration outcome; predict that outcome on separate observations. Change $R$
-and, where feasible, $N$ to distinguish a finite-range effect from the asymptotic
-classification. No finite apparatus should exhibit an exact singular boundary.
+A useful experiment would vary the state dependence of disturbance across the
+upper edge while measuring the finite-range prediction, rather than expecting
+an infinite-limit discontinuity. No physical dataset is used as validation in
+this paper.
 
-A failed model-assumption check means that this experiment does not test this
-particular prediction. Conversely, disagreement with the finite-range curve after
-independent checks of those assumptions would count against the proposed model.
-No physical dataset is used as validation in this paper.
+\input{thought_experiments}
 
 \section{Numerical checks of the stationary result}
 
@@ -415,14 +379,14 @@ diagnostic. The exact power integrals remain valid.
 
 \section{Conclusion}
 
-Uniform activity at microscopic contacts can give larger-footprint channels
-stronger state fluctuations. Under the specified conserved-flow dynamics, their
-stationary residence times yield an exact concentration window and a measurable
-finite-population correction. The upper edge limits extreme pooled concentration;
-it does not forbid all large channels or unequal sharing. The proposed physical
-test concerns the contact mechanism, its conditional variance law and the resulting
-finite-range curve. It is not a universal amplitude window, a theorem of channel
-formation or a derivation of biological selection.
+The conserved-flow model gives an exact concentration window and a
+finite-population correction. The upper bound states when rare large states
+cease to dominate pooled throughput; its mathematics is established. The
+physical proposal is the connection from such sorting to structures whose
+variations persist and reproduce. The repository makes several steps concrete
+and keeps their assumptions separate. A complete account must derive the
+connections under consistent physical rules and test them independently;
+concentration alone is not a derivation of selection.
 
 \paragraph{Code and reproducibility.}
 Manuscript sources, model implementations, tests and retained data are at
@@ -452,5 +416,26 @@ A note on diffusion limits of chaotic skew-product flows,
 Homogenization for deterministic maps and multiplicative noise,
 \emph{Proc. R. Soc. A} \textbf{469}, 20130201 (2013), corrected version (2015).
 \href{https://arxiv.org/abs/1304.6222}{arXiv:1304.6222}.
+\bibitem{branching} S. Hautphenne, G. Latouche and G. Nguyen,
+Extinction probabilities of branching processes with countably infinitely many types,
+\emph{Advances in Applied Probability} \textbf{45}, 1068--1082 (2013).
+\href{https://arxiv.org/abs/1211.4129}{arXiv:1211.4129}.
+\bibitem{pearson} J. E. Pearson, Complex patterns in a simple system,
+\emph{Science} \textbf{261}, 189--192 (1993).
+\href{https://arxiv.org/abs/patt-sol/9304003}{arXiv:patt-sol/9304003}.
+\bibitem{spots} W. N. Reynolds, S. Ponce-Dawson and J. E. Pearson,
+Self-replicating spots in reaction-diffusion systems,
+\emph{Physical Review E} \textbf{56}, 185--198 (1997).
+\href{https://doi.org/10.1103/PhysRevE.56.185}{doi:10.1103/PhysRevE.56.185}.
+\bibitem{chemicalspots} K.-J. Lee, W. D. McCormick, J. E. Pearson and H. L. Swinney,
+Experimental observation of self-replicating spots in a reaction--diffusion system,
+\emph{Nature} \textbf{369}, 215--218 (1994).
+\href{https://doi.org/10.1038/369215a0}{doi:10.1038/369215a0}.
+\bibitem{peptide} D. H. Lee et al., A self-replicating peptide,
+\emph{Nature} \textbf{382}, 525--528 (1996).
+\href{https://doi.org/10.1038/382525a0}{doi:10.1038/382525a0}.
+\bibitem{lbm} M. Junk, A. Klar and L.-S. Luo, Asymptotic analysis of the lattice Boltzmann equation,
+\emph{Journal of Computational Physics} \textbf{210}, 676--704 (2005).
+\href{https://doi.org/10.1016/j.jcp.2005.05.003}{doi:10.1016/j.jcp.2005.05.003}.
 \end{thebibliography}
 \end{document}

@@ -1,67 +1,49 @@
-# Paper draft
+# Two working papers
 
-[Read the paper (PDF)](finite_noise_window.pdf). The editable source is
-[finite_noise_window.tex](finite_noise_window.tex).
+David Galbraith, revised 11 September 2026.
 
-**A finite noise window for concentration of a shared flow: deterministic
-disturbance and steps toward selection**, David Galbraith, revised 10 September 2026.
-This is a working paper, not a peer-reviewed publication. The
-originality of the full model and correction has not been established by a
-comprehensive literature review. Known results for power laws and deterministic
-effective noise do not by themselves establish that the combined physical
-proposal has already been demonstrated.
+| Paper | Main argument | Status |
+|---|---|---|
+| [A noise-scaling window for concentration of a shared flow](finite_noise_window.pdf) ([source](finite_noise_window.tex)) | Uniform contact activity can yield differential disturbance; an exact conserved-flow model predicts a scaling window and finite-population correction. | Theoretical prediction with bounded numerical checks. Physical applicability and priority of the complete mechanism remain to be established. |
+| [From driven flow to inherited growth](flow_to_selection.pdf) ([source](flow_to_selection.tex)) | Separate physical steps, with conditional establishment predictions that depend on copying clocks and inherited-state lifetime. | Methods and research-programme draft. A common physical construction or discriminating empirical result is still needed for a stronger publication claim. |
 
-The concise manuscript distinguishes channel formation, sorting, persistent flow
-patterns, reproduction with inherited differences, and portable information. Its
-main mathematical result concerns sorting. The existing pole-and-lattice model
-is the simple example of a flow responding to a persistent irregularity.
-
-The [binary-material extension](../docs/material_results/README.md) lets local
-cohesion retain a prepared obstruction whose coarse occupancy reflects fluid.
-It assumes substrate support and a specified coupling; it does not establish
-spontaneous formation from uniform noise.
-
-Detailed [spatial checks](../docs/construction_results/README.md),
-[heredity audits](../docs/heredity_audit.md) and
-[secondary threshold predictions](../docs/heredity_results/README.md) stay in the
-repository. The longer previous discussion is archived in
-[the expanded section](../docs/thought_experiments_expanded_2026-09-09.tex).
-The models demonstrate separate possibilities and conditional consequences;
-they do not yet establish the complete physical connection.
-
-The upper threshold is presented as an application of established moment
-mathematics. The draft does not claim discovery of a new power-law threshold or
-empirical confirmation of its physical interpretation.
+Both drafts use established mathematics explicitly. Neither claims a new universal
+law of noise or a completed first-principles derivation of biological selection.
+The first paper stands independently of the second paper's copying assumptions.
+The [scope note](../docs/two_paper_scope.md) states what would make each publishable
+on its intended terms. The previous combined source is retained in
+[the archive](../docs/paper_archive/combined_draft_2026-09-10.tex), alongside its
+included section; it is historical, not a separate current manuscript.
 
 ## Build
 
-From the repository root, using Python 3.10 or later and Tectonic:
+From the repository root, with Python 3.10 or later and Tectonic:
 
 ```sh
 python -m pip install -r paper/requirements.txt
 python paper/make_figure_data.py
 cd paper
 tectonic finite_noise_window.tex
+tectonic flow_to_selection.tex
 ```
 
-Tectonic may download TeX packages on its first build. ReportLab draws the vector
-figure from the exact formula. The committed CSV and PDFs let readers inspect
-the paper without installing a build environment. Figure 1 plots exact formula
-evaluations; it does not claim simulations at large state ranges.
+Tectonic may download TeX packages on its first build. The first paper uses the
+committed exact-formula figure. The second paper's table comes from
+[retained copying-clock histories](../docs/copy_clock_results/README.md).
 
-## Reproduce the underlying checks
-
-From the repository root:
+## Reproduce checks
 
 ```sh
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests
 python -m sims.validation.run_validation
-python -m sims.validation.run_validation --intervals 8 --output docs/validation_results/finer_grid
-python -m sims.validation.run_validation --channels 40 --intervals 8 --output docs/validation_results/forty_channels
+python -m sims.validation.run_copy_clock
 ```
 
-The runner overwrites results in the selected output directory. Use a different
-`--output` directory to preserve the retained runs. Validation details and limits
-are in [the model note](../docs/conserved_flow_validation.md); the paper's numerical
-table comes from the three [retained runs](../docs/validation_results/README.md),
-whose underlying implementation was committed as `e802c6f`.
+The copying-clock runner overwrites its retained output directory. The existing
+[stationary](../docs/conserved_flow_validation.md),
+[deterministic contact](../docs/research_examples/README.md),
+[spatial](../docs/construction_results/README.md),
+[material](../docs/material_results/README.md) and
+[heredity](../docs/heredity_results/README.md) notes give their own commands,
+parameters and limits. The repository currently has 26 passing unit tests;
+these check the specified models rather than establish physical applicability.

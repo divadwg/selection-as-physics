@@ -5,15 +5,29 @@ flows: deterministic fine-scale dynamics supply effective variation, a bounded
 range of disturbance scaling permits concentrated sharing, and inherited states
 can use flow to reproduce.
 
-**Start with the [revised paper (PDF)](paper/finite_noise_window.pdf):
-*A finite noise window for concentration of a shared flow*.**
-[Editable source and build instructions](paper/README.md).
+## Two papers
 
-The paper combines an exact result for a specified stochastic model with
-computational thought experiments exploring that proposed connection. The
-repository supplies the implementations, independent stationary checks and
-retained example runs, alongside further work on memory and inheritance.
-The whole sequence has not yet been demonstrated in one physical system.
+1. **[A noise-scaling window for concentration of a shared flow](paper/finite_noise_window.pdf).**
+   Uniform microscopic activity can give larger contact footprints greater
+   disturbance. The paper connects that mechanism to an exact conditional
+   sorting window, its finite-population correction and physical tests.
+2. **[From driven flow to inherited growth](paper/flow_to_selection.pdf).**
+   The broader physical programme, with separate constructions for its steps
+   and a test of whether flow-funded copying can establish a lineage. This is
+   a working methods draft, not a completed derivation of selection from physics.
+
+[Editable sources and build commands](paper/README.md).
+[Claims, tests and publication gaps](docs/two_paper_scope.md).
+The repository retains the detailed checks, raw outcomes and historical models
+so that each paper can keep a short argument.
+
+Uniform activity and differential disturbance are compatible: more contacts can
+collect more fluctuations under the same local rule. But multiplying all noise
+rates by one constant only changes the clock in the sorting model. The proved
+window concerns **how variance grows with state**, not a universal interval of
+overall noise strength. Independent contacts proportional to actual flow give
+the model's `q=m` case; the complete two-sided window has not yet been demonstrated
+by the same deterministic microscopic construction.
 
 The models specify possible routes and their response to flow; they do not
 prescribe which routes become dominant. An [equal-start lattice control](docs/research_examples/README.md#equal-coarse-route-start)

@@ -1,0 +1,12 @@
+{
+  "seeds": [
+    100,
+    101,
+    102
+  ],
+  "trials_per_case": 100000,
+  "source_sha256": {
+    "sims/validation/run_copy_clock.py": "3c11e69c029208f07248505eab8be69116eafe18b42d2f2d4db915687be73187",
+    "sims/validation/copy_clock.py": "e3507b781085318024caf3b93f3981bf5736aba810a57b76cefda786ea2e5e68"
+  }
+}
